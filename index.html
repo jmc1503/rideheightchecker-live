@@ -60,12 +60,12 @@
     <div class="container">
         <h1>Theme Park Finder</h1>
         <form id="park-form">
-            <label for="Minimum Height">Enter your height (in centimeters):</label>
-            <input type="number" id="Minimum Height" name="Minimum Height" required>
-            <label for="Country">Select your country:</label>
-            <select id="Country" name="Country"></select>
-            <label for="Theme Park">Select theme park:</label>
-            <select id="Theme Park" name="Theme Park"></select>
+            <label for="height">Enter your height (in centimeters):</label>
+            <input type="number" id="height" name="height" required>
+            <label for="country">Select your country:</label>
+            <select id="country" name="country"></select>
+            <label for="theme-park">Select theme park:</label>
+            <select id="theme-park" name="theme-park"></select>
             <button type="submit">Find Rides</button>
         </form>
         <div id="result-container"></div>
@@ -74,55 +74,43 @@
     <script>
         // Fetch data from JSON file
         fetch('data.json')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 // Populate country dropdown
-                const countrySelect = document.getElementById('Country');
+                const countrySelect = document.getElementById('country');
                 const countries = [...new Set(data.map(item => item.Country))];
-                countries.forEach(Xountry => {
+                countries.forEach(country => {
                     const option = document.createElement('option');
-                    option.value = Country;
-                    option.textContent = Country;
+                    option.value = country;
+                    option.textContent = country;
                     countrySelect.appendChild(option);
                 });
-
-                // Handle country change event
-                countrySelect.addEventListener('change', () => {
-                    const selectedCountry = countrySelect.value;
-                    const themeParkSelect = document.getElementById('Theme Park');
-                    themeParkSelect.innerHTML = '';
-                    const themeParks = [...new Set(data.filter(item => item.Country === selectedCountry).map(item => item['Theme Park'] || 'Unknown'))];
-                    themeParks.forEach(themePark => {
-                        const option = document.createElement('option');
-                        option.value = themePark;
-                        option.textContent = themePark;
-                        themeParkSelect.appendChild(option);
-                    });
-                });
-
-                // Populate theme park dropdown based on initial country selection
-                const themeParkSelect = document.getElementById('theme-park');
-                const selectedCountry = countrySelect.value;
-                const themeParks = [...new Set(data.filter(item => item.Country === selectedCountry).map(item => item['Theme Park'] || 'Unknown'))];
-                themeParks.forEach(themePark => {
-                    const option = document.createElement('option');
-                    option.value = themePark;
-                    option.textContent = themePark;
-                    themeParkSelect.appendChild(option);
-                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
             });
 
         // Handle form submission
         document.getElementById('park-form').addEventListener('submit', function(event) {
             event.preventDefault();
-            
+
             const height = parseInt(document.getElementById('height').value);
             const country = document.getElementById('country').value;
             const themePark = document.getElementById('theme-park').value;
 
             // Fetch data from JSON file
             fetch('data.json')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     // Filter rides based on country and theme park
                     const filteredRides = data.filter(item => item.Country === country && item['Theme Park'] === themePark);
@@ -140,12 +128,20 @@
                                 parkList.appendChild(listItem);
                             }
                         });
-                        resultContainer.appendChild(parkList);
-                        resultContainer.style.display = 'block';
+                        if (parkList.children.length > 0) {
+                            resultContainer.appendChild(parkList);
+                            resultContainer.style.display = 'block';
+                        } else {
+                            resultContainer.textContent = 'No rides available for your height in this theme park.';
+                            resultContainer.style.display = 'block';
+                        }
                     } else {
-                        resultContainer.textContent = 'Sorry, no rides available for your height in this theme park.';
+                        resultContainer.textContent = 'No rides available for your height in this theme park.';
                         resultContainer.style.display = 'block';
                     }
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
                 });
         });
     </script>
