@@ -144,24 +144,44 @@
                     return response.json();
                 })
                 .then(data => {
-                    const filteredRides = data.filter(item => {
+                    let filteredRides = data.filter(item => {
                         return (country === '' || item.Country === country) &&
                                (themePark === '' || item['Theme Park'] === themePark) &&
                                item['Minimum Height'] <= height &&
                                item['Maximum Height'] >= height;
                     });
                     
+                    filteredRides.sort((a, b) => a.Ride.localeCompare(b.Ride));
+
                     const resultContainer = document.getElementById('result-container');
                     resultContainer.innerHTML = '';
 
                     if (filteredRides.length > 0) {
-                        const parkList = document.createElement('ul');
-                        filteredRides.forEach(ride => {
-                            const listItem = document.createElement('li');
-                            listItem.textContent = ride.Ride;
-                            parkList.appendChild(listItem);
+                        const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
+                        
+                        themeParks.forEach(park => {
+                            const parkHeader = document.createElement('h3');
+                            parkHeader.textContent = park;
+                            resultContainer.appendChild(parkHeader);
+
+                            const heights = [...new Set(filteredRides.filter(ride => ride['Theme Park'] === park).map(ride => ride['Minimum Height']))];
+                            heights.sort((a, b) => a - b);
+                            
+                            heights.forEach(height => {
+                                const heightHeader = document.createElement('h4');
+                                heightHeader.textContent = `Minimum Height: ${height} cm`;
+                                resultContainer.appendChild(heightHeader);
+
+                                const parkList = document.createElement('ul');
+                                filteredRides.filter(ride => ride['Theme Park'] === park && ride['Minimum Height'] === height).forEach(ride => {
+                                    const listItem = document.createElement('li');
+                                    listItem.textContent = ride.Ride;
+                                    parkList.appendChild(listItem);
+                                });
+                                resultContainer.appendChild(parkList);
+                            });
                         });
-                        resultContainer.appendChild(parkList);
+                        
                         resultContainer.style.display = 'block';
                     } else {
                         resultContainer.textContent = 'No rides available for your height in this theme park.';
