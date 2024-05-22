@@ -175,7 +175,7 @@
                                 const parkList = document.createElement('ul');
                                 filteredRides.filter(ride => ride['Theme Park'] === park && ride['Minimum Height'] === height).forEach(ride => {
                                     const listItem = document.createElement('li');
-                                    listItem.textContent = ride.Ride;
+                                    listItem.innerHTML = `${ride.Ride} <a href="${ride.URL}" target="_blank">Buy Tickets</a>`;
                                     parkList.appendChild(listItem);
                                 });
                                 resultContainer.appendChild(parkList);
