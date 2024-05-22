@@ -243,5 +243,12 @@
    "Ride": "CBeebies Land Photo Studio",
    "Minimum Height": 0,
    "Maximum Height": 300
+ },
+ {
+   "Country": "United States",
+   "Theme Park": "Universal Studios Florida",
+   "Ride": "Illumination's Villain-Con Minion Blast",
+   "Minimum Height": 0,
+   "Maximum Height": 300
  }
 ]
