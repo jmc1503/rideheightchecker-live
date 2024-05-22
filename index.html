@@ -160,8 +160,9 @@
                         const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
                         
                         themeParks.forEach(park => {
+                            const parkURL = filteredRides.find(ride => ride['Theme Park'] === park).URL;
                             const parkHeader = document.createElement('h3');
-                            parkHeader.textContent = park;
+                            parkHeader.innerHTML = `${park} <a href="${parkURL}" target="_blank">Buy Tickets</a>`;
                             resultContainer.appendChild(parkHeader);
 
                             const heights = [...new Set(filteredRides.filter(ride => ride['Theme Park'] === park).map(ride => ride['Minimum Height']))];
@@ -175,7 +176,7 @@
                                 const parkList = document.createElement('ul');
                                 filteredRides.filter(ride => ride['Theme Park'] === park && ride['Minimum Height'] === height).forEach(ride => {
                                     const listItem = document.createElement('li');
-                                    listItem.innerHTML = `${ride.Ride} <a href="${ride.URL}" target="_blank">Buy Tickets</a>`;
+                                    listItem.textContent = ride.Ride;
                                     parkList.appendChild(listItem);
                                 });
                                 resultContainer.appendChild(parkList);
