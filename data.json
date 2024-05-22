@@ -250,5 +250,110 @@
    "Ride": "Illumination's Villain-Con Minion Blast",
    "Minimum Height": 0,
    "Maximum Height": 300
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Stealth",
+   "Minimum Height": 140,
+   "Maximum Height": 196
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Saw – The Ride",
+   "Minimum Height": 140,
+   "Maximum Height": 196
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "The Swarm",
+   "Minimum Height": 140,
+   "Maximum Height": 196
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Nemesis Inferno",
+   "Minimum Height": 140,
+   "Maximum Height": 196
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Colossus",
+   "Minimum Height": 140,
+   "Maximum Height": 196
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Mandrill Mayhem",
+   "Minimum Height": 120,
+   "Maximum Height": 300
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Ostrich Stampede",
+   "Minimum Height": 120,
+   "Maximum Height": 300
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Mamba Strike",
+   "Minimum Height": 120,
+   "Maximum Height": 300
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Croc Drop",
+   "Minimum Height": 120,
+   "Maximum Height": 300
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Blue Barnacle",
+   "Minimum Height": 110,
+   "Maximum Height": 300
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Paultons Park",
+   "Ride": "Cyclonator",
+   "Minimum Height": 120,
+   "Maximum Height": 300
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Paultons Park",
+   "Ride": "Flight of the Pterosaur",
+   "Minimum Height": 100,
+   "Maximum Height": 200
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Paultons Park",
+   "Ride": "Velociraptor",
+   "Minimum Height": 100,
+   "Maximum Height": 200
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Paultons Park",
+   "Ride": "The Cobra",
+   "Minimum Height": 110,
+   "Maximum Height": 300
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Paultons Park",
+   "Ride": "Magma",
+   "Minimum Height": 110,
+   "Maximum Height": 200
  }
 ]
