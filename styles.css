@@ -50,11 +50,32 @@ button:hover {
 #result-container {
     display: none;
     margin-top: 20px;
+}
 
 .park-container {
-    border: 1px solid #ccc;
+    border: 5px dashed #007bff;
     border-radius: 8px;
     padding: 10px;
     margin-bottom: 20px;
-    background-color: #fff;    
+    background-color: #fff;
+}
+
+.view-toggle {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.view-toggle button {
+    width: 45%;
+}
+
+#map {
+    height: 400px;
+    display: none;
+}
+
+/* Hide theme park select initially */
+#theme-park {
+    display: none;
 }
