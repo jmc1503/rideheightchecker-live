@@ -74,8 +74,3 @@ button:hover {
     height: 400px;
     display: none;
 }
-
-/* Hide theme park select initially */
-#theme-park {
-    display: none;
-}
