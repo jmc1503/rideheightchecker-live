@@ -6,7 +6,8 @@
     <title>Theme Park Finder</title>
     <link rel="stylesheet" href="styles.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1969578899445338" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
 </head>
 <body>
     <div class="container">
@@ -17,32 +18,16 @@
             <label for="country">Select your country:</label>
             <select id="country" name="country" autocomplete="off"></select>
             <label for="theme-park">Select theme park:</label>
-            <select id="theme-park" name="theme-park" autocomplete="off"></select>
+            <select id="theme-park" name="theme-park" autocomplete="off" style="display:none;"></select>
             <button type="submit">Find Rides</button>
         </form>
-
-        <!-- AdSense Ad Unit -->
-        <div class="adsense-container">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1969578899445338"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-
-        <div id="result-container"></div>
-
         <div class="view-toggle">
             <button id="list-view-btn">List View</button>
             <button id="map-view-btn">Map View</button>
         </div>
-        <div id="map" style="height: 400px; display: none;"></div>
+        <div id="result-container"></div>
+        <div id="map"></div>
     </div>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
