@@ -1,5 +1,5 @@
 body {
-    font-family: 'Sora', sans-serif;
+    font-family: Courier New, sans-serif;
     background-color: #5de8d5;
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ body {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 300px #007bff;
 }
 
 form {
