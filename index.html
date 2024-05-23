@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theme Park Finder</title>
-    <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,8 +14,8 @@
             <input type="number" id="height" name="height" required autocomplete="off">
             <label for="country">Select your country:</label>
             <select id="country" name="country" autocomplete="off"></select>
-            <label for="theme-park">Select theme park:</label>
-            <select id="theme-park" name="theme-park" autocomplete="off"></select>
+            <label for="theme-park" id="theme-park-label" style="display: none;">Select theme park:</label>
+            <select id="theme-park" name="theme-park" style="display: none;" autocomplete="off"></select>
             <button type="submit">Find Rides</button>
         </form>
         <div id="result-container"></div>
@@ -54,18 +53,25 @@
         // Handle country change event
         document.getElementById('country').addEventListener('change', () => {
             const selectedCountry = document.getElementById('country').value;
-
             const themeParkSelect = document.getElementById('theme-park');
+            const themeParkLabel = document.getElementById('theme-park-label');
+            
             themeParkSelect.innerHTML = '';
             const anyOption = document.createElement('option');
             anyOption.value = '';
             anyOption.textContent = 'Any';
             themeParkSelect.appendChild(anyOption);
 
+            if (selectedCountry === '') {
+                themeParkSelect.style.display = 'none';
+                themeParkLabel.style.display = 'none';
+                return;
+            }
+
             fetch('data.json')
                 .then(response => response.json())
                 .then(data => {
-                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry);
+                    const filteredData = data.filter(item => item.Country === selectedCountry);
                     const themeParks = [...new Set(filteredData.map(item => item['Theme Park'] || 'Unknown'))];
                     themeParks.forEach(themePark => {
                         const option = document.createElement('option');
@@ -73,6 +79,8 @@
                         option.textContent = themePark;
                         themeParkSelect.appendChild(option);
                     });
+                    themeParkSelect.style.display = 'block';
+                    themeParkLabel.style.display = 'block';
                 })
                 .catch(error => {
                     console.error('Error fetching data:', error);
@@ -82,11 +90,11 @@
         // Handle form submission
         document.getElementById('park-form').addEventListener('submit', function(event) {
             event.preventDefault();
-
+            
             const height = parseInt(document.getElementById('height').value);
             const country = document.getElementById('country').value;
             const themePark = document.getElementById('theme-park').value;
-
+            
             fetch('data.json')
                 .then(response => {
                     if (!response.ok) {
@@ -101,7 +109,7 @@
                                item['Minimum Height'] <= height &&
                                item['Maximum Height'] >= height;
                     });
-
+                    
                     filteredRides.sort((a, b) => a.Ride.localeCompare(b.Ride));
 
                     const resultContainer = document.getElementById('result-container');
@@ -109,20 +117,20 @@
 
                     if (filteredRides.length > 0) {
                         const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
-
+                        
                         themeParks.forEach(park => {
                             const parkURL = filteredRides.find(ride => ride['Theme Park'] === park).URL;
                             const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
                             const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
                             const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(2);
-
+                            
                             const parkHeader = document.createElement('h3');
                             parkHeader.innerHTML = `${park} <a href="${parkURL}" target="_blank">Buy Tickets</a> (${percentage}% of rides available)`;
                             resultContainer.appendChild(parkHeader);
 
                             const heights = [...new Set(filteredRides.filter(ride => ride['Theme Park'] === park).map(ride => ride['Minimum Height']))];
                             heights.sort((a, b) => a - b);
-
+                            
                             heights.forEach(height => {
                                 const heightHeader = document.createElement('h4');
                                 heightHeader.textContent = `Minimum Height: ${height} cm`;
@@ -137,7 +145,7 @@
                                 resultContainer.appendChild(parkList);
                             });
                         });
-
+                        
                         resultContainer.style.display = 'block';
                     } else {
                         resultContainer.textContent = 'No rides available for your height in this theme park.';
