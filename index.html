@@ -122,13 +122,13 @@
                             const parkURL = filteredRides.find(ride => ride['Theme Park'] === park).URL;
                             const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
                             const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
-                            const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(2);
+                            const percentage = Math.floor((availableRidesInPark / totalRidesInPark) * 100);
                             
                             const parkContainer = document.createElement('div');
                             parkContainer.classList.add('park-container');
 
                             const parkHeader = document.createElement('h3');
-                            parkHeader.innerHTML = `${park} <a href="${parkURL}" target="_blank">Buy Tickets</a> (${percentage}% of rides available)`;
+                            parkHeader.innerHTML = `${park} - ${percentage}% of available rides <br><a href="${parkURL}" target="_blank">Buy Tickets</a>`;
                             parkContainer.appendChild(parkHeader);
 
                             const heights = [...new Set(filteredRides.filter(ride => ride['Theme Park'] === park).map(ride => ride['Minimum Height']))];
