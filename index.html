@@ -128,7 +128,7 @@
                             parkContainer.classList.add('park-container');
 
                             const parkHeader = document.createElement('h3');
-                            parkHeader.innerHTML = `${park} - ${percentage}% of available rides <br><a href="${parkURL}" target="_blank">Buy Tickets</a>`;
+                            parkHeader.innerHTML = `${park} - ${percentage}% of rides available <br><a href="${parkURL}" target="_blank">Buy Tickets</a>`;
                             parkContainer.appendChild(parkHeader);
 
                             const heights = [...new Set(filteredRides.filter(ride => ride['Theme Park'] === park).map(ride => ride['Minimum Height']))];
