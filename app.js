@@ -36,36 +36,36 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error fetching data:', error);
         });
 
-    // Handle country change event
-    countrySelect.addEventListener('change', () => {
-        const selectedCountry = countrySelect.value;
-        themeParkSelect.innerHTML = '';
-        const anyOption = document.createElement('option');
-        anyOption.value = '';
-        anyOption.textContent = 'Any';
-        themeParkSelect.appendChild(anyOption);
+// Handle country change event
+countrySelect.addEventListener('change', () => {
+    const selectedCountry = countrySelect.value;
+    themeParkSelect.innerHTML = '';
+    const anyOption = document.createElement('option');
+    anyOption.value = '';
+    anyOption.textContent = 'Any';
+    themeParkSelect.appendChild(anyOption);
 
-        if (selectedCountry === '') {
-            themeParkSelect.style.display = 'none';
-        } else {
-            fetch('data.json')
-                .then(response => response.json())
-                .then(data => {
-                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry);
-                    const themeParks = [...new Set(filteredData.map(item => item['Theme Park'] || 'Unknown'))];
-                    themeParks.forEach(themePark => {
-                        const option = document.createElement('option');
-                        option.value = themePark;
-                        option.textContent = themePark;
-                        themeParkSelect.appendChild(option);
-                    });
-                    themeParkSelect.style.display = 'block';
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
+    if (selectedCountry === '') {
+        themeParkSelect.style.display = 'none';
+    } else {
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry);
+                const themeParks = [...new Set(filteredData.map(item => item['Theme Park'] || 'Unknown'))];
+                themeParks.forEach(themePark => {
+                    const option = document.createElement('option');
+                    option.value = themePark;
+                    option.textContent = themePark;
+                    themeParkSelect.appendChild(option);
                 });
-        }
-    });
+                themeParkSelect.style.display = 'block';
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+});
 
     // Handle form submission
     document.getElementById('park-form').addEventListener('submit', function(event) {
