@@ -185,8 +185,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 themeParks.forEach(park => {
                     const parkData = data.find(item => item['Theme Park'] === park);
                     if (parkData) {
+                        const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
+                        const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
+                        const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
+
                         const marker = L.marker([parkData.Latitude, parkData.Longitude]).addTo(map);
-                        marker.bindPopup(`<b>${park}</b><br>${parkData.Country}`).openPopup();
+                        marker.bindPopup(`<b>${park}</b><br>${parkData.Country}<br>${percentage}% of rides available`).openPopup();
                         markers.push(marker);
                     }
                 });
