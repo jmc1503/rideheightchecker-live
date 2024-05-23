@@ -46,7 +46,7 @@ countrySelect.addEventListener('change', () => {
     themeParkSelect.appendChild(anyOption);
 
     if (selectedCountry === '') {
-        themeParkSelect.style.display = 'none';
+        themeParkSelect.style.display = 'none'; // Hide theme park dropdown
     } else {
         fetch('data.json')
             .then(response => response.json())
@@ -59,7 +59,7 @@ countrySelect.addEventListener('change', () => {
                     option.textContent = themePark;
                     themeParkSelect.appendChild(option);
                 });
-                themeParkSelect.style.display = 'block';
+                themeParkSelect.style.display = 'block'; // Show theme park dropdown
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
