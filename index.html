@@ -122,7 +122,7 @@
                             const parkURL = filteredRides.find(ride => ride['Theme Park'] === park).URL;
                             const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
                             const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
-                            const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(2);
+                            const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
                             
                             const parkHeader = document.createElement('h3');
                             parkHeader.innerHTML = `${park} <a href="${parkURL}" target="_blank">Buy Tickets</a> (${percentage}% of rides available)`;
