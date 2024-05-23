@@ -122,11 +122,14 @@
                             const parkURL = filteredRides.find(ride => ride['Theme Park'] === park).URL;
                             const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
                             const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
-                            const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
+                            const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(2);
                             
+                            const parkContainer = document.createElement('div');
+                            parkContainer.classList.add('park-container');
+
                             const parkHeader = document.createElement('h3');
                             parkHeader.innerHTML = `${park} <a href="${parkURL}" target="_blank">Buy Tickets</a> (${percentage}% of rides available)`;
-                            resultContainer.appendChild(parkHeader);
+                            parkContainer.appendChild(parkHeader);
 
                             const heights = [...new Set(filteredRides.filter(ride => ride['Theme Park'] === park).map(ride => ride['Minimum Height']))];
                             heights.sort((a, b) => a - b);
@@ -134,7 +137,7 @@
                             heights.forEach(height => {
                                 const heightHeader = document.createElement('h4');
                                 heightHeader.textContent = `Minimum Height: ${height} cm`;
-                                resultContainer.appendChild(heightHeader);
+                                parkContainer.appendChild(heightHeader);
 
                                 const parkList = document.createElement('ul');
                                 filteredRides.filter(ride => ride['Theme Park'] === park && ride['Minimum Height'] === height).forEach(ride => {
@@ -142,8 +145,10 @@
                                     listItem.textContent = ride.Ride;
                                     parkList.appendChild(listItem);
                                 });
-                                resultContainer.appendChild(parkList);
+                                parkContainer.appendChild(parkList);
                             });
+
+                            resultContainer.appendChild(parkContainer);
                         });
                         
                         resultContainer.style.display = 'block';
