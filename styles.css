@@ -74,3 +74,14 @@ button:hover {
     height: 400px;
     display: none;
 }
+
+/* Add styling for the logo */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 100px; /* Adjust the max-width as needed */
+    height: auto;
+}
