@@ -16,27 +16,23 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 300px #007bff;
+    text-align: center;  /* Center align the content */
 }
 
 .banner {
     background-color: #5de8d5;
-    padding: 10px 0;  /* Reduced padding to decrease banner size */
-    text-align: center;
-    border-radius: 8px 8px 0 0;
-    margin-bottom: 20px;
-}
-
-.logo-container {
-    text-align: center;
+    padding: 10px;
+    border-radius: 8px 8px 0 0; /* Only round the top corners */
 }
 
 .logo {
-    max-width: 150px; /* Adjust the max-width as needed */
+    max-width: 100%;
     height: auto;
 }
 
 form {
     margin-bottom: 20px;
+    text-align: left;  /* Left align the form elements */
 }
 
 label {
@@ -64,6 +60,14 @@ button:hover {
     background-color: #0056b3;
 }
 
+.view-toggle {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
 #result-container {
     display: none;
     margin-top: 20px;
@@ -74,5 +78,11 @@ button:hover {
     border-radius: 8px;
     padding: 10px;
     margin-bottom: 20px;
-    background-color: #fff;    
+    background-color: #fff;
+}
+
+#map {
+    height: 400px;
+    margin-top: 20px;
+    display: none;
 }
