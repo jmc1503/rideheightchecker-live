@@ -1,28 +1,69 @@
-/* Your CSS code with the necessary changes */
+/* Apply Courier New font to all elements */
+* {
+    font-family: 'Courier New', sans-serif;
+}
 body {
     background-color: #5de8d5;
     margin: 0;
     padding: 0;
 }
-
-.logo {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 .container {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 50px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 300px #007bff;
 }
-
+form {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+#result-container {
+    display: none;
+    margin-top: 20px;
+}
+.park-container {
+    border: 5px dashed #007bff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
 .view-toggle {
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.view-toggle button {
+    width: 45%;
+}
+#map {
+    height: 400px;
+    display: none;
 }
 
-.hidden {
+/* Hide theme park select initially */
+#theme-park {
     display: none;
 }
