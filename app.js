@@ -19,12 +19,31 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
+            const markers = [];
             data.forEach(item => {
                 const marker = L.marker([item.Latitude, item.Longitude]).addTo(mymap);
                 marker.bindTooltip(`<b>${item['Theme Park']}</b><br>${item.Ride}<br>Minimum Height: ${item['Minimum Height']} cm<br>Maximum Height: ${item['Maximum Height']} cm`, {
                     permanent: true,
                     direction: 'top'
                 }).openTooltip();
+                markers.push(marker);
+            });
+
+            // Filter data by country
+            const countrySelect = document.getElementById('country');
+            countrySelect.addEventListener('change', () => {
+                const selectedCountry = countrySelect.value;
+                markers.forEach(marker => marker.remove());
+                data.forEach(item => {
+                    if (selectedCountry === '' || item.Country === selectedCountry) {
+                        const marker = L.marker([item.Latitude, item.Longitude]).addTo(mymap);
+                        marker.bindTooltip(`<b>${item['Theme Park']}</b><br>${item.Ride}<br>Minimum Height: ${item['Minimum Height']} cm<br>Maximum Height: ${item['Maximum Height']} cm`, {
+                            permanent: true,
+                            direction: 'top'
+                        }).openTooltip();
+                        markers.push(marker);
+                    }
+                });
             });
 
             // Map view button
@@ -38,8 +57,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 mapContainer.style.display = 'none';
                 resultContainer.style.display = 'block';
             });
+
+            // Form submission
+            const form = document.getElementById('park-form');
+            form.addEventListener('submit', event => {
+                event.preventDefault();
+                const height = parseInt(document.getElementById('height').value);
+                const selectedCountry = countrySelect.value;
+                const filteredData = data.filter(item => (selectedCountry === '' || item.Country === selectedCountry) && height >= item['Minimum Height'] && height <= item['Maximum Height']);
+                displayResults(filteredData);
+            });
         })
         .catch(error => {
             console.error('Error fetching data:', error);
         });
+
+    // Function to display results
+    function displayResults(data) {
+        resultContainer.innerHTML = '';
+        if (data.length > 0) {
+            const parkList = document.createElement('ul');
+            data.forEach(ride => {
+                const listItem = document.createElement('li');
+                listItem.textContent = ride.Ride;
+                parkList.appendChild(listItem);
+            });
+            resultContainer.appendChild(parkList);
+            resultContainer.style.display = 'block';
+        } else {
+            resultContainer.textContent = 'No rides available for your height in this country.';
+            resultContainer.style.display = 'block';
+        }
+    }
 });
