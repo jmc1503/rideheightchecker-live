@@ -1,60 +1,28 @@
-/* Apply Courier New font to all elements */
-* {
-    font-family: 'Courier New', sans-serif;
-}
-
+/* Your CSS code with the necessary changes */
 body {
     background-color: #5de8d5;
     margin: 0;
     padding: 0;
 }
 
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .container {
     max-width: 600px;
-    margin: 50px auto;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
 }
 
-form {
-    margin-bottom: 20px;
+.view-toggle {
+    text-align: center;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input, select, button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#result-container {
+.hidden {
     display: none;
-    margin-top: 20px;
-}
-
-#logo {
-    width: 30%;
-    display: block;
-    margin: auto;
-    margin-bottom: 20px;
 }
