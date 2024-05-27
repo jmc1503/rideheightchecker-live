@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(data => {
             const markers = [];
+            const parks = {};
             data.forEach(item => {
                 const marker = L.marker([item.Latitude, item.Longitude]).addTo(mymap);
                 marker.bindTooltip(`<b>${item['Theme Park']}</b><br>${item.Ride}<br>Minimum Height: ${item['Minimum Height']} cm<br>Maximum Height: ${item['Maximum Height']} cm`, {
@@ -27,6 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     direction: 'top'
                 }).openTooltip();
                 markers.push(marker);
+
+                if (!parks[item['Theme Park']]) {
+                    parks[item['Theme Park']] = [];
+                }
+                parks[item['Theme Park']].push(item);
             });
 
             // Filter data by country
@@ -34,15 +40,17 @@ document.addEventListener('DOMContentLoaded', () => {
             countrySelect.addEventListener('change', () => {
                 const selectedCountry = countrySelect.value;
                 markers.forEach(marker => marker.remove());
-                data.forEach(item => {
-                    if (selectedCountry === '' || item.Country === selectedCountry) {
-                        const marker = L.marker([item.Latitude, item.Longitude]).addTo(mymap);
-                        marker.bindTooltip(`<b>${item['Theme Park']}</b><br>${item.Ride}<br>Minimum Height: ${item['Minimum Height']} cm<br>Maximum Height: ${item['Maximum Height']} cm`, {
-                            permanent: true,
-                            direction: 'top'
-                        }).openTooltip();
-                        markers.push(marker);
-                    }
+                Object.values(parks).forEach(park => {
+                    park.forEach(item => {
+                        if (selectedCountry === '' || item.Country === selectedCountry) {
+                            const marker = L.marker([item.Latitude, item.Longitude]).addTo(mymap);
+                            marker.bindTooltip(`<b>${item['Theme Park']}</b><br>${item.Ride}<br>Minimum Height: ${item['Minimum Height']} cm<br>Maximum Height: ${item['Maximum Height']} cm`, {
+                                permanent: true,
+                                direction: 'top'
+                            }).openTooltip();
+                            markers.push(marker);
+                        }
+                    });
                 });
             });
 
@@ -75,18 +83,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to display results
     function displayResults(data) {
         resultContainer.innerHTML = '';
-        if (data.length > 0) {
+        const parks = {};
+        data.forEach(item => {
+            if (!parks[item['Theme Park']]) {
+                parks[item['Theme Park']] = [];
+            }
+            parks[item['Theme Park']].push(item);
+        });
+
+        Object.entries(parks).forEach(([parkName, parkData]) => {
+            const parkContainer = document.createElement('div');
+            parkContainer.classList.add('park-container');
+            const parkHeader = document.createElement('h3');
+            parkHeader.innerHTML = `${parkName} - ${calculatePercentage(parkData)}% of available rides`;
+            parkContainer.appendChild(parkHeader);
+
             const parkList = document.createElement('ul');
-            data.forEach(ride => {
+            parkData.forEach(ride => {
                 const listItem = document.createElement('li');
                 listItem.textContent = ride.Ride;
                 parkList.appendChild(listItem);
             });
-            resultContainer.appendChild(parkList);
-            resultContainer.style.display = 'block';
-        } else {
-            resultContainer.textContent = 'No rides available for your height in this country.';
-            resultContainer.style.display = 'block';
-        }
+            parkContainer.appendChild(parkList);
+            resultContainer.appendChild(parkContainer);
+        });
+    }
+
+    // Function to calculate percentage of available rides
+    function calculatePercentage(parkData) {
+        const totalRides = parkData.length;
+        const availableRides = parkData.filter(ride => ride['Minimum Height'] <= height && ride['Maximum Height'] >= height).length;
+        return ((availableRides / totalRides) * 100).toFixed(2);
     }
 });
