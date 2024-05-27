@@ -13,26 +13,13 @@ body {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 300px #007bff;
-    text-align: center;  /* Center align the content */
-}
-
-.banner {
-    background-color: #5de8d5;
-    padding: 10px;
-    border-radius: 8px 8px 0 0; /* Only round the top corners */
-}
-
-.logo {
-    max-width: 100%;
-    height: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 form {
     margin-bottom: 20px;
-    text-align: left;  /* Left align the form elements */
 }
 
 label {
@@ -60,29 +47,14 @@ button:hover {
     background-color: #0056b3;
 }
 
-.view-toggle {
-    margin-bottom: 20px;
-}
-
-.hidden {
-    display: none;
-}
-
 #result-container {
     display: none;
     margin-top: 20px;
 }
 
-.park-container {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
+#logo {
+    width: 30%;
+    display: block;
+    margin: auto;
     margin-bottom: 20px;
-    background-color: #fff;
-}
-
-#map {
-    height: 400px;
-    margin-top: 20px;
-    display: none;
 }
