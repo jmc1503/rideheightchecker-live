@@ -18,8 +18,65 @@
 <div id="result"></div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="data.json"></script>
-<script src="script.js"></script>
+<script>
+$(document).ready(function() {
+  // Load the JSON data
+  var ridesData = [
+    // Your rides data here
+  ];
+
+  // Populate the country dropdown
+  var countries = [...new Set(ridesData.map(item => item.Country))];
+  countries.forEach(country => {
+    $('#country-dropdown').append($('<option>', {
+      value: country,
+      text: country
+    }));
+  });
+
+  // Filter function
+  function filterRides() {
+    var country = $('#country-dropdown').val();
+    var themePark = $('#theme-park-dropdown').val();
+    var filteredRides = ridesData.filter(item => {
+      return (item.Country === country) && (item['Theme Park'] === themePark);
+    });
+
+    // Display the filtered results
+    $('#result').empty();
+    if (filteredRides.length === 0) {
+      $('#result').text('No rides found.');
+    } else {
+      filteredRides.forEach(item => {
+        $('#result').append('<p>Ride: ' + item.Ride + '</p>');
+      });
+    }
+  }
+
+  // Populate the theme park dropdown based on the selected country
+  $('#country-dropdown').change(function() {
+    var selectedCountry = $(this).val();
+    var themeParks = [...new Set(ridesData.filter(item => item.Country === selectedCountry).map(item => item['Theme Park']))];
+    $('#theme-park-dropdown').empty();
+    $('#theme-park-dropdown').append($('<option>', {
+      value: '',
+      text: 'All Theme Parks'
+    }));
+    themeParks.forEach(themePark => {
+      $('#theme-park-dropdown').append($('<option>', {
+        value: themePark,
+        text: themePark
+      }));
+    });
+  });
+
+  // Filter button click event
+  $('#filter-btn').click(function() {
+    filterRides();
+  });
+
+});
+</script>
 
 </body>
 </html>
