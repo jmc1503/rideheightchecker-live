@@ -1,16 +1,67 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const resultContainer = document.getElementById('result-container');
-    const mapContainer = document.getElementById('map');
-    const listViewBtn = document.getElementById('list-view-btn');
-    const mapViewBtn = document.getElementById('map-view-btn');
+// Fetch data from JSON file
+fetch('data.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Populate country dropdown
+        const countrySelect = document.getElementById('country');
+        const anyOption = document.createElement('option');
+        anyOption.value = '';
+        anyOption.textContent = 'Any';
+        countrySelect.appendChild(anyOption);
 
-    // Initialize map
-    const mymap = L.map('map').setView([51.505, -0.09], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(mymap);
+        const countries = [...new Set(data.map(item => item.Country))];
+        countries.forEach(country => {
+            const option = document.createElement('option');
+            option.value = country;
+            option.textContent = country;
+            countrySelect.appendChild(option);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
 
-    // Load data and add markers to the map
+// Handle country change event
+document.getElementById('country').addEventListener('change', () => {
+    const selectedCountry = document.getElementById('country').value;
+    
+    const themeParkSelect = document.getElementById('theme-park');
+    themeParkSelect.innerHTML = '';
+    const anyOption = document.createElement('option');
+    anyOption.value = '';
+    anyOption.textContent = 'Any';
+    themeParkSelect.appendChild(anyOption);
+
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry);
+            const themeParks = [...new Set(filteredData.map(item => item['Theme Park'] || 'Unknown'))];
+            themeParks.forEach(themePark => {
+                const option = document.createElement('option');
+                option.value = themePark;
+                option.textContent = themePark;
+                themeParkSelect.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+});
+
+// Handle form submission
+document.getElementById('park-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const height = parseInt(document.getElementById('height').value);
+    const country = document.getElementById('country').value;
+    const themePark = document.getElementById('theme-park').value;
+    
     fetch('data.json')
         .then(response => {
             if (!response.ok) {
@@ -19,100 +70,38 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
-            const markers = [];
-            const parks = {};
-            data.forEach(item => {
-                const marker = L.marker([item.Latitude, item.Longitude]).addTo(mymap);
-                marker.bindTooltip(`<b>${item['Theme Park']}</b><br>${item.Ride}<br>Minimum Height: ${item['Minimum Height']} cm<br>Maximum Height: ${item['Maximum Height']} cm`, {
-                    permanent: true,
-                    direction: 'top'
-                }).openTooltip();
-                markers.push(marker);
-
-                if (!parks[item['Theme Park']]) {
-                    parks[item['Theme Park']] = [];
-                }
-                parks[item['Theme Park']].push(item);
+            let filteredRides = data.filter(item => {
+                return (country === '' || item.Country === country) &&
+                       (themePark === '' || item['Theme Park'] === themePark) &&
+                       item['Minimum Height'] <= height &&
+                       item['Maximum Height'] >= height;
             });
+            
+            filteredRides.sort((a, b) => a.Ride.localeCompare(b.Ride));
 
-            // Filter data by country
-            const countrySelect = document.getElementById('country');
-            countrySelect.addEventListener('change', () => {
-                const selectedCountry = countrySelect.value;
-                markers.forEach(marker => marker.remove());
-                Object.values(parks).forEach(park => {
-                    park.forEach(item => {
-                        if (selectedCountry === '' || item.Country === selectedCountry) {
-                            const marker = L.marker([item.Latitude, item.Longitude]).addTo(mymap);
-                            marker.bindTooltip(`<b>${item['Theme Park']}</b><br>${item.Ride}<br>Minimum Height: ${item['Minimum Height']} cm<br>Maximum Height: ${item['Maximum Height']} cm`, {
-                                permanent: true,
-                                direction: 'top'
-                            }).openTooltip();
-                            markers.push(marker);
-                        }
-                    });
-                });
-            });
+            const resultContainer = document.getElementById('result-container');
+            resultContainer.innerHTML = '';
 
-            // Map view button
-            mapViewBtn.addEventListener('click', () => {
-                resultContainer.style.display = 'none';
-                mapContainer.style.display = 'block';
-            });
+            if (filteredRides.length > 0) {
+                const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
+                
+                themeParks.forEach(park => {
+                    const parkURL = filteredRides.find(ride => ride['Theme Park'] === park).URL;
+                    const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
+                    const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
+                    const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(2);
+                    
+                    const parkHeader = document.createElement('h3');
+                    parkHeader.innerHTML = `${park} <a href="${parkURL}" target="_blank">Buy Tickets</a> (${percentage}% of rides available)`;
+                    resultContainer.appendChild(parkHeader);
 
-            // List view button
-            listViewBtn.addEventListener('click', () => {
-                mapContainer.style.display = 'none';
-                resultContainer.style.display = 'block';
-            });
+                    const heights = [...new Set(filteredRides.filter(ride => ride['Theme Park'] === park).map(ride => ride['Minimum Height']))];
+                    heights.sort((a, b) => a - b);
+                    
+                    heights.forEach(height => {
+                        const heightHeader = document.createElement('h4');
+                        heightHeader.textContent = `Minimum Height: ${height} cm`;
+                        resultContainer.appendChild(heightHeader);
 
-            // Form submission
-            const form = document.getElementById('park-form');
-            form.addEventListener('submit', event => {
-                event.preventDefault();
-                const height = parseInt(document.getElementById('height').value);
-                const selectedCountry = countrySelect.value;
-                const filteredData = data.filter(item => (selectedCountry === '' || item.Country === selectedCountry) && height >= item['Minimum Height'] && height <= item['Maximum Height']);
-                displayResults(filteredData);
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
-
-    // Function to display results
-    function displayResults(data) {
-        resultContainer.innerHTML = '';
-        const parks = {};
-        data.forEach(item => {
-            if (!parks[item['Theme Park']]) {
-                parks[item['Theme Park']] = [];
-            }
-            parks[item['Theme Park']].push(item);
-        });
-
-        Object.entries(parks).forEach(([parkName, parkData]) => {
-            const parkContainer = document.createElement('div');
-            parkContainer.classList.add('park-container');
-            const parkHeader = document.createElement('h3');
-            parkHeader.innerHTML = `${parkName} - ${calculatePercentage(parkData)}% of available rides`;
-            parkContainer.appendChild(parkHeader);
-
-            const parkList = document.createElement('ul');
-            parkData.forEach(ride => {
-                const listItem = document.createElement('li');
-                listItem.textContent = ride.Ride;
-                parkList.appendChild(listItem);
-            });
-            parkContainer.appendChild(parkList);
-            resultContainer.appendChild(parkContainer);
-        });
-    }
-
-    // Function to calculate percentage of available rides
-    function calculatePercentage(parkData) {
-        const totalRides = parkData.length;
-        const availableRides = parkData.filter(ride => ride['Minimum Height'] <= height && ride['Maximum Height'] >= height).length;
-        return ((availableRides / totalRides) * 100).toFixed(2);
-    }
-});
+                        const parkList = document.createElement('ul');
+                        filteredRides.filter(ride => ride
