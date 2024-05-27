@@ -63,7 +63,4 @@ button:hover {
     display: none;
 }
 
-/* Hide theme park select initially */
-#theme-park {
-    display: none;
-}
+/* Hide theme park
