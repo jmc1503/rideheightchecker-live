@@ -140,7 +140,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('map-view-btn').addEventListener('click', function () {
         resultContainer.style.display = 'none';
-        mapDiv.style.display = 'block';
-        map.invalidateSize();
-    });
-});
+        mapDiv.style.display = 'block
