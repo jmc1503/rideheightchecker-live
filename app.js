@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                             const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
 
-                            themeParks.forEach(park => {
+                                                    themeParks.forEach(park => {
                                 const parkData = data.find(item => item['Theme Park'] === park);
                                 if (parkData) {
                                     const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
@@ -199,8 +199,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         .catch(error => {
                             console.error('Error fetching data:', error);
                         });
-                });
-            });
-        });
-    });
+                    }
+                }
+            }
+        }
+    }
 });
