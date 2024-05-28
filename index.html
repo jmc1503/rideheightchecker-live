@@ -1,34 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theme Park Finder</title>
-    <link rel="stylesheet" href="styles.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1969578899445338" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theme Park Ride Finder</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+  .theme-park {
+    margin: 20px 0;
+  }
+
+  .rides {
+    display: none;
+    margin: 10px 0;
+  }
+
+  .more-info {
+    color: blue;
+    cursor: pointer;
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Theme Park Finder</h1>
-        <form id="park-form" autocomplete="off">
-            <label for="height">Enter your height (in centimeters):</label>
-            <input type="number" id="height" name="height" required autocomplete="off">
-            <label for="country">Select your country:</label>
-            <select id="country" name="country" autocomplete="off"></select>
-            <label for="theme-park">Select theme park:</label>
-            <!-- Set display to none to hide the theme park dropdown initially -->
-            <select id="theme-park" name="theme-park" autocomplete="off" style="display: none;"></select>
-            <button type="submit">Find Rides</button>
-        </form>
-        <div class="view-toggle">
-            <button id="list-view-btn">List View</button>
-            <button id="map-view-btn">Map View</button>
-        </div>
-        <div id="result-container"></div>
-        <div id="map"></div>
-    </div>
-    <script src="app.js"></script>
+
+<h1>Theme Park Ride Finder</h1>
+
+<label for="country-dropdown">Country:</label>
+<select id="country-dropdown">
+  <option value="">Select Country</option>
+</select>
+
+<label for="theme-park-dropdown">Theme Park:</label>
+<select id="theme-park-dropdown">
+  <option value="">All Theme Parks</option>
+</select>
+
+<button id="filter-btn">Filter</button>
+
+<div id="result"></div>
+
+<script>
+$(document).ready(function() {
+  $.getJSON("data.json", function(ridesData) {
+    // Populate country dropdown
+    var countries = [...new Set(ridesData.map(ride => ride.Country))];
+    countries.forEach(country => {
+      $('#country-dropdown').append(new Option(country, country));
+    });
+
+    // Filter button click event
+    $('#filter-btn').click(function() {
+      var selectedCountry = $('#country-dropdown').val();
+      var selectedThemePark = $('#theme-park-dropdown').val();
+
+      var filteredRides = ridesData.filter(ride => ride.Active === 1);
+
+      if (selectedCountry) {
+        filteredRides = filteredRides.filter(ride => ride.Country === selectedCountry);
+      }
+
+      if (selectedThemePark) {
+        filteredRides = filteredRides.filter(ride => ride.Theme_Park === selectedThemePark);
+      }
+
+      displayResults(filteredRides);
+    });
+
+    // Display results
+    function displayResults(rides) {
+      $('#result').empty();
+
+      var themeParks = [...new Set(rides.map(ride => ride.Theme_Park))];
+      themeParks.forEach(themePark => {
+        var themeParkDiv = $('<div class="theme-park"></div>');
+        var ridesDiv = $('<div class="rides"></div>');
+
+        themeParkDiv.append(`<h2>${themePark}</h2>`);
+
+        var parkRides = rides.filter(ride => ride.Theme_Park === themePark);
+        parkRides.forEach(ride => {
+          var rideInfo = `
+            <p><strong>Ride:</strong> ${ride.Ride}</p>
+            <p><strong>Minimum Height:</strong> ${ride.Minimum_Height} cm</p>
+            <p><strong>Maximum Height:</strong> ${ride.Maximum_Height} cm</p>
+          `;
+
+          if (ride.URL) {
+            rideInfo += `<p><a href="${ride.URL}" target="_blank">Buy Tickets</a></p>`;
+          }
+
+          ridesDiv.append(rideInfo);
+        });
+
+        themeParkDiv.append('<span class="more-info">More info</span>');
+        themeParkDiv.append(ridesDiv);
+        $('#result').append(themeParkDiv);
+      });
+
+      $('.more-info').click(function() {
+        $(this).next('.rides').toggle();
+      });
+    }
+
+    // Initial population of theme park dropdown based on selected country
+    $('#country-dropdown').change(function() {
+      var selectedCountry = $(this).val();
+      $('#theme-park-dropdown').empty().append('<option value="">All Theme Parks</option>');
+
+      var themeParks = [...new Set(ridesData.filter(ride => ride.Country === selectedCountry && ride.Active === 1).map(ride => ride.Theme_Park))];
+      themeParks.forEach(themePark => {
+        $('#theme-park-dropdown').append(new Option(themePark, themePark));
+      });
+    });
+  });
+});
+</script>
+
 </body>
 </html>
