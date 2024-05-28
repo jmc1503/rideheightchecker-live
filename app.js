@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const countrySelect = document.getElementById('country');
     const themeParkSelect = document.getElementById('theme-park');
     const resultContainer = document.getElementById('result-container');
-    const listViewBtn = document.getElementById('list-view-btn'); // Define listViewBtn
+    const listViewBtn = document.getElementById('list-view-btn');
     const mapViewBtn = document.getElementById('map-view-btn');
     const mapElement = document.getElementById('map');
 
@@ -36,36 +36,36 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error fetching data:', error);
         });
 
-    // Handle country change event
-    countrySelect.addEventListener('change', () => {
-        const selectedCountry = countrySelect.value;
-        themeParkSelect.innerHTML = '';
-        const anyOption = document.createElement('option');
-        anyOption.value = '';
-        anyOption.textContent = 'Any';
-        themeParkSelect.appendChild(anyOption);
+// Handle country change event
+countrySelect.addEventListener('change', () => {
+    const selectedCountry = countrySelect.value;
+    themeParkSelect.innerHTML = '';
+    const anyOption = document.createElement('option');
+    anyOption.value = '';
+    anyOption.textContent = 'Any';
+    themeParkSelect.appendChild(anyOption);
 
-        if (selectedCountry === '') {
-            themeParkSelect.style.display = 'none'; // Hide theme park dropdown
-        } else {
-            fetch('data.json')
-                .then(response => response.json())
-                .then(data => {
-                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry);
-                    const themeParks = [...new Set(filteredData.map(item => item['Theme Park'] || 'Unknown'))];
-                    themeParks.forEach(themePark => {
-                        const option = document.createElement('option');
-                        option.value = themePark;
-                        option.textContent = themePark;
-                        themeParkSelect.appendChild(option);
-                    });
-                    themeParkSelect.style.display = 'block'; // Show theme park dropdown
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
+    if (selectedCountry === '') {
+        themeParkSelect.style.display = 'none'; // Hide theme park dropdown
+    } else {
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry);
+                const themeParks = [...new Set(filteredData.map(item => item['Theme Park'] || 'Unknown'))];
+                themeParks.forEach(themePark => {
+                    const option = document.createElement('option');
+                    option.value = themePark;
+                    option.textContent = themePark;
+                    themeParkSelect.appendChild(option);
                 });
-        }
-    });
+                themeParkSelect.style.display = 'block'; // Show theme park dropdown
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+});
 
     // Handle form submission
     document.getElementById('park-form').addEventListener('submit', function(event) {
@@ -87,8 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     return (country === '' || item.Country === country) &&
                         (themePark === '' || item['Theme Park'] === themePark) &&
                         item['Minimum Height'] <= height &&
-                        item['Maximum Height'] >= height &&
-                        item.Active === 1; // Filter rides where Active = 1
+                        item['Maximum Height'] >= height;
                 });
 
                 filteredRides.sort((a, b) => a.Ride.localeCompare(b.Ride));
@@ -108,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkContainer.classList.add('park-container');
 
                         const parkHeader = document.createElement('h3');
-                        parkHeader.innerHTML = `${park} - ${percentage}% of available rides<br>${parkURL ? `<a href="${parkURL}" target="_blank">Buy Tickets</a>` : ''}`; // Check if parkURL exists before creating link
+                        parkHeader.innerHTML = `${park} - ${percentage}% of available rides<br><a href="${parkURL}" target="_blank">Buy Tickets</a>`;
                         parkContainer.appendChild(parkHeader);
 
                         const heights = [...new Set(filteredRides.filter(ride => ride['Theme Park'] === park).map(ride => ride['Minimum Height']))];
@@ -167,41 +166,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
         markers = [];
 
-                    fetch('data.json')
-                        .then(response => response.json())
-                        .then(data => {
-                            const height = parseInt(document.getElementById('height').value);
-                            const country = countrySelect.value;
-                            const themePark = themeParkSelect.value;
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                const height = parseInt(document.getElementById('height').value);
+                const country = countrySelect.value;
+                const themePark = themeParkSelect.value;
 
-                            let filteredRides = data.filter(item => {
-                                return (country === '' || item.Country === country) &&
-                                    (themePark === '' || item['Theme Park'] === themePark) &&
-                                    item['Minimum Height'] <= height &&
-                                    item['Maximum Height'] >= height;
-                            });
+                let filteredRides = data.filter(item => {
+                    return (country === '' || item.Country === country) &&
+                        (themePark === '' || item['Theme Park'] === themePark) &&
+                        item['Minimum Height'] <= height &&
+                        item['Maximum Height'] >= height;
+                });
 
-                            const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
+                const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
 
-                                                    themeParks.forEach(park => {
-                                const parkData = data.find(item => item['Theme Park'] === park);
-                                if (parkData) {
-                                    const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
-                                    const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
-                                    const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
+                themeParks.forEach(park => {
+                    const parkData = data.find(item => item['Theme Park'] === park);
+                    if (parkData) {
+                        const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
+                        const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
+                        const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
 
-                                    const marker = L.marker([parkData.Latitude, parkData.Longitude]).addTo(map);
-                                    marker.bindPopup(`<b>${park}</b><br>${parkData.Country}<br>${percentage}% of rides available`).openPopup();
-                                    markers.push(marker);
-                                }
-                            });
-                        })
-                        .catch(error => {
-                            console.error('Error fetching data:', error);
-                        });
+                        const marker = L.marker([parkData.Latitude, parkData.Longitude]).addTo(map);
+                        marker.bindPopup(`<b>${park}</b><br>${parkData.Country}<br>${percentage}% of rides available`).openPopup();
+                        markers.push(marker);
                     }
-                }
-            }
-        }
-    }
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    });
 });
