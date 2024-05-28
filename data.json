@@ -1,13 +1,432 @@
 [
  {
    "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "City Wheel",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "AdventureVille",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Over the Hill 2: Spooksville",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Big Wheel",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Kiddi-Koasta",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "American Whip",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Crooked House",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Flying Jumbos",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Carousel",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Dune Buggies",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "ChooChooVille",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Jumping Jolly Rogers",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Viking Boats",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Play Stack",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Play Pod",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Green Scream",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Mighty Mini Mega",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Barnstormer",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Sea Dragon",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Smiles per Galleon",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Cow Jump",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Drop 'n' Smile",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Fireball",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "The Pirates Plunge",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Sk8borda",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Vertigo",
+   "Minimum Height": 120,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Archelon",
+   "Minimum Height": 120,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Rage",
+   "Minimum Height": 120,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Skydrop",
+   "Minimum Height": 120,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Ramba Zamba",
+   "Minimum Height": 120,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Tidal Wave Blue",
+   "Minimum Height": 120,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Tidal Wave Green",
+   "Minimum Height": 120,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Pharoahs Fury",
+   "Minimum Height": 120,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "The Screature",
+   "Minimum Height": 130,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Axis",
+   "Minimum Height": 130,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Adventure Golf",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Funtopia Prize Arcade",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Adventure Island",
+   "Ride": "Hook a Duck",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 51.5331,
+   "Longitude": 0.7176,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
    "Theme Park": "Alton Towers",
    "Ride": "Rita",
    "Minimum Height": 140,
    "Maximum Height": 195,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -15,9 +434,10 @@
    "Ride": "Galactica",
    "Minimum Height": 140,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -25,9 +445,10 @@
    "Ride": "The Smiler",
    "Minimum Height": 140,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -35,9 +456,10 @@
    "Ride": "Oblivion",
    "Minimum Height": 140,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -45,9 +467,10 @@
    "Ride": "Nemesis Sub-Terra",
    "Minimum Height": 140,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -55,9 +478,10 @@
    "Ride": "TH13TEEN",
    "Minimum Height": 120,
    "Maximum Height": 196,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -65,9 +489,10 @@
    "Ride": "Spinball Whizzer",
    "Minimum Height": 120,
    "Maximum Height": 196,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -75,9 +500,10 @@
    "Ride": "Wicker Man",
    "Minimum Height": 120,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -85,9 +511,10 @@
    "Ride": "Marauder's Mayhem",
    "Minimum Height": 110,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -95,9 +522,10 @@
    "Ride": "Congo River Rapids",
    "Minimum Height": 110,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -105,9 +533,10 @@
    "Ride": "Runaway Mine Train",
    "Minimum Height": 110,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -115,9 +544,10 @@
    "Ride": "The Blade",
    "Minimum Height": 100,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -125,9 +555,10 @@
    "Ride": "Gangsta Granny: The Ride",
    "Minimum Height": 90,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -135,9 +566,10 @@
    "Ride": "Battle Galleons",
    "Minimum Height": 90,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -145,9 +577,10 @@
    "Ride": "Heave Ho",
    "Minimum Height": 90,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -155,9 +588,10 @@
    "Ride": "Raj's Bouncy Bottom Burp",
    "Minimum Height": 90,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -165,9 +599,10 @@
    "Ride": "Peter Rabbit Hippity Hop",
    "Minimum Height": 90,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -175,9 +610,10 @@
    "Ride": "Octonauts Rollercoaster Adventure",
    "Minimum Height": 90,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -185,9 +621,10 @@
    "Ride": "Justin's House Pie-O-Matic Factory",
    "Minimum Height": 90,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -195,9 +632,10 @@
    "Ride": "Go Jetters Vroomster Zoom Ride",
    "Minimum Height": 90,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -205,9 +643,10 @@
    "Ride": "The Curse at Alton Manor",
    "Minimum Height": 90,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -215,9 +654,10 @@
    "Ride": "The Alton Towers Dungeon",
    "Minimum Height": 0,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -225,9 +665,10 @@
    "Ride": "Sharkbait Reef by SEALIFE",
    "Minimum Height": 0,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -235,9 +676,10 @@
    "Ride": "Royal Carousel",
    "Minimum Height": 0,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -245,9 +687,10 @@
    "Ride": "Skyride",
    "Minimum Height": 0,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -255,9 +698,10 @@
    "Ride": "Andy's Adventures Dinosaur Dig",
    "Minimum Height": 0,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -265,9 +709,10 @@
    "Ride": "Big Fun Showtime",
    "Minimum Height": 0,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -275,9 +720,10 @@
    "Ride": "Get! Set! Go! Tree Top Adventure",
    "Minimum Height": 0,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -285,9 +731,10 @@
    "Ride": "Something Special Sensory Garden",
    "Minimum Height": 0,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -295,9 +742,10 @@
    "Ride": "Bugbie-Go-Round",
    "Minimum Height": 0,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -305,9 +753,10 @@
    "Ride": "Postman Pat Parcel Post",
    "Minimum Height": 0,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -315,9 +764,10 @@
    "Ride": "Hey Duggee's Big Adventure Badge",
    "Minimum Height": 0,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -325,9 +775,10 @@
    "Ride": "JoJo & Gran Gran at Home",
    "Minimum Height": 0,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -335,9 +786,10 @@
    "Ride": "In the Night Garden Magical Boat Ride",
    "Minimum Height": 0,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -345,69 +797,54 @@
    "Ride": "CBeebies Land Photo Studio",
    "Minimum Height": 0,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "https://prf.hn/click/camref:1101l3LXQd/pubref:rideheightchecker/ar:altontowers/[p_id:1101l557217]",
    "Latitude": 52.9859291,
-   "Longitude": -1.8875917
- },
- {
-   "Country": "United States",
-   "Theme Park": "Universal Studios Florida",
-   "Ride": "Illumination's Villain-Con Minion Blast",
-   "Minimum Height": 0,
-   "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
-   "Latitude": 28.4793801,
-   "Longitude": -81.4711171
+   "Longitude": -1.8875917,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
-   "Theme Park": "Thorpe Park",
-   "Ride": "Stealth",
-   "Minimum Height": 140,
-   "Maximum Height": 196,
-   "URL": "http://www.thorpepark.com",
-   "Latitude": 51.4051035,
-   "Longitude": -0.5149661
+   "Theme Park": "Barry Island Pleasure Park",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 51.3942,
+   "Longitude": -3.2783,
+   "Active": 0
  },
  {
    "Country": "United Kingdom",
-   "Theme Park": "Thorpe Park",
-   "Ride": "Saw – The Ride",
-   "Minimum Height": 140,
-   "Maximum Height": 196,
-   "URL": "http://www.thorpepark.com",
-   "Latitude": 51.4051035,
-   "Longitude": -0.5149661
+   "Theme Park": "Blackpool Pleasure Beach",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 53.794,
+   "Longitude": -3.0536,
+   "Active": 0
  },
  {
    "Country": "United Kingdom",
-   "Theme Park": "Thorpe Park",
-   "Ride": "The Swarm",
-   "Minimum Height": 140,
-   "Maximum Height": 196,
-   "URL": "http://www.thorpepark.com",
-   "Latitude": 51.4051035,
-   "Longitude": -0.5149661
+   "Theme Park": "Brean Leisure Park",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 51.2992,
+   "Longitude": -3.0157,
+   "Active": 0
  },
  {
    "Country": "United Kingdom",
-   "Theme Park": "Thorpe Park",
-   "Ride": "Nemesis Inferno",
-   "Minimum Height": 140,
-   "Maximum Height": 196,
-   "URL": "http://www.thorpepark.com",
-   "Latitude": 51.4051035,
-   "Longitude": -0.5149661
- },
- {
-   "Country": "United Kingdom",
-   "Theme Park": "Thorpe Park",
-   "Ride": "Colossus",
-   "Minimum Height": 140,
-   "Maximum Height": 196,
-   "URL": "http://www.thorpepark.com",
-   "Latitude": 51.4051035,
-   "Longitude": -0.5149661
+   "Theme Park": "Camel Creek Adventure Park",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 50.4516,
+   "Longitude": -4.9377,
+   "Active": 0
  },
  {
    "Country": "United Kingdom",
@@ -415,49 +852,1066 @@
    "Ride": "Mandrill Mayhem",
    "Minimum Height": 120,
    "Maximum Height": 300,
-   "URL": "http://www.chessington.com",
-   "Latitude": 51.3485016,
-   "Longitude": -0.3215835
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
    "Theme Park": "Chessington World of Adventures",
-   "Ride": "Ostrich Stampede",
+   "Ride": "Ostrich Stampede (<1.3m needs adult)",
    "Minimum Height": 120,
    "Maximum Height": 300,
-   "URL": "http://www.chessington.com",
-   "Latitude": 51.3485016,
-   "Longitude": -0.3215835
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
    "Theme Park": "Chessington World of Adventures",
-   "Ride": "Mamba Strike",
+   "Ride": "Mamba Strike (<1.3m needs adult)",
    "Minimum Height": 120,
    "Maximum Height": 300,
-   "URL": "http://www.chessington.com",
-   "Latitude": 51.3485016,
-   "Longitude": -0.3215835
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
    "Theme Park": "Chessington World of Adventures",
-   "Ride": "Croc Drop",
+   "Ride": "Croc Drop (<1.3 needs adult)",
    "Minimum Height": 120,
    "Maximum Height": 300,
-   "URL": "http://www.chessington.com",
-   "Latitude": 51.3485016,
-   "Longitude": -0.3215835
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
    "Theme Park": "Chessington World of Adventures",
-   "Ride": "Blue Barnacle",
+   "Ride": "Blue Barnacle (<1.3 needs adult)",
    "Minimum Height": 110,
    "Maximum Height": 300,
-   "URL": "http://www.chessington.com",
-   "Latitude": 51.3485016,
-   "Longitude": -0.3215835
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Seastorm (0.9-1.1m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Barrel Bail Out (0.9-1.2m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Trawler Trouble (0.9-1.1m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Vampire (<1.3m needs adult)",
+   "Minimum Height": 110,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Dragon's Fury",
+   "Minimum Height": 120,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Kobra",
+   "Minimum Height": 120,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Tiger Rock (1.2-1.3m needs adults)",
+   "Minimum Height": 120,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Rattlesnake",
+   "Minimum Height": 140,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Gruffalo River Ride Adventure (<1.1m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Zufari: Ride Into Africa (1-1.3m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Room On The Brook - A Magical Journey (<1.1m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Tomb Blaster (<1.1m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Elmer's Flying Jumbos (<1.1m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Treetop Hoppers (0.9-1.1m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Jungle Rangers (<1.2m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "River Rafts (<1.2m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Monkey Swinger",
+   "Minimum Height": 120,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Sea Dragons (<1.1m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Tiny Truckers (<1.1m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Griffin's Galleon (<1.2m needs adult)",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Adventure Tree Carousel (<1.3m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Tuk Tuk Turmoil (0.9-1.3m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Amazu",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Temple of Mayhem (<4 years)",
+   "Minimum Height": 0,
+   "Maximum Height": 140,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Canopy Capers (<0.9m needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Dragon's Playhouse",
+   "Minimum Height": 0,
+   "Maximum Height": 140,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Chessington World of Adventures",
+   "Ride": "Jungle Bus (<1.1m needs adult)",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1100l3LXv2/pubref:rideheightchecker/ar:chessington/[p_id:1101l557217]",
+   "Latitude": 51.3485048,
+   "Longitude": -0.3238795,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Clarence Pier",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 50.7908,
+   "Longitude": -1.0987,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Crealy Theme Park & Resort",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 50.7222,
+   "Longitude": -3.4136,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Diggerland",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 51.2853,
+   "Longitude": 0.5004,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Drayton Manor Theme Park",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 52.6163,
+   "Longitude": -1.7147,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Dreamland Margate",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 51.3813,
+   "Longitude": 1.3832,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Fantasy Island",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 53.1205,
+   "Longitude": 0.3405,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Flambards",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 50.1041,
+   "Longitude": -5.2637,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Flamingo Land",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 54.2131,
+   "Longitude": -0.8062,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "GreenWood Forest Park",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 53.1842,
+   "Longitude": -4.1809,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Gulliver's Kingdom",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 53.1195,
+   "Longitude": -1.5737,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Gulliver's Land",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 52.0392,
+   "Longitude": -0.7397,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Gulliver's Valley",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 53.3622,
+   "Longitude": -1.3027,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Gulliver's World",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 53.3914,
+   "Longitude": -2.6021,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Harbour Park",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 50.8073,
+   "Longitude": -0.546,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Landmark Forest Adventure Park",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 57.2758,
+   "Longitude": -3.8226,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Minifigure Speedway",
+   "Minimum Height": 105,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "LEGO Ferrari Build & Race Experience",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Flight of the Sky Lion",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Fire & Ice Freefall",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Hydra's Challenge",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "The Magical Forest",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "The Brick",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "LEGO City Driving School (6-13 years)",
+   "Minimum Height": 110,
+   "Maximum Height": 150,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "The Dragon (6-13 years)",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "LEGO NINJAGO The Ride (6-13 years)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "DUPLO Dino Coaster (3-5 years)",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Miniland",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Creature Creation",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Haunted House Monster Party",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Fairy Tale Brook",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Coastguard HQ",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Pirate Falls: Treasure Quest (6-13 years)",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "DUPLO Airport (<3 years)",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Jolly Rocker (6-13 years)",
+   "Minimum Height": 100,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Laser Riders",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "LEGOLAND Express",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Drench Towers (6-13 years)",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Balloon School",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "DUPLO Express (<3 years)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Autumn's Riding Adventure (6-13 years)",
+   "Minimum Height": 120,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Rebuild The World",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Destiny's Bounty (6-13 years)",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "L-Drivers (3-5 years)",
+   "Minimum Height": 90,
+   "Maximum Height": 110,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Aero Nomad (3-5 years)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "DUPLO Playtown (<3 years)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "LEGO Studios 4D",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Desert Chase (3-5 years)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Spinning Spider (6-13 years)",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Thunder Blazer (3-5 years)",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Fire Academy",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Merlin's Challenge (3-5 years)",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Castaway Camp (3-5 years needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "The Hill Train",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Dragon's Apprentice",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Pirate Goldwash",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Sky Rider (3-5 years)",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Scarab Bouncers (3-5 years)",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "The LEGOLAND Learning Academy",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Model Making Studio",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "LEGO Games Zone",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "LEGO City Deep Sea Adventure",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Legoland Windsor",
+   "Ride": "Splash Safari (<3 years)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJR/pubref:rideheightchecker/ar:legolandwindsor/[p_id:1101l557217]",
+   "Latitude": 51.4638338,
+   "Longitude": -0.6526024,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Lightwater Valley",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 54.1823,
+   "Longitude": -1.5384,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "M&D's Scotland's Theme Park",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 55.81,
+   "Longitude": -4.0101,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Oakwood Theme Park",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 51.7924,
+   "Longitude": -4.8234,
+   "Active": 0
  },
  {
    "Country": "United Kingdom",
@@ -465,9 +1919,10 @@
    "Ride": "Cyclonator",
    "Minimum Height": 120,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "",
    "Latitude": 50.9482969,
-   "Longitude": -1.5544884
+   "Longitude": -1.5544884,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -475,9 +1930,10 @@
    "Ride": "Flight of the Pterosaur",
    "Minimum Height": 100,
    "Maximum Height": 200,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "",
    "Latitude": 50.9482969,
-   "Longitude": -1.5544884
+   "Longitude": -1.5544884,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -485,9 +1941,10 @@
    "Ride": "Velociraptor",
    "Minimum Height": 100,
    "Maximum Height": 200,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "",
    "Latitude": 50.9482969,
-   "Longitude": -1.5544884
+   "Longitude": -1.5544884,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -495,9 +1952,10 @@
    "Ride": "The Cobra",
    "Minimum Height": 110,
    "Maximum Height": 300,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "",
    "Latitude": 50.9482969,
-   "Longitude": -1.5544884
+   "Longitude": -1.5544884,
+   "Active": 1
  },
  {
    "Country": "United Kingdom",
@@ -505,8 +1963,1615 @@
    "Ride": "Magma",
    "Minimum Height": 110,
    "Maximum Height": 200,
-   "URL": "https://www.altontowers.com/tickets-passes/",
+   "URL": "",
    "Latitude": 50.9482969,
-   "Longitude": -1.5544884
+   "Longitude": -1.5544884,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Pleasure Beach Great Yarmouth",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 52.5961,
+   "Longitude": 1.7356,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Pleasurewood Hills",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 52.5143,
+   "Longitude": 1.743,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Robin Hill",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 50.6792,
+   "Longitude": -1.2381,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Southport Pleasureland",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 53.6458,
+   "Longitude": -3.0054,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Sundown Adventureland",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 53.2781,
+   "Longitude": -0.8837,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "The Milky Way Adventure Park",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 50.9583,
+   "Longitude": -4.4808,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Stealth",
+   "Minimum Height": 140,
+   "Maximum Height": 196,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "SAW - The Ride",
+   "Minimum Height": 140,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "The Swarm",
+   "Minimum Height": 140,
+   "Maximum Height": 196,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Nemesis Inferno",
+   "Minimum Height": 140,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Hyperia",
+   "Minimum Height": 130,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Colossus",
+   "Minimum Height": 140,
+   "Maximum Height": 196,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Ghost Train",
+   "Minimum Height": 130,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Samurai",
+   "Minimum Height": 140,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Tidal Wave",
+   "Minimum Height": 120,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Vortex",
+   "Minimum Height": 140,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "The Walking Dead: The Ride",
+   "Minimum Height": 140,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Storm Surge (<1.2m needs adult)",
+   "Minimum Height": 110,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Rush",
+   "Minimum Height": 130,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Zodiac (<1.4m needs adult)",
+   "Minimum Height": 110,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Depth Charge (<1.2m needs adult)",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Quantum",
+   "Minimum Height": 120,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Detonator",
+   "Minimum Height": 130,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Big Easy Bumpers (<1.3m needs adult(",
+   "Minimum Height": 110,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Mr Monkey's Banana Ride (<1.2m needs adult)",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "High Striker (<1.1m needs adult)",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Flying Fish (<1.1m needs adult)",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Rumba Rapids (<1.3m needs adult)",
+   "Minimum Height": 110,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Dobble Tea Party (<1.3m needs adult)",
+   "Minimum Height": 110,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Amity Beach",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "Sunset Cinema (<12 years needs adult)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Thorpe Park",
+   "Ride": "The Playground (<12 years)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://prf.hn/click/camref:1011l3LYJS/pubref:rideheightchecker/ar:thorpepark/[p_id:1101l557217]",
+   "Latitude": 51.4051035,
+   "Longitude": -0.5149661,
+   "Active": null
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Twinlakes",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 52.763,
+   "Longitude": -0.8908,
+   "Active": 0
+ },
+ {
+   "Country": "United States",
+   "Theme Park": "Universal Studios Florida",
+   "Ride": "Illumination's Villain-Con Minion Blast",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 28.4793801,
+   "Longitude": -81.4711171,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Waterworld",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 53.0258,
+   "Longitude": -2.2025,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "West Midland Safari Park",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 52.3765,
+   "Longitude": -2.2998,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Wheelgate Park",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 53.1139,
+   "Longitude": -1.0611,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Wonderland Telford",
+   "Ride": "",
+   "Minimum Height": null,
+   "Maximum Height": null,
+   "URL": "",
+   "Latitude": 52.6766,
+   "Longitude": -2.4516,
+   "Active": 0
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Triple Drop Slide (min 6 years)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Champion Pedal Carts (6-12 years)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Dino Trek",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Farmyard Ride",
+   "Minimum Height": 0,
+   "Maximum Height": 110,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Circus Train Ride",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Safari Adventure Golf",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Action Track 1",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Zip Slides",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "The Paddling Pool",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Toddler Ice Palace",
+   "Minimum Height": 0,
+   "Maximum Height": 95,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Junior Ice Palace",
+   "Minimum Height": 0,
+   "Maximum Height": 125,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Pedal Town",
+   "Minimum Height": 0,
+   "Maximum Height": 100,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Dolphin Toddler Play",
+   "Minimum Height": 0,
+   "Maximum Height": 110,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Mermaids Ball Pool",
+   "Minimum Height": 0,
+   "Maximum Height": 110,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Big Top Soft Play",
+   "Minimum Height": 0,
+   "Maximum Height": 110,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Toddler's Play Village",
+   "Minimum Height": 0,
+   "Maximum Height": 110,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Whistle Stop Junction",
+   "Minimum Height": 0,
+   "Maximum Height": 110,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Mini Ninja Playtime (max 5 years)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Golden Bear City",
+   "Minimum Height": 0,
+   "Maximum Height": 110,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Jumping Pillow",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Submarine Ride",
+   "Minimum Height": 80,
+   "Maximum Height": 140,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Polar Pilot",
+   "Minimum Height": 80,
+   "Maximum Height": 140,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Ferris Wheel",
+   "Minimum Height": 80,
+   "Maximum Height": 140,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Watercoaster",
+   "Minimum Height": 90,
+   "Maximum Height": 130,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Toboggan Run",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Bumper Boats",
+   "Minimum Height": 90,
+   "Maximum Height": 140,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Pedal Boats",
+   "Minimum Height": 90,
+   "Maximum Height": 140,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Master Blaster Empire Play Equip.",
+   "Minimum Height": 90,
+   "Maximum Height": 110,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Acrobats Challenge",
+   "Minimum Height": 90,
+   "Maximum Height": 140,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Dizzy Dune Buggies",
+   "Minimum Height": 90,
+   "Maximum Height": 140,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Bouncy Castle",
+   "Minimum Height": 90,
+   "Maximum Height": 140,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Rocking Tug Boat",
+   "Minimum Height": 90,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Vertigo",
+   "Minimum Height": 96,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Swing Ship",
+   "Minimum Height": 110,
+   "Maximum Height": 125,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Ninja Towers",
+   "Minimum Height": 110,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Smugglers Ball Pool",
+   "Minimum Height": 110,
+   "Maximum Height": 140,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Trauma Tower",
+   "Minimum Height": 110,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Avalanche",
+   "Minimum Height": 140,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Woodlands Family Theme Park",
+   "Ride": "Arctic Gliders",
+   "Minimum Height": 110,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 50.3993,
+   "Longitude": -3.6418,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "\"it's a small world\"",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Adventure Isle",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Alice's Curious Labyrinth",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Autopia, presented by Avis",
+   "Minimum Height": 81,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Big Thunder Mountain",
+   "Minimum Height": 102,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Blanch-Neige et les Sept Nains",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Buzz Lightyear Laser Blast",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Discovery Arcade",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Disney Raileroad",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Dumbo the Flying Elephant",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Fronteirland Playground",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Horse-Drawn Streetcars",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Indiana Jones and the Temple of Peril",
+   "Minimum Height": 140,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "La Cabane des Robinson",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "La Galerie de la Belle au Bois Dormant",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "La Tanière du Dragon",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Le Carrousel de Lancelot",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Le Passage Enchanté d'Aladdin",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Les Mystères du Nautilus",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Les Voyages de Pinocchio",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Liberty Arcade",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Mad Hatter's Tea Cups",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Main Street Vehicles",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Mickey's PhilharMagic",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Monkey Puzzle Tree / Araucaria araucana",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Orbitron",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Peter Pan's Flight",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Phantom Manor",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Pirates of the Carribean",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Pirate's Beach",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Princess Pavilion",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Rustler Roundup Shootin' Gallery",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Sleeping Beauty Castle",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Star Tours: The Adventures Continue",
+   "Minimum Height": 102,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Disneyland Paris",
+   "Ride": "Thunder Mesa Riverboat Landing",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "",
+   "Latitude": 48.8673858,
+   "Longitude": 2.7810181,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Bear Gryls Adventure",
+   "Ride": "Archery (5-9 years needs adult, 10-15 needs waiver)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1011l3LYMo/pubref:rideheightchecker/ar:beargrylsadventure/[p_id:1101l557217]",
+   "Latitude": 52.4492986,
+   "Longitude": -1.7239715,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Bear Gryls Adventure",
+   "Ride": "Axe Throwing (10+ years, 10-15 needs waiver)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1011l3LYMo/pubref:rideheightchecker/ar:beargrylsadventure/[p_id:1101l557217]",
+   "Latitude": 52.4492986,
+   "Longitude": -1.7239715,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Bear Gryls Adventure",
+   "Ride": "High Ropes (8+ years, 8-9 needs adult, 10-15 needs waiver)",
+   "Minimum Height": 122,
+   "Maximum Height": 203,
+   "URL": "https://merlin.prf.hn/click/camref:1011l3LYMo/pubref:rideheightchecker/ar:beargrylsadventure/[p_id:1101l557217]",
+   "Latitude": 52.4492986,
+   "Longitude": -1.7239715,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Bear Gryls Adventure",
+   "Ride": "iFLY (5+ years, 5-9 needs adult, 10-17 needs waiver)",
+   "Minimum Height": 0,
+   "Maximum Height": 203,
+   "URL": "https://merlin.prf.hn/click/camref:1011l3LYMo/pubref:rideheightchecker/ar:beargrylsadventure/[p_id:1101l557217]",
+   "Latitude": 52.4492986,
+   "Longitude": -1.7239715,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Bear Gryls Adventure",
+   "Ride": "Climb (5+ years, 5-9 needs adult)",
+   "Minimum Height": 110,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1011l3LYMo/pubref:rideheightchecker/ar:beargrylsadventure/[p_id:1101l557217]",
+   "Latitude": 52.4492986,
+   "Longitude": -1.7239715,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Bear Gryls Adventure",
+   "Ride": "Shooting (10+ years, 10-15 needs adults)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1011l3LYMo/pubref:rideheightchecker/ar:beargrylsadventure/[p_id:1101l557217]",
+   "Latitude": 52.4492986,
+   "Longitude": -1.7239715,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Bear Gryls Adventure",
+   "Ride": "Cage Snorkel (8+ years, 8-10 needs adult, 10-17 needs waiver)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1011l3LYMo/pubref:rideheightchecker/ar:beargrylsadventure/[p_id:1101l557217]",
+   "Latitude": 52.4492986,
+   "Longitude": -1.7239715,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Bear Gryls Adventure",
+   "Ride": "Shark Dive (10+ years, 10-17 needs waiver)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1011l3LYMo/pubref:rideheightchecker/ar:beargrylsadventure/[p_id:1101l557217]",
+   "Latitude": 52.4492986,
+   "Longitude": -1.7239715,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Bear Gryls Adventure",
+   "Ride": "Zip Line (8+ years, 8-9 needs adult, 10-15 needs waiver)",
+   "Minimum Height": 130,
+   "Maximum Height": 203,
+   "URL": "https://merlin.prf.hn/click/camref:1011l3LYMo/pubref:rideheightchecker/ar:beargrylsadventure/[p_id:1101l557217]",
+   "Latitude": 52.4492986,
+   "Longitude": -1.7239715,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "4D Chocolate Adventure",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "Manufacturing",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "Making Chocolate Story",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "Bull Street",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "Aztec Jungle",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "The Cadbury Story",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "Chocolate Making",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "Advertising Avenue",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "Have A Go",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "The Bournville Experience",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "Journey To Europe",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "Cadbury World Cafe",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "Cadbury World Shop",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "African Adventure Play Area (5-14 years)",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "Green Screen",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "Cadbury World",
+   "Ride": "Cadbury Chocolate Quest",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvL/pubref:rideheightchecker/ar:cadburyworld/[p_id:1101l557217]",
+   "Latitude": 52.4287945,
+   "Longitude": -1.9340002,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "The Gruffalo & Friends Clubhouse",
+   "Ride": "Deep, Dark Wood Aventure Play",
+   "Minimum Height": 90,
+   "Maximum Height": 148,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvM/pubref:rideheightchecker/ar:gruffaloclubhouse/[p_id:1101l557217]",
+   "Latitude": 53.8128854,
+   "Longitude": -3.0577849,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "The Gruffalo & Friends Clubhouse",
+   "Ride": "Deep, Dark Wood Soft Play",
+   "Minimum Height": 90,
+   "Maximum Height": 148,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvM/pubref:rideheightchecker/ar:gruffaloclubhouse/[p_id:1101l557217]",
+   "Latitude": 53.8128854,
+   "Longitude": -3.0577849,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "The Gruffalo & Friends Clubhouse",
+   "Ride": "Room On The Broom Toddler Play",
+   "Minimum Height": 0,
+   "Maximum Height": 90,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvM/pubref:rideheightchecker/ar:gruffaloclubhouse/[p_id:1101l557217]",
+   "Latitude": 53.8128854,
+   "Longitude": -3.0577849,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "The Gruffalo & Friends Clubhouse",
+   "Ride": "Gruffalo's Child Sensory Room",
+   "Minimum Height": 90,
+   "Maximum Height": 148,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvM/pubref:rideheightchecker/ar:gruffaloclubhouse/[p_id:1101l557217]",
+   "Latitude": 53.8128854,
+   "Longitude": -3.0577849,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "The Gruffalo & Friends Clubhouse",
+   "Ride": "Zog's Dragon School Challenge",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvM/pubref:rideheightchecker/ar:gruffaloclubhouse/[p_id:1101l557217]",
+   "Latitude": 53.8128854,
+   "Longitude": -3.0577849,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "The Gruffalo & Friends Clubhouse",
+   "Ride": "The Snail And The Whale Seaside Play",
+   "Minimum Height": 90,
+   "Maximum Height": 148,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvM/pubref:rideheightchecker/ar:gruffaloclubhouse/[p_id:1101l557217]",
+   "Latitude": 53.8128854,
+   "Longitude": -3.0577849,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "The Gruffalo & Friends Clubhouse",
+   "Ride": "Woodland Cafe",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvM/pubref:rideheightchecker/ar:gruffaloclubhouse/[p_id:1101l557217]",
+   "Latitude": 53.8128854,
+   "Longitude": -3.0577849,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "The Gruffalo & Friends Clubhouse",
+   "Ride": "Meet & Greet Area",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvM/pubref:rideheightchecker/ar:gruffaloclubhouse/[p_id:1101l557217]",
+   "Latitude": 53.8128854,
+   "Longitude": -3.0577849,
+   "Active": 1
+ },
+ {
+   "Country": "United Kingdom",
+   "Theme Park": "The Gruffalo & Friends Clubhouse",
+   "Ride": "Gift Shop",
+   "Minimum Height": 0,
+   "Maximum Height": 300,
+   "URL": "https://merlin.prf.hn/click/camref:1100l3LXvM/pubref:rideheightchecker/ar:gruffaloclubhouse/[p_id:1101l557217]",
+   "Latitude": 53.8128854,
+   "Longitude": -3.0577849,
+   "Active": 1
  }
 ]
