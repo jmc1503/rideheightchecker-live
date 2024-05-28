@@ -88,53 +88,47 @@ document.addEventListener('DOMContentLoaded', function() {
                         (themePark === '' || item['Theme Park'] === themePark) &&
                         item['Minimum Height'] <= height &&
                         item['Maximum Height'] >= height &&
-                        item['Active'] === 1; // Filter active rides
+                        item['Active'] === 1; // Include only rides where Active = 1
                 });
 
+                // Sort filtered rides by ride name
                 filteredRides.sort((a, b) => a.Ride.localeCompare(b.Ride));
 
+                // Clear result container before adding new content
                 resultContainer.innerHTML = '';
 
                 if (filteredRides.length > 0) {
+                    // Display rides for each theme park
                     const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
-
                     themeParks.forEach(park => {
                         const parkURL = filteredRides.find(ride => ride['Theme Park'] === park).URL;
-                        const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
-                        const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
-                        const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
-
                         const parkContainer = document.createElement('div');
                         parkContainer.classList.add('park-container');
 
+                        // Park header with "More Info" link
                         const parkHeader = document.createElement('h3');
-                        parkHeader.innerHTML = `${park} - ${percentage}% of available rides<br>${parkURL ? `<a href="${parkURL}" target="_blank">Buy Tickets</a>` : ''}`;
+                        parkHeader.innerHTML = `<span class="park-name">${park}</span> - <a href="${parkURL}" target="_blank" class="buy-tickets-link">Buy Tickets</a>`;
+                        parkHeader.addEventListener('click', function() {
+                            const ridesContainer = parkContainer.querySelector('.rides-container');
+                            ridesContainer.classList.toggle('expanded');
+                        });
                         parkContainer.appendChild(parkHeader);
 
-                        const heights = [...new Set(filteredRides.filter(ride => ride['Theme Park'] === park).map(ride => ride['Minimum Height']))];
-                        heights.sort((a, b) => a - b);
-
-                        heights.forEach(height => {
-                            const heightHeader = document.createElement('h4');
-                            heightHeader.textContent = `Minimum Height: ${height} cm`;
-                            parkContainer.appendChild(heightHeader);
-
-                            const parkList = document.createElement('ul');
-                            filteredRides.filter(ride => ride['Theme Park'] === park && ride['Minimum Height'] === height).forEach(ride => {
-                                const listItem = document.createElement('li');
-                                listItem.textContent = ride.Ride;
-                                parkList.appendChild(listItem);
-                            });
-                            parkContainer.appendChild(parkList);
+                        // Rides list
+                        const ridesContainer = document.createElement('div');
+                        ridesContainer.classList.add('rides-container');
+                        filteredRides.filter(ride => ride['Theme Park'] === park).forEach(ride => {
+                            const rideItem = document.createElement('div');
+                            rideItem.textContent = ride.Ride;
+                            ridesContainer.appendChild(rideItem);
                         });
+                        parkContainer.appendChild(ridesContainer);
 
                         resultContainer.appendChild(parkContainer);
                     });
-
-                    resultContainer.style.display = 'block';
                 } else {
+                    // Display message if no rides found
                     resultContainer.textContent = 'No rides available for your height in this theme park.';
-                    resultContainer.style.display = 'block';
                 }
             })
             .catch(error => {
@@ -179,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         (themePark === '' || item['Theme Park'] === themePark) &&
                         item['Minimum Height'] <= height &&
                         item['Maximum Height'] >= height &&
-                        item['Active'] === 1; // Filter active rides
+                        item['Active'] === 1; // Include only rides where Active = 1
                 });
 
                 const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
@@ -188,16 +182,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     const parkData = data.find(item => item['Theme Park'] === park);
                     if (parkData) {
                         const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
-                    const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
-                    const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
+                        const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
+                        const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
 
-                    const marker = L.marker([parkData.Latitude, parkData.Longitude]).addTo(map);
-                    marker.bindPopup(`<b>${park}</b><br>${parkData.Country}<br>${percentage}% of rides available`).openPopup();
-                    markers.push(marker);
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    });
-});
+                        const marker = L.marker([parkData.Latitude, parkData.Longitude]).addTo(map);
+                        marker.bindPopup(`<b>${park}</b><br>${parkData.Country}<br>${percentage}% of rides available`).openPopup();
+                        markers.push(marker);
+                   
