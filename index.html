@@ -6,18 +6,33 @@
 <title>Theme Park Ride Finder</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  h1 {
+    text-align: center;
+  }
+  label, select, button {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+  }
   .theme-park {
     margin: 20px 0;
   }
-
   .rides {
     display: none;
     margin: 10px 0;
   }
-
   .more-info {
     color: blue;
     cursor: pointer;
+  }
+  .map {
+    width: 100%;
+    height: 400px;
+    margin: 20px 0;
   }
 </style>
 </head>
@@ -39,21 +54,35 @@
 
 <div id="result"></div>
 
+<div id="map" class="map"></div>
+
 <script>
 $(document).ready(function() {
+  let map;
+  let markers = [];
+
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: 0, lng: 0 },
+      zoom: 2
+    });
+  }
+
   $.getJSON("data.json", function(ridesData) {
+    ridesData = ridesData.filter(ride => ride.Active === 1); // Only include active rides
+
     // Populate country dropdown
-    var countries = [...new Set(ridesData.map(ride => ride.Country))];
+    const countries = [...new Set(ridesData.map(ride => ride.Country))];
     countries.forEach(country => {
       $('#country-dropdown').append(new Option(country, country));
     });
 
     // Filter button click event
     $('#filter-btn').click(function() {
-      var selectedCountry = $('#country-dropdown').val();
-      var selectedThemePark = $('#theme-park-dropdown').val();
+      const selectedCountry = $('#country-dropdown').val();
+      const selectedThemePark = $('#theme-park-dropdown').val();
 
-      var filteredRides = ridesData.filter(ride => ride.Active === 1);
+      let filteredRides = ridesData;
 
       if (selectedCountry) {
         filteredRides = filteredRides.filter(ride => ride.Country === selectedCountry);
@@ -69,17 +98,18 @@ $(document).ready(function() {
     // Display results
     function displayResults(rides) {
       $('#result').empty();
+      clearMarkers();
 
-      var themeParks = [...new Set(rides.map(ride => ride.Theme_Park))];
+      const themeParks = [...new Set(rides.map(ride => ride.Theme_Park))];
       themeParks.forEach(themePark => {
-        var themeParkDiv = $('<div class="theme-park"></div>');
-        var ridesDiv = $('<div class="rides"></div>');
+        const themeParkDiv = $('<div class="theme-park"></div>');
+        const ridesDiv = $('<div class="rides"></div>');
 
         themeParkDiv.append(`<h2>${themePark}</h2>`);
 
-        var parkRides = rides.filter(ride => ride.Theme_Park === themePark);
+        const parkRides = rides.filter(ride => ride.Theme_Park === themePark);
         parkRides.forEach(ride => {
-          var rideInfo = `
+          let rideInfo = `
             <p><strong>Ride:</strong> ${ride.Ride}</p>
             <p><strong>Minimum Height:</strong> ${ride.Minimum_Height} cm</p>
             <p><strong>Maximum Height:</strong> ${ride.Maximum_Height} cm</p>
@@ -90,6 +120,7 @@ $(document).ready(function() {
           }
 
           ridesDiv.append(rideInfo);
+          addMarker(ride);
         });
 
         themeParkDiv.append('<span class="more-info">More info</span>');
@@ -104,17 +135,37 @@ $(document).ready(function() {
 
     // Initial population of theme park dropdown based on selected country
     $('#country-dropdown').change(function() {
-      var selectedCountry = $(this).val();
+      const selectedCountry = $(this).val();
       $('#theme-park-dropdown').empty().append('<option value="">All Theme Parks</option>');
 
-      var themeParks = [...new Set(ridesData.filter(ride => ride.Country === selectedCountry && ride.Active === 1).map(ride => ride.Theme_Park))];
+      const themeParks = [...new Set(ridesData.filter(ride => ride.Country === selectedCountry).map(ride => ride.Theme_Park))];
       themeParks.forEach(themePark => {
         $('#theme-park-dropdown').append(new Option(themePark, themePark));
       });
     });
+
+    function addMarker(ride) {
+      const marker = new google.maps.Marker({
+        position: { lat: ride.Latitude, lng: ride.Longitude },
+        map: map,
+        title: ride.Ride
+      });
+
+      markers.push(marker);
+    }
+
+    function clearMarkers() {
+      markers.forEach(marker => marker.setMap(null));
+      markers = [];
+    }
   });
+
+  initMap();
 });
 </script>
+
+<!-- Replace with your Google Maps API key -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 
 </body>
 </html>
