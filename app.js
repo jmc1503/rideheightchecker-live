@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const countrySelect = document.getElementById('country');
     const themeParkSelect = document.getElementById('theme-park');
+    const themeParkContainer = document.getElementById('theme-park-container');
     const resultContainer = document.getElementById('result-container');
     const listViewBtn = document.getElementById('list-view-btn');
     const mapViewBtn = document.getElementById('map-view-btn');
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         themeParkSelect.appendChild(anyOption);
 
         if (selectedCountry === '') {
-            themeParkSelect.style.display = 'none'; // Hide theme park dropdown
+            themeParkContainer.style.display = 'none'; // Hide theme park container
         } else {
             fetch('data.json')
                 .then(response => response.json())
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         option.textContent = themePark;
                         themeParkSelect.appendChild(option);
                     });
-                    themeParkSelect.style.display = 'block'; // Show theme park dropdown
+                    themeParkContainer.style.display = 'block'; // Show theme park container
                 })
                 .catch(error => {
                     console.error('Error fetching data:', error);
@@ -121,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
 
                         const moreInfoBtn = document.createElement('button');
-                        moreInfoBtn.textContent = 'Ride Information';
+                        moreInfoBtn.textContent = 'More Information';
                         moreInfoBtn.addEventListener('click', () => {
                             const infoContent = parkContainer.querySelector('.info-content');
                             if (infoContent.style.display === 'none') {
