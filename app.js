@@ -98,12 +98,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (filteredRides.length > 0) {
                     const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
 
-                    themeParks.forEach(park => {
+                    let parksWithPercentage = themeParks.map(park => {
                         const parkData = filteredRides.find(ride => ride['Theme Park'] === park);
-                        const parkURL = parkData.URL;
                         const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
                         const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
                         const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
+                        return { park, percentage: parseInt(percentage), parkData, filteredRides };
+                    });
+
+                    // Sort by percentage desc and then by park name asc
+                    parksWithPercentage.sort((a, b) => b.percentage - a.percentage || a.park.localeCompare(b.park));
+
+                    parksWithPercentage.forEach(({ park, percentage, parkData, filteredRides }) => {
+                        const parkURL = parkData.URL;
 
                         const parkContainer = document.createElement('div');
                         parkContainer.classList.add('park-container');
