@@ -110,13 +110,29 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkHeader.innerHTML = `${park} - ${percentage}% of available rides<br><a href="${parkURL}" target="_blank">Buy Tickets</a>`;
                         parkContainer.appendChild(parkHeader);
 
+                        const moreInfoBtn = document.createElement('button');
+                        moreInfoBtn.textContent = 'More Information';
+                        moreInfoBtn.addEventListener('click', () => {
+                            const infoContent = parkContainer.querySelector('.info-content');
+                            if (infoContent.style.display === 'none') {
+                                infoContent.style.display = 'block';
+                            } else {
+                                infoContent.style.display = 'none';
+                            }
+                        });
+                        parkContainer.appendChild(moreInfoBtn);
+
+                        const infoContent = document.createElement('div');
+                        infoContent.classList.add('info-content');
+                        infoContent.style.display = 'none';
+
                         const heights = [...new Set(filteredRides.filter(ride => ride['Theme Park'] === park).map(ride => ride['Minimum Height']))];
                         heights.sort((a, b) => a - b);
 
                         heights.forEach(height => {
                             const heightHeader = document.createElement('h4');
                             heightHeader.textContent = `Minimum Height: ${height} cm`;
-                            parkContainer.appendChild(heightHeader);
+                            infoContent.appendChild(heightHeader);
 
                             const parkList = document.createElement('ul');
                             filteredRides.filter(ride => ride['Theme Park'] === park && ride['Minimum Height'] === height).forEach(ride => {
@@ -124,8 +140,10 @@ document.addEventListener('DOMContentLoaded', function() {
                                 listItem.textContent = ride.Ride;
                                 parkList.appendChild(listItem);
                             });
-                            parkContainer.appendChild(parkList);
+                            infoContent.appendChild(parkList);
                         });
+
+                        parkContainer.appendChild(infoContent);
 
                         resultContainer.appendChild(parkContainer);
                     });
