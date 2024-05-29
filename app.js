@@ -98,7 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
 
                     themeParks.forEach(park => {
-                        const parkURL = filteredRides.find(ride => ride['Theme Park'] === park).URL;
+                        const parkData = filteredRides.find(ride => ride['Theme Park'] === park);
+                        const parkURL = parkData.URL;
                         const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
                         const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
                         const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
@@ -107,11 +108,20 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkContainer.classList.add('park-container');
 
                         const parkHeader = document.createElement('h3');
-                        parkHeader.innerHTML = `${park} - ${percentage}% of available rides<br><a href="${parkURL}" target="_blank">Buy Tickets</a>`;
+                        parkHeader.innerHTML = `${park} - ${percentage}% of available rides`;
                         parkContainer.appendChild(parkHeader);
 
+                        if (parkURL) {
+                            const buyTicketsLink = document.createElement('a');
+                            buyTicketsLink.href = parkURL;
+                            buyTicketsLink.target = '_blank';
+                            buyTicketsLink.textContent = 'Buy Tickets';
+                            parkContainer.appendChild(buyTicketsLink);
+                            parkContainer.appendChild(document.createElement('br'));
+                        }
+
                         const moreInfoBtn = document.createElement('button');
-                        moreInfoBtn.textContent = 'More Information';
+                        moreInfoBtn.textContent = 'Ride Information';
                         moreInfoBtn.addEventListener('click', () => {
                             const infoContent = parkContainer.querySelector('.info-content');
                             if (infoContent.style.display === 'none') {
