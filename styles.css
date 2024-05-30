@@ -62,6 +62,8 @@ button:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add slight shadow to each card */
     box-sizing: border-box;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
 }
 
 .park-header {
@@ -75,7 +77,7 @@ button:hover {
 }
 
 .ride-info {
-    margin-top: 10px;
+    margin-top: auto; /* Push the More Information button to the bottom */
 }
 
 .view-toggle {
