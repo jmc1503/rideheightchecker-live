@@ -13,64 +13,24 @@ body {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); /* Adjusted shadow */
-}
-form {
-    margin-bottom: 20px;
-}
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-input, select, button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #0056b3;
-}
-#result-container {
-    display: none;
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create a grid layout with three columns */
-    gap: 20px; /* Space between grid items */
-}
-.park-container {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for card effect */
-}
-.park-container h3 {
-    margin: 0 0 10px 0;
-}
-.info-content {
-    margin-top: 10px;
-}
-.info-content h4 {
-    margin: 10px 0 5px 0;
-}
-.view-toggle {
+    box-shadow: 0 0 300px #007bff;
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    flex-wrap: wrap; /* Allow the container to wrap its children */
+    justify-content: space-between; /* Align cards in the container */
 }
-.view-toggle button {
-    width: 45%;
+.park-card {
+    width: calc(33.33% - 20px); /* Set the width of each card to one-third of the container minus the gap */
+    padding: 20px;
+    margin-bottom: 20px; /* Add bottom margin to separate cards */
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-#map {
-    height: 400px;
-    display: none;
+.park-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.park-info {
+    margin-bottom: 10px;
 }
