@@ -3,8 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeParkSelect = document.getElementById('theme-park');
     const resultContainer = document.getElementById('result-container');
     const modal = document.getElementById('modal');
-    const modalContent = document.querySelector('.modal-content');
-    const closeModal = document.querySelector('.close');
+    const rideInfoContainer = document.getElementById('ride-info');
     const listViewBtn = document.getElementById('list-view-btn');
     const mapViewBtn = document.getElementById('map-view-btn');
     const mapElement = document.getElementById('map');
@@ -118,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         const parkURL = filteredRides.find(ride => ride['Theme Park'] === park).URL;
                         const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
                         const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
+                        const percentage = ((available
                         const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
 
                         const parkCard = document.createElement('div');
@@ -133,12 +133,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkInfo.innerHTML = `${percentage}% of available rides<br>${parkURL ? `<a href="${parkURL}" target="_blank">Buy Tickets</a>` : ''}`;
                         parkCard.appendChild(parkInfo);
 
-                        const toggleButton = document.createElement('button');
-                        toggleButton.textContent = 'More Information';
-                        toggleButton.addEventListener('click', () => {
-                            displayRideInfo(park, filteredRides);
+                        const moreInfoButton = document.createElement('button');
+                        moreInfoButton.textContent = 'More Information';
+                        moreInfoButton.addEventListener('click', () => {
+                            showRideInfoModal(park, filteredRides.filter(ride => ride['Theme Park'] === park));
                         });
-                        parkCard.appendChild(toggleButton);
+                        parkCard.appendChild(moreInfoButton);
 
                         resultContainer.appendChild(parkCard);
                     });
@@ -152,6 +152,33 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
+    });
+
+    // Show ride info modal
+    function showRideInfoModal(themePark, rides) {
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+
+        modalTitle.textContent = `${themePark} Ride Information`;
+        modalBody.innerHTML = '';
+
+        rides.forEach(ride => {
+            const rideHeader = document.createElement('h4');
+            rideHeader.textContent = `${ride.Ride}`;
+
+            const minHeight = document.createElement('p');
+            minHeight.textContent = `Minimum Height: ${ride['Minimum Height']} cm`;
+
+            modalBody.appendChild(rideHeader);
+            modalBody.appendChild(minHeight);
+        });
+
+        modal.style.display = 'block';
+    }
+
+    // Hide ride info modal
+    document.getElementById('close-modal').addEventListener('click', () => {
+        modal.style.display = 'none';
     });
 
     // Initialize map
@@ -189,8 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 markers.forEach(marker => marker.setMap(null));
                 markers = [];
 
-                filteredRides
-.forEach(ride => {
+                filteredRides.forEach(ride => {
                     const marker = new google.maps.Marker({
                         position: { lat: parseFloat(ride.Latitude), lng: parseFloat(ride.Longitude) },
                         map: map,
@@ -206,35 +232,4 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
     });
-
-    // Function to display ride information in a modal
-    function displayRideInfo(themePark, rides) {
-        const rideInfoContainer = document.getElementById('ride-info');
-        rideInfoContainer.innerHTML = '';
-        const parkRides = rides.filter(ride => ride['Theme Park'] === themePark);
-
-        parkRides.forEach(ride => {
-            const rideInfo = document.createElement('div');
-            rideInfo.innerHTML = `
-                <h4>Ride: ${ride.Ride}</h4>
-                <p>Minimum Height: ${ride['Minimum Height']} cm</p>
-                <p>Maximum Height: ${ride['Maximum Height']} cm</p>
-            `;
-            rideInfoContainer.appendChild(rideInfo);
-        });
-
-        modal.style.display = 'block'; // Display modal
-    }
-
-    // Close modal when close button is clicked
-    closeModal.onclick = function() {
-        modal.style.display = 'none';
-    }
-
-    // Close modal when user clicks outside the modal
-    window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    }
 });
