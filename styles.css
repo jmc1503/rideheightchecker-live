@@ -13,7 +13,7 @@ body {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 300px #007bff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add slight shadow to the container */
 }
 form {
     margin-bottom: 20px;
@@ -48,10 +48,10 @@ button:hover {
 }
 .park-card {
     width: calc(25% - 20px); /* Set the width of each card to one-fourth of the container minus the gap */
-    padding: 10px;
+    padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    border: 5px dashed #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add slight shadow to each card */
     box-sizing: border-box;
 }
 .park-header {
