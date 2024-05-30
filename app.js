@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const countrySelect = document.getElementById('country');
     const themeParkSelect = document.getElementById('theme-park');
     const resultContainer = document.getElementById('result-container');
+    const modal = document.getElementById('modal');
+    const modalContent = document.querySelector('.modal-content');
+    const closeModal = document.querySelector('.close');
     const listViewBtn = document.getElementById('list-view-btn');
     const mapViewBtn = document.getElementById('map-view-btn');
     const mapElement = document.getElementById('map');
@@ -133,32 +136,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         const toggleButton = document.createElement('button');
                         toggleButton.textContent = 'More Information';
                         toggleButton.addEventListener('click', () => {
-                            rideInfo.style.display = rideInfo.style.display === 'none' ? 'block' : 'none';
+                            displayRideInfo(park, filteredRides);
                         });
                         parkCard.appendChild(toggleButton);
 
-                        const rideInfo = document.createElement('div');
-                        rideInfo.classList.add('ride-info');
-                        rideInfo.style.display = 'none';
-
-                        const heights = [...new Set(filteredRides.filter(ride => ride['Theme Park'] === park).map(ride => ride['Minimum Height']))];
-                        heights.sort((a, b) => a - b);
-
-                        heights.forEach(height => {
-                            const heightHeader = document.createElement('h4');
-                            heightHeader.textContent = `Minimum Height: ${height} cm`;
-                            rideInfo.appendChild(heightHeader);
-
-                            const parkList = document.createElement('ul');
-                            filteredRides.filter(ride => ride['Theme Park'] === park && ride['Minimum Height'] === height).forEach(ride => {
-                                const listItem = document.createElement('li');
-                                listItem.textContent = ride.Ride;
-                                parkList.appendChild(listItem);
-                            });
-                            rideInfo.appendChild(parkList);
-                        });
-
-                        parkCard.appendChild(rideInfo);
                         resultContainer.appendChild(parkCard);
                     });
 
@@ -208,7 +189,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 markers.forEach(marker => marker.setMap(null));
                 markers = [];
 
-                filteredRides.forEach(ride => {
+                filteredRides
+.forEach(ride => {
                     const marker = new google.maps.Marker({
                         position: { lat: parseFloat(ride.Latitude), lng: parseFloat(ride.Longitude) },
                         map: map,
@@ -224,4 +206,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
     });
+
+    // Function to display ride information in a modal
+    function displayRideInfo(themePark, rides) {
+        const rideInfoContainer = document.getElementById('ride-info');
+        rideInfoContainer.innerHTML = '';
+        const parkRides = rides.filter(ride => ride['Theme Park'] === themePark);
+
+        parkRides.forEach(ride => {
+            const rideInfo = document.createElement('div');
+            rideInfo.innerHTML = `
+                <h4>Ride: ${ride.Ride}</h4>
+                <p>Minimum Height: ${ride['Minimum Height']} cm</p>
+                <p>Maximum Height: ${ride['Maximum Height']} cm</p>
+            `;
+            rideInfoContainer.appendChild(rideInfo);
+        });
+
+        modal.style.display = 'block'; // Display modal
+    }
+
+    // Close modal when close button is clicked
+    closeModal.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    // Close modal when user clicks outside the modal
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    }
 });
