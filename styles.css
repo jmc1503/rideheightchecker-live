@@ -77,7 +77,7 @@ button:hover {
 }
 
 .ride-info {
-    margin-top: auto; /* Push the More Information button to the bottom */
+    display: none;
 }
 
 .view-toggle {
@@ -92,5 +92,4 @@ button:hover {
 
 #map {
     height: 400px;
-    display: none;
-}
+    display:
