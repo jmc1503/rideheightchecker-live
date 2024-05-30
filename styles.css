@@ -8,7 +8,7 @@ body {
     padding: 0;
 }
 .container {
-    max-width: 900px; /* Increase the width of the container */
+    max-width: 1200px; /* Increase the width of the container */
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
@@ -42,12 +42,14 @@ button:hover {
 #result-container {
     display: none;
     margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Create a grid layout with auto-fit */
+    gap: 20px; /* Space between grid items */
 }
 .park-container {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 20px;
-    margin-bottom: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for card effect */
 }
