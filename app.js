@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         themeParkSelect.appendChild(anyOption);
 
         if (selectedCountry === '') {
-            themeParkSelect.style.display = 'none'; // Hide theme park dropdown
+            themeParkSelect.classList.add('hidden'); // Hide theme park dropdown
         } else {
             fetch('data.json')
                 .then(response => response.json())
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         option.textContent = themePark;
                         themeParkSelect.appendChild(option);
                     });
-                    themeParkSelect.style.display = 'block'; // Show theme park dropdown
+                    themeParkSelect.classList.remove('hidden'); // Show theme park dropdown
                 })
                 .catch(error => {
                     console.error('Error fetching data:', error);
@@ -87,61 +87,49 @@ document.addEventListener('DOMContentLoaded', function() {
                     return (country === '' || item.Country === country) &&
                         (themePark === '' || item['Theme Park'] === themePark) &&
                         item['Minimum Height'] <= height &&
-                        item['Maximum Height'] >= height;
+                        item['Maximum Height'] >= height
+                        );
                 });
 
                 filteredRides.sort((a, b) => {
-                    const aTotalRidesInPark = data.filter(ride => ride['Theme Park'] === a['Theme Park']).length;
-                    const aAvailableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === a['Theme Park']).length;
-                    const aPercentage = (aAvailableRidesInPark / aTotalRidesInPark) * 100;
-
-                    const bTotalRidesInPark = data.filter(ride => ride['Theme Park'] === b['Theme Park']).length;
-                    const bAvailableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === b['Theme Park']).length;
-                    const bPercentage = (bAvailableRidesInPark / bTotalRidesInPark) * 100;
-
-                    if (bPercentage === aPercentage) {
-                        return a['Theme Park'].localeCompare(b['Theme Park']);
-                    }
-
-                    return bPercentage - aPercentage;
+                    const percentageA = ((filteredRides.filter(ride => ride['Theme Park'] === a['Theme Park']).length) / (data.filter(ride => ride['Theme Park'] === a['Theme Park']).length) * 100);
+                    const percentageB = ((filteredRides.filter(ride => ride['Theme Park'] === b['Theme Park']).length) / (data.filter(ride => ride['Theme Park'] === b['Theme Park']).length) * 100);
+                    return percentageB - percentageA || a['Theme Park'].localeCompare(b['Theme Park']);
                 });
 
                 resultContainer.innerHTML = '';
 
                 if (filteredRides.length > 0) {
-                    const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
-
-                    themeParks.forEach(park => {
-                        const parkURL = filteredRides.find(ride => ride['Theme Park'] === park).URL;
-                        const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
-                        const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
-                        const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
-
+                    filteredRides.forEach(park => {
                         const parkCard = document.createElement('div');
-                        parkCard.classList.add('park-card');
+                        parkCard.classList.add('card');
 
                         const parkHeader = document.createElement('h3');
-                        parkHeader.classList.add('park-header');
-                        parkHeader.innerHTML = `${park}`;
+                        parkHeader.innerHTML = `${park['Theme Park']} - ${((filteredRides.filter(ride => ride['Theme Park'] === park['Theme Park']).length) / (data.filter(ride => ride['Theme Park'] === park['Theme Park']).length) * 100).toFixed(0)}% of available rides`;
                         parkCard.appendChild(parkHeader);
 
-                        const parkInfo = document.createElement('p');
-                        parkInfo.classList.add('park-info');
-                        parkInfo.innerHTML = `${percentage}% of available rides<br>${parkURL ? `<a href="${parkURL}" target="_blank">Buy Tickets</a>` : ''}`;
-                        parkCard.appendChild(parkInfo);
+                        if (park['URL']) {
+                            const parkLink = document.createElement('a');
+                            parkLink.href = park['URL'];
+                            parkLink.target = '_blank';
+                            parkLink.textContent = 'Buy Tickets';
+                            parkCard.appendChild(parkLink);
+                        }
 
-                        const toggleButton = document.createElement('button');
-                        toggleButton.textContent = 'More Information';
-                        toggleButton.addEventListener('click', () => {
-                            rideInfo.style.display = rideInfo.style.display === 'none' ? 'block' : 'none';
+                        const moreInfoBtn = document.createElement('button');
+                        moreInfoBtn.textContent = 'More Information';
+                        moreInfoBtn.addEventListener('click', () => {
+                            // Toggle visibility of ride information
+                            const rideInfo = parkCard.querySelector('.ride-info');
+                            rideInfo.classList.toggle('hidden');
+                            moreInfoBtn.textContent = rideInfo.classList.contains('hidden') ? 'More Information' : 'Less Information';
                         });
-                        parkCard.appendChild(toggleButton);
+                        parkCard.appendChild(moreInfoBtn);
 
                         const rideInfo = document.createElement('div');
-                        rideInfo.classList.add('ride-info');
-                        rideInfo.style.display = 'none';
+                        rideInfo.classList.add('ride-info', 'hidden');
 
-                        const heights = [...new Set(filteredRides.filter(ride => ride['Theme Park'] === park).map(ride => ride['Minimum Height']))];
+                        const heights = [...new Set(filteredRides.filter(ride => ride['Theme Park'] === park['Theme Park']).map(ride => ride['Minimum Height']))];
                         heights.sort((a, b) => a - b);
 
                         heights.forEach(height => {
@@ -150,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             rideInfo.appendChild(heightHeader);
 
                             const parkList = document.createElement('ul');
-                            filteredRides.filter(ride => ride['Theme Park'] === park && ride['Minimum Height'] === height).forEach(ride => {
+                            filteredRides.filter(ride => ride['Theme Park'] === park['Theme Park'] && ride['Minimum Height'] === height).forEach(ride => {
                                 const listItem = document.createElement('li');
                                 listItem.textContent = ride.Ride;
                                 parkList.appendChild(listItem);
@@ -159,13 +147,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         });
 
                         parkCard.appendChild(rideInfo);
+
                         resultContainer.appendChild(parkCard);
                     });
-
-                    resultContainer.style.display = 'flex';
                 } else {
                     resultContainer.textContent = 'No rides available for your height in this theme park.';
-                    resultContainer.style.display = 'block';
                 }
             })
             .catch(error => {
@@ -173,55 +159,63 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     });
 
-    // Initialize map
-    function initMap() {
-        map = new google.maps.Map(mapElement, {
-            center: { lat: 0, lng: 0 },
-            zoom: 2
-        });
-    }
-
-    // Switch to list view
+    // Handle view toggling
     listViewBtn.addEventListener('click', () => {
         resultContainer.style.display = 'flex';
         mapElement.style.display = 'none';
     });
 
-    // Switch to map view
     mapViewBtn.addEventListener('click', () => {
         resultContainer.style.display = 'none';
         mapElement.style.display = 'block';
+
         if (!map) {
-            initMap();
+            map = L.map('map').setView([51.505, -0.09], 2);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
         }
+
+        markers.forEach(marker => {
+            map.removeLayer(marker);
+        });
+
+        markers = [];
 
         fetch('data.json')
             .then(response => response.json())
             .then(data => {
-                const filteredRides = data.filter(item => {
+                const height = parseInt(document.getElementById('height').value);
+                const country = countrySelect.value;
+                const themePark = themeParkSelect.value;
+
+                let filteredRides = data.filter(item => {
                     return (country === '' || item.Country === country) &&
                         (themePark === '' || item['Theme Park'] === themePark) &&
                         item['Minimum Height'] <= height &&
                         item['Maximum Height'] >= height;
                 });
 
-                markers.forEach(marker => marker.setMap(null));
-                markers = [];
+                const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
 
-                filteredRides.forEach(ride => {
-                    const marker = new google.maps.Marker({
-                        position: { lat: parseFloat(ride.Latitude), lng: parseFloat(ride.Longitude) },
-                        map: map,
-                        title: ride['Theme Park']
-                    });
-                    markers.push(marker);
+                themeParks.forEach(park => {
+                    const parkData = data.find(item => item['Theme Park'] === park);
+                    if (parkData) {
+                        const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
+                        const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
+                        const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
+
+                        const marker = L.marker([parkData.Latitude, parkData.Longitude]).addTo(map);
+                        marker.bindPopup(`<b>${park}</b><br>${parkData.Country}<br>${percentage}% of rides available`).openPopup();
+                        markers.push(marker);
+                    }
                 });
-
-                if (markers.length > 0) {
-                    const bounds = new google.maps.LatLngBounds();
-                    markers.forEach(marker => bounds.extend(marker.getPosition()));
-                    map.fitBounds(bounds);
-                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
             });
     });
 });
+
