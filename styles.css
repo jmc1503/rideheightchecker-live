@@ -2,31 +2,26 @@
 * {
     font-family: 'Courier New', sans-serif;
 }
-
 body {
     background-color: #5de8d5;
     margin: 0;
     padding: 0;
 }
-
 .container {
-    max-width: 1200px; /* Increase the width of the container */
+    max-width: 600px;
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 255, 0.3); /* Add blue shadow to the container */
+    box-shadow: 0 0 300px #007bff;
 }
-
 form {
     margin-bottom: 20px;
 }
-
 label {
     display: block;
     margin-bottom: 5px;
 }
-
 input, select, button {
     width: 100%;
     padding: 10px;
@@ -35,61 +30,35 @@ input, select, button {
     border-radius: 5px;
     box-sizing: border-box;
 }
-
 button {
     background-color: #007bff;
     color: #fff;
     border: none;
     cursor: pointer;
 }
-
 button:hover {
     background-color: #0056b3;
 }
-
 #result-container {
     display: none;
     margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Add gap between cards */
 }
-
-.park-card {
-    width: calc(25% - 20px); /* Set the width of each card to one-fourth of the container minus the gap */
-    padding: 20px;
-    background-color: #fff;
+.park-container {
+    border: 5px dashed #007bff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add slight shadow to each card */
-    box-sizing: border-box;
-    display: flex; /* Use flexbox */
-    flex-direction: column; /* Stack children vertically */
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
 }
-
-.park-header {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.park-info {
-    margin-bottom: 10px;
-}
-
-.ride-info {
-    display: none;
-}
-
 .view-toggle {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
 }
-
 .view-toggle button {
     width: 45%;
 }
-
 #map {
     height: 400px;
-    display:
+    display: none;
+}
