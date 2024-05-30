@@ -8,7 +8,7 @@ body {
     padding: 0;
 }
 .container {
-    max-width: 600px;
+    max-width: 1200px; /* Increase the width of the container */
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
@@ -42,13 +42,28 @@ button:hover {
 #result-container {
     display: none;
     margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Add gap between cards */
 }
-.park-container {
-    border: 5px dashed #007bff;
-    border-radius: 8px;
+.park-card {
+    width: calc(25% - 20px); /* Set the width of each card to one-fourth of the container minus the gap */
     padding: 10px;
-    margin-bottom: 20px;
     background-color: #fff;
+    border-radius: 8px;
+    border: 5px dashed #007bff;
+    box-sizing: border-box;
+}
+.park-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.park-info {
+    margin-bottom: 10px;
+}
+.ride-info {
+    margin-top: 10px;
 }
 .view-toggle {
     display: flex;
