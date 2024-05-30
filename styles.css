@@ -8,12 +8,12 @@ body {
     padding: 0;
 }
 .container {
-    max-width: 600px;
+    max-width: 900px; /* Increase the width of the container */
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 300px #007bff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); /* Adjusted shadow */
 }
 form {
     margin-bottom: 20px;
@@ -44,11 +44,21 @@ button:hover {
     margin-top: 20px;
 }
 .park-container {
-    border: 5px dashed #007bff;
+    border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 20px;
     background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for card effect */
+}
+.park-container h3 {
+    margin: 0 0 10px 0;
+}
+.info-content {
+    margin-top: 10px;
+}
+.info-content h4 {
+    margin: 10px 0 5px 0;
 }
 .view-toggle {
     display: flex;
