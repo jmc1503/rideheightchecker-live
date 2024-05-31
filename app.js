@@ -144,6 +144,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         const moreInfoButton = document.createElement('button');
                         moreInfoButton.textContent = 'More Information';
+                        moreInfoButton.style.position = 'absolute';
+                        moreInfoButton.style.bottom = '20px';
                         moreInfoButton.addEventListener('click', () => {
                             showRideInfoModal(park, filteredRides.filter(ride => ride['Theme Park'] === park));
                         });
@@ -164,18 +166,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Show ride info modal
-    function showRideInfoModal(themePark, rides) {
-        rideInfoContainer.innerHTML = `<h2>${themePark} Ride Information</h2>`;
+    function showRideInfoModal(park, rides) {
+        rideInfoContainer.innerHTML = `<h3>${park}</h3>`;
+        let heights = [...new Set(rides.map(ride => ride['Minimum Height']))];
+        heights.sort((a, b) => a - b);
 
-        rides.forEach(ride => {
-            const rideHeader = document.createElement('h4');
-            rideHeader.textContent = `${ride.Ride}`;
+        heights.forEach(height => {
+            const heightHeader = document.createElement('h4');
+            heightHeader.textContent = `Minimum Height: ${height} cm`;
+            rideInfoContainer.appendChild(heightHeader);
 
-            const minHeight = document.createElement('p');
-            minHeight.textContent = `Minimum Height: ${ride['Minimum Height']} cm`;
-
-            rideInfoContainer.appendChild(rideHeader);
-            rideInfoContainer.appendChild(minHeight);
+            const rideList = document.createElement('ul');
+            rides.filter(ride => ride['Minimum Height'] === height).forEach(ride => {
+                const listItem = document.createElement('li');
+                listItem.textContent = ride.Ride;
+                rideList.appendChild(listItem);
+            });
+            rideInfoContainer.appendChild(rideList);
         });
 
         modal.style.display = 'block';
