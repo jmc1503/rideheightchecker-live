@@ -13,7 +13,7 @@ body {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add slight shadow to the container */
+    box-shadow: 0 0 300px #007bff; /* Restore the original shadow */
 }
 form {
     margin-bottom: 20px;
@@ -47,7 +47,8 @@ button:hover {
     gap: 20px; /* Add gap between cards */
 }
 .park-card {
-    width: calc(25% - 20px); /* Set the width of each card to one-fourth of the container minus the gap */
+    position: relative;
+    flex: 1 1 calc(25% - 20px); /* Adjust to four cards per row */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -76,6 +77,11 @@ button:hover {
 #map {
     height: 400px;
     display: none;
+}
+.more-info-btn {
+    position: absolute;
+    bottom: 20px;
+    width: calc(100% - 40px);
 }
 
 /* Modal styles */
