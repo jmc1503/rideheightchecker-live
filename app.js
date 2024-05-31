@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const listViewBtn = document.getElementById('list-view-btn');
     const mapViewBtn = document.getElementById('map-view-btn');
     const mapElement = document.getElementById('map');
+    const viewToggle = document.querySelector('.view-toggle');
     const modal = document.getElementById('modal');
     const rideInfoContainer = document.getElementById('ride-info');
     const closeModal = document.getElementsByClassName('close')[0];
@@ -142,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         resultContainer.appendChild(parkCard);
                     });
 
+                    viewToggle.style.display = 'flex'; // Show view toggle buttons
                     resultContainer.style.display = 'flex';
                 } else {
                     resultContainer.textContent = 'No rides available for your height in this theme park.';
@@ -175,10 +177,17 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'block';
     }
 
-    // Hide ride info modal
-    closeModal.addEventListener('click', () => {
+    // Hide modal on close
+    closeModal.onclick = function() {
         modal.style.display = 'none';
-    });
+    }
+
+    // Hide modal when clicking outside of it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
 
     // Handle view toggling
     listViewBtn.addEventListener('click', () => {
