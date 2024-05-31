@@ -94,21 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         item['Maximum Height'] >= height;
                 });
 
-                filteredRides.sort((a, b) => {
-                    const aTotalRidesInPark = data.filter(ride => ride['Theme Park'] === a['Theme Park']).length;
-                    const aAvailableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === a['Theme Park']).length;
-                    const aPercentage = (aAvailableRidesInPark / aTotalRidesInPark) * 100;
-
-                    const bTotalRidesInPark = data.filter(ride => ride['Theme Park'] === b['Theme Park']).length;
-                    const bAvailableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === b['Theme Park']).length;
-                    const bPercentage = (bAvailableRidesInPark / bTotalRidesInPark) * 100;
-
-                    if (bPercentage === aPercentage) {
-                        return a['Theme Park'].localeCompare(b['Theme Park']);
-                    }
-
-                    return bPercentage - aPercentage;
-                });
+                filteredRides.sort((a, b) => a.Ride.localeCompare(b.Ride));
 
                 resultContainer.innerHTML = '';
 
@@ -133,23 +119,25 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkCard.classList.add('park-card');
 
                         const parkHeader = document.createElement('h3');
-                        parkHeader.classList.add('park-header');
-                        parkHeader.innerHTML = `${park}`;
+                        parkHeader.innerHTML = `${park} - ${percentage}% of available rides`;
                         parkCard.appendChild(parkHeader);
 
-                        const parkInfo = document.createElement('p');
-                        parkInfo.classList.add('park-info');
-                        parkInfo.innerHTML = `${percentage}% of available rides<br>${parkURL ? `<a href="${parkURL}" target="_blank">Buy Tickets</a>` : ''}`;
-                        parkCard.appendChild(parkInfo);
+                        if (parkURL) {
+                            const buyTicketsLink = document.createElement('a');
+                            buyTicketsLink.href = parkURL;
+                            buyTicketsLink.target = '_blank';
+                            buyTicketsLink.textContent = 'Buy Tickets';
+                            parkCard.appendChild(buyTicketsLink);
+                            parkCard.appendChild(document.createElement('br'));
+                        }
 
-                        const moreInfoButton = document.createElement('button');
-                        moreInfoButton.textContent = 'More Information';
-                        moreInfoButton.style.position = 'absolute';
-                        moreInfoButton.style.bottom = '20px';
-                        moreInfoButton.addEventListener('click', () => {
+                        const moreInfoBtn = document.createElement('button');
+                        moreInfoBtn.textContent = 'More Information';
+                        moreInfoBtn.classList.add('more-info-btn');
+                        moreInfoBtn.addEventListener('click', () => {
                             showRideInfoModal(park, filteredRides.filter(ride => ride['Theme Park'] === park));
                         });
-                        parkCard.appendChild(moreInfoButton);
+                        parkCard.appendChild(moreInfoBtn);
 
                         resultContainer.appendChild(parkCard);
                     });
@@ -165,7 +153,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     });
 
-    // Show ride info modal
     function showRideInfoModal(park, rides) {
         rideInfoContainer.innerHTML = `<h3>${park}</h3>`;
         let heights = [...new Set(rides.map(ride => ride['Minimum Height']))];
