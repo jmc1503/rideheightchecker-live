@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal');
     const rideInfoContainer = document.getElementById('ride-info');
     const closeModal = document.getElementsByClassName('close')[0];
-    const logo = document.getElementById('logo');
 
     let map;
     let markers = [];
@@ -247,14 +246,5 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
-    });
-
-    // Shrink logo on scroll
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            logo.style.height = '50px';
-        } else {
-            logo.style.height = '100px';
-        }
     });
 });
