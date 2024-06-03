@@ -32,28 +32,13 @@ header.shrink img {
     height: 100px; /* Adjust this value to make the logo smaller on scroll */
 }
 
-@media (max-width: 768px) {
-    header img {
-        height: 90px; /* Adjust this value for smaller screens */
-    }
-
-    header.shrink img {
-        height: 60px; /* Adjust this value to make the logo smaller on scroll */
-    }
-}
-
 .container {
-    max-width: 600px; /* Set a smaller default width */
-    margin: 200px auto 50px auto; /* Adjust margin to account for fixed header */
+    max-width: 1200px; /* Increase the width of the container */
+    margin: 250px auto 50px auto; /* Adjust margin to account for fixed header */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 300px #007bff; /* Add slight shadow to the container */
-    transition: max-width 0.3s ease; /* Add transition for smooth width change */
-}
-
-.container.results-shown {
-    max-width: 1200px; /* Expand width when results are shown */
 }
 
 form {
@@ -98,7 +83,7 @@ button:hover {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 15px #C023D2; /* Add bigger shadow to each card */
+    box-shadow: 0 4px 15px rgba(192, 35, 210, 0.4); /* Add slight shadow to each card */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -115,10 +100,6 @@ button:hover {
     margin-bottom: 10px;
 }
 
-.ride-info ul li {
-    font-weight: 300; /* Lighter font weight for ride names */
-}
-
 .more-info-btn {
     margin-top: auto; /* Push the button to the bottom of the card */
     background: none;
@@ -126,7 +107,7 @@ button:hover {
     color: #007bff;
     cursor: pointer;
     text-decoration: underline;
-    text-align: center;
+    font-size: 14px; /* Make text slightly smaller */
 }
 
 .more-info-btn:hover {
@@ -142,7 +123,7 @@ button:hover {
     cursor: pointer;
     margin-top: 10px;
     text-align: center;
-    font-size: 1.2em; /* Make text and emoji bigger */
+    font-size: 18px; /* Make text and emoji bigger */
 }
 
 .action-btn:hover {
@@ -208,6 +189,7 @@ button:hover {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 
 .form-field {
@@ -216,56 +198,50 @@ button:hover {
 }
 
 .find-rides-container {
-    flex: 1 1 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .find-rides-container button {
-    width: 25%;
+    flex: 1 1 49%;
     padding: 10px;
 }
 
-.reset-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
+.reset-btn {
+    background-color: #ccc;
+    color: #fff;
 }
 
-.reset-container button {
-    background: none;
-    border: none;
-    color: lightgrey;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-.reset-container button:hover {
-    color: grey;
-}
-
-.reset-container button svg {
-    margin-right: 5px;
+.reset-btn:hover {
+    background-color: #999;
 }
 
 @media (max-width: 768px) {
+    header img {
+        height: 100px; /* Adjust this value to make the logo smaller on mobile */
+    }
+
     .form-field {
         flex: 1 1 100%;
         margin-right: 0;
         margin-bottom: 10px;
     }
 
+    .find-rides-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .find-rides-container button {
         width: 100%;
+        margin-bottom: 10px;
     }
-    
-    .container {
-        margin: 150px auto 50px auto;
-        max-width: 100%;
+
+    .reset-btn {
+        margin-top: 0;
     }
-    
-    .park-card {
-        flex: 1 1 100%;
-    }
+}
+
+.results-shown .container {
+    max-width: 1200px;
 }
