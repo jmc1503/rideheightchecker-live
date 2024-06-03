@@ -44,7 +44,7 @@ header.shrink img {
 
 .container {
     max-width: 600px; /* Set a smaller default width */
-    margin: 250px auto 50px auto; /* Adjust margin to account for fixed header */
+    margin: 200px auto 50px auto; /* Adjust margin to account for fixed header */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -102,7 +102,6 @@ button:hover {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensure the Buy Tickets button is at the bottom */
 }
 
 .park-header {
@@ -112,21 +111,25 @@ button:hover {
 }
 
 .park-info {
+    font-weight: 300; /* Lighter font for % of rides available */
     margin-bottom: 10px;
 }
 
-.ride-info ul li {
-    font-weight: 300; /* Lighter font weight for ride names */
+.action-container {
+    margin-top: auto; /* Ensure buttons are at the bottom */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add gap between buttons */
 }
 
 .more-info-btn {
-    margin-top: auto; /* Push the button to the bottom of the card */
     background: none;
     border: none;
     color: #007bff;
     cursor: pointer;
     text-decoration: underline;
     text-align: center;
+    font-size: 0.9em; /* Slightly smaller text */
 }
 
 .more-info-btn:hover {
@@ -134,23 +137,17 @@ button:hover {
 }
 
 .action-btn {
-    width: 100%;
     background-color: #007bff;
     color: #fff;
     border: none;
     padding: 10px;
     cursor: pointer;
-    margin-top: 10px;
     text-align: center;
     font-size: 1.2em; /* Make text and emoji bigger */
 }
 
 .action-btn:hover {
     background-color: #0056b3;
-}
-
-.action-container {
-    margin-top: auto; /* Push the action buttons to the bottom */
 }
 
 .view-toggle {
@@ -223,7 +220,7 @@ button:hover {
     flex: 1 1 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    position: relative; /* Ensure reset button aligns correctly */
 }
 
 .find-rides-container button {
@@ -232,21 +229,10 @@ button:hover {
 }
 
 .reset-container {
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.reset-container .reset-btn {
-    background: none;
-    border: none;
-    color: lightgrey;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.reset-container .reset-btn:hover {
-    color: grey;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 @media (max-width: 768px) {
@@ -258,7 +244,7 @@ button:hover {
 
     .find-rides-container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .find-rides-container button {
@@ -266,20 +252,16 @@ button:hover {
     }
 
     .reset-container {
-        width: 100%;
-        justify-content: flex-end;
+        position: static;
+        transform: none;
+        margin-top: 10px;
     }
-
-    .reset-container .reset-btn {
-        width: 100%;
-        text-align: right;
-    }
-
+    
     .container {
         margin: 150px auto 50px auto;
-        max-width: 90%;
+        max-width: 90%; /* Slightly narrower container on mobile */
     }
-
+    
     .park-card {
         flex: 1 1 100%;
     }
