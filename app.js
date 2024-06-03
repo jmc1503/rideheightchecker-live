@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeModal = document.getElementsByClassName('close')[0];
     const header = document.querySelector('header');
     const logo = document.getElementById('logo');
+    const resetFiltersBtn = document.getElementById('reset-filters');
+    const container = document.querySelector('.container');
 
     let map;
     let markers = [];
@@ -145,12 +147,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkCard.classList.add('park-card');
 
                         const parkHeader = document.createElement('h3');
-                        parkHeader.innerHTML = `${park}`;
+                        parkHeader.innerHTML = `<b>${park}</b>`;
                         parkCard.appendChild(parkHeader);
 
-                        const parkPercentage = document.createElement('p');
-                        parkPercentage.innerHTML = `${percentage}% of available rides`;
-                        parkCard.appendChild(parkPercentage);
+                        const parkInfo = document.createElement('p');
+                        parkInfo.innerHTML = `${percentage}% of available rides`;
+                        parkCard.appendChild(parkInfo);
 
                         if (parkURL) {
                             const buyTicketsBtn = document.createElement('button');
@@ -173,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     viewToggle.style.display = 'flex'; // Show view toggle buttons
                     resultContainer.style.display = 'flex';
-                    document.querySelector('.container').classList.add('results-shown'); // Expand container
+                    container.classList.add('results-shown'); // Expand container width when results are shown
                 } else {
                     resultContainer.textContent = 'No rides available for your height in this theme park.';
                     resultContainer.style.display = 'block';
@@ -275,5 +277,15 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
+    });
+
+    // Handle reset filters
+    resetFiltersBtn.addEventListener('click', () => {
+        countrySelect.value = '';
+        themeParkSelect.innerHTML = '';
+        themeParkContainer.style.display = 'none';
+        resultContainer.innerHTML = '';
+        viewToggle.style.display = 'none';
+        container.classList.remove('results-shown'); // Collapse container width when results are cleared
     });
 });
