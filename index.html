@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Theme Park Finder Logo">
+        <img id="logo" src="logo.png" alt="Theme Park Finder Logo">
     </header>
     <div class="container">
         <form id="park-form" autocomplete="off">
@@ -32,7 +32,9 @@
             </div>
             <div class="find-rides-container">
                 <button type="submit">Find Rides</button>
-                <span class="reset-btn">Reset</span>
+                <div class="reset-container">
+                    <button type="button" class="reset-btn">Reset</button>
+                </div>
             </div>
         </form>
         <div class="view-toggle" style="display: none;">
