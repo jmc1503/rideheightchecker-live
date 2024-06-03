@@ -127,7 +127,6 @@ button:hover {
     cursor: pointer;
     text-decoration: underline;
     text-align: center;
-    font-size: smaller; /* Make text slightly smaller */
 }
 
 .more-info-btn:hover {
@@ -220,6 +219,7 @@ button:hover {
     flex: 1 1 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .find-rides-container button {
@@ -228,17 +228,20 @@ button:hover {
 }
 
 .reset-container {
+    margin-left: 10px;
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
+    align-items: center;
 }
 
-.reset-container span {
-    cursor: pointer;
+.reset-container .reset-btn {
+    background: none;
+    border: none;
     color: lightgrey;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
-.reset-container span:hover {
+.reset-container .reset-btn:hover {
     color: grey;
 }
 
@@ -251,26 +254,29 @@ button:hover {
 
     .find-rides-container {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .find-rides-container button {
         width: 100%;
     }
 
-    .find-rides-container .reset-btn {
-        margin-top: 10px;
+    .reset-container {
+        width: 100%;
+        justify-content: flex-end;
     }
 
-    #result-container {
-        flex-direction: column; /* Single column on mobile */
+    .reset-container .reset-btn {
+        width: 100%;
+        text-align: right;
     }
 
-    header img {
-        height: 90px; /* Smaller logo on mobile */
+    .container {
+        margin: 150px auto 50px auto;
+        max-width: 100%;
     }
 
-    header.shrink img {
-        height: 60px; /* Smaller logo on mobile scroll */
+    .park-card {
+        flex: 1 1 100%;
     }
 }
