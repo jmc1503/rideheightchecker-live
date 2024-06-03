@@ -21,11 +21,14 @@ header {
     display: flex;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
 }
 
 header img {
-    height: 200px; /* Adjust this value to make the logo bigger */
-    transition: height 0.3s ease;
+    width: 100%;
+    max-width: 400px; /* Adjust this value as needed */
+    height: auto;
+    transition: width 0.3s ease;
 }
 
 .container {
@@ -153,4 +156,17 @@ button:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .park-card {
+        flex: 1 1 calc(50% - 20px); /* Set the width of each card to half of the container minus the gap on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .park-card {
+        flex: 1 1 100%; /* Set the width of each card to 100% of the container on very small screens */
+    }
 }
