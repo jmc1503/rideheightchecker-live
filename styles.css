@@ -103,6 +103,11 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Ensure the Buy Tickets button is at the bottom */
+    min-height: 300px; /* Ensure cards have equal height */
+}
+
+.empty-card {
+    visibility: hidden; /* Hide empty cards but keep space for layout */
 }
 
 .park-header {
@@ -120,13 +125,13 @@ button:hover {
 }
 
 .more-info-btn {
-    margin-top: auto; /* Push the button to the bottom of the card */
     background: none;
     border: none;
     color: #007bff;
     cursor: pointer;
     text-decoration: underline;
     text-align: center;
+    font-size: 0.9em; /* Slightly smaller text */
 }
 
 .more-info-btn:hover {
@@ -151,6 +156,8 @@ button:hover {
 
 .action-container {
     margin-top: auto; /* Push the action buttons to the bottom */
+    display: flex;
+    flex-direction: column;
 }
 
 .view-toggle {
