@@ -10,9 +10,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal');
     const rideInfoContainer = document.getElementById('ride-info');
     const closeModal = document.getElementsByClassName('close')[0];
+    const header = document.querySelector('header');
+    const logo = document.getElementById('logo');
 
     let map;
     let markers = [];
+
+    // Shrink logo on scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('shrink');
+        } else {
+            header.classList.remove('shrink');
+        }
+    });
 
     // Fetch data from JSON file
     fetch('data.json')
@@ -95,7 +106,21 @@ document.addEventListener('DOMContentLoaded', function() {
                         item['Maximum Height'] >= height;
                 });
 
-                filteredRides.sort((a, b) => a.Ride.localeCompare(b.Ride));
+                filteredRides.sort((a, b) => {
+                    const aTotalRidesInPark = data.filter(ride => ride['Theme Park'] === a['Theme Park']).length;
+                    const aAvailableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === a['Theme Park']).length;
+                    const aPercentage = (aAvailableRidesInPark / aTotalRidesInPark) * 100;
+
+                    const bTotalRidesInPark = data.filter(ride => ride['Theme Park'] === b['Theme Park']).length;
+                    const bAvailableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === b['Theme Park']).length;
+                    const bPercentage = (bAvailableRidesInPark / bTotalRidesInPark) * 100;
+
+                    if (bPercentage === aPercentage) {
+                        return b.URL ? -1 : 1; // Prioritize results with a URL
+                    }
+
+                    return bPercentage - aPercentage;
+                });
 
                 resultContainer.innerHTML = '';
 
@@ -110,12 +135,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         return { park, percentage: parseInt(percentage), parkData, filteredRides };
                     });
 
-                    // Sort by percentage desc and then by park name asc, prioritizing those with URLs
-                    parksWithPercentage.sort((a, b) => {
-                        if (b.parkData.URL && !a.parkData.URL) return 1;
-                        if (!b.parkData.URL && a.parkData.URL) return -1;
-                        return b.percentage - a.percentage || a.park.localeCompare(b.park);
-                    });
+                    // Sort by percentage desc and then by park name asc
+                    parksWithPercentage.sort((a, b) => b.percentage - a.percentage || a.park.localeCompare(b.park));
 
                     parksWithPercentage.forEach(({ park, percentage, parkData, filteredRides }) => {
                         const parkURL = parkData.URL;
@@ -127,19 +148,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkHeader.innerHTML = `${park} - ${percentage}% of available rides`;
                         parkCard.appendChild(parkHeader);
 
-                        const parkImage = document.createElement('img');
-                        parkImage.src = parkData.Image;
-                        parkImage.alt = `${park} Image`;
-                        parkImage.classList.add('park-image');
-                        parkCard.appendChild(parkImage);
-
                         if (parkURL) {
-                            const buyTicketsLink = document.createElement('a');
-                            buyTicketsLink.href = parkURL;
-                            buyTicketsLink.target = '_blank';
-                            buyTicketsLink.classList.add('buy-tickets-btn');
-                            buyTicketsLink.innerHTML = 'Buy Tickets 🎟️';
-                            parkCard.appendChild(buyTicketsLink);
+                            const buyTicketsBtn = document.createElement('button');
+                            buyTicketsBtn.classList.add('action-btn');
+                            buyTicketsBtn.innerHTML = '🎟️ Buy Tickets';
+                            buyTicketsBtn.onclick = () => window.open(parkURL, '_blank');
+                            parkCard.appendChild(buyTicketsBtn);
                         }
 
                         const moreInfoBtn = document.createElement('div');
