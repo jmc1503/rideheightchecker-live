@@ -200,6 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
             rides.filter(ride => ride['Minimum Height'] === height).forEach(ride => {
                 const listItem = document.createElement('li');
                 listItem.textContent = ride.Ride;
+                listItem.style.fontWeight = 'lighter'; // Make ride names lighter
                 rideList.appendChild(listItem);
             });
             rideInfoContainer.appendChild(rideList);
