@@ -10,22 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal');
     const rideInfoContainer = document.getElementById('ride-info');
     const closeModal = document.getElementsByClassName('close')[0];
-    const header = document.querySelector('header');
-    const logo = document.getElementById('logo');
-    const resetFiltersBtn = document.getElementById('reset-filters');
     const container = document.querySelector('.container');
 
     let map;
     let markers = [];
-
-    // Shrink logo on scroll
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('shrink');
-        } else {
-            header.classList.remove('shrink');
-        }
-    });
 
     // Fetch data from JSON file
     fetch('data.json')
@@ -280,13 +268,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     });
 
-    // Handle reset filters
-    resetFiltersBtn.addEventListener('click', () => {
-        countrySelect.value = '';
-        themeParkSelect.innerHTML = '';
+    // Reset function
+    document.querySelector('.reset-btn').addEventListener('click', () => {
+        document.getElementById('park-form').reset();
         themeParkContainer.style.display = 'none';
         resultContainer.innerHTML = '';
         viewToggle.style.display = 'none';
-        container.classList.remove('results-shown'); // Collapse container width when results are cleared
+        container.classList.remove('results-shown'); // Collapse container width when results are hidden
     });
 });
