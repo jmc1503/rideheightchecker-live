@@ -19,7 +19,9 @@ header {
     left: 0;
     z-index: 1000;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -32,13 +34,84 @@ header.shrink img {
     height: 100px; /* Adjust this value to make the logo smaller on scroll */
 }
 
+header .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+header .menu a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+header .burger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #007bff;
+    margin: 4px;
+    transition: 0.3s;
+}
+
+header .burger.active div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+header .burger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+header .burger.active div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+header .menu.active {
+    display: flex;
+}
+
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
     header img {
         height: 90px; /* Adjust this value for smaller screens */
     }
 
     header.shrink img {
         height: 60px; /* Adjust this value to make the logo smaller on scroll */
+    }
+
+    header .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    header .burger {
+        margin-top: 10px;
+    }
+
+    header .menu a {
+        margin: 10px 0;
     }
 }
 
