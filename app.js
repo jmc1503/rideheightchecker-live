@@ -10,17 +10,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal');
     const rideInfoContainer = document.getElementById('ride-info');
     const closeModal = document.getElementsByClassName('close')[0];
-    const burgerMenu = document.getElementById('burger-menu');
-    const menu = document.getElementById('menu');
+    const resetBtn = document.querySelector('.reset-btn');
+    const parkForm = document.getElementById('park-form');
 
     let map;
     let markers = [];
-
-    // Toggle menu visibility on burger menu click
-    burgerMenu.addEventListener('click', () => {
-        menu.classList.toggle('active');
-        burgerMenu.classList.toggle('active');
-    });
 
     // Fetch data from JSON file
     fetch('data.json')
@@ -81,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Handle form submission
-    document.getElementById('park-form').addEventListener('submit', function(event) {
+    parkForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
         const height = parseInt(document.getElementById('height').value);
@@ -145,7 +139,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         return b.percentage - a.percentage;
                     });
 
-                    // Create cards
                     parksWithPercentage.forEach(({ park, percentage, parkData, filteredRides }) => {
                         const parkURL = parkData.URL;
 
@@ -156,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkHeader.innerHTML = `${park}`;
                         parkCard.appendChild(parkHeader);
 
-                        const parkInfo = document.createElement('div');
+                        const parkInfo = document.createElement('p');
                         parkInfo.classList.add('park-info');
                         parkInfo.innerHTML = `${percentage}% of available rides`;
                         parkCard.appendChild(parkInfo);
@@ -184,12 +177,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         resultContainer.appendChild(parkCard);
                     });
 
-                    // Ensure there are 4 cards in a row by adding empty cards if necessary
-                    const cardsInRow = 4;
-                    const totalCards = resultContainer.children.length;
-                    const emptyCardsNeeded = (cardsInRow - (totalCards % cardsInRow)) % cardsInRow;
-
-                    for (let i = 0; i < emptyCardsNeeded; i++) {
+                    // Ensure 4 cards per row with equal size
+                    const numCards = resultContainer.children.length;
+                    const numEmptyCards = (4 - (numCards % 4)) % 4;
+                    for (let i = 0; i < numEmptyCards; i++) {
                         const emptyCard = document.createElement('div');
                         emptyCard.classList.add('park-card', 'empty-card');
                         resultContainer.appendChild(emptyCard);
@@ -299,5 +290,14 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
+    });
+
+    // Handle reset button click
+    resetBtn.addEventListener('click', () => {
+        parkForm.reset();
+        themeParkContainer.style.display = 'none';
+        resultContainer.style.display = 'none';
+        viewToggle.style.display = 'none';
+        document.querySelector('.container').classList.remove('results-shown'); // Contract container
     });
 });
