@@ -25,11 +25,12 @@ header.shrink {
 
 #logo {
     width: 200px;
-    transition: all 0.3s ease;
 }
 
-header.shrink #logo {
-    width: 100px;
+@media (max-width: 768px) {
+    #logo {
+        width: 100px;
+    }
 }
 
 .container {
@@ -83,10 +84,12 @@ button:hover {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(192, 35, 210, 0.6); /* Increase shadow size and color */
+    box-shadow: 0 15px 15px rgba(192, 35, 210, 0.5); /* Add larger shadow to each card */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: space-between; /* Ensure the More Information button is at the bottom */
+    border: 1px solid #C023D2; /* Border color */
 }
 
 .park-header {
@@ -106,7 +109,8 @@ button:hover {
     color: #007bff;
     cursor: pointer;
     text-decoration: underline;
-    font-size: 14px; /* Slightly smaller text */
+    text-align: center;
+    font-size: 0.9em;
 }
 
 .more-info-btn:hover {
@@ -122,7 +126,7 @@ button:hover {
     cursor: pointer;
     margin-top: 10px;
     text-align: center;
-    font-size: 16px; /* Increase text size */
+    font-size: 1.2em; /* Increase the font size */
 }
 
 .action-btn:hover {
@@ -218,6 +222,6 @@ button:hover {
     }
 
     .park-card {
-        flex: 1 1 100%; /* Set the width to 100% for mobile view */
+        flex: 1 1 100%; /* Make cards full width on mobile */
     }
 }
