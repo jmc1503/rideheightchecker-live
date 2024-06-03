@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         item['Maximum Height'] >= height;
                 });
 
-                // Sort filtered rides by URL presence, percentage, and park name
                 filteredRides.sort((a, b) => {
                     const aTotalRidesInPark = data.filter(ride => ride['Theme Park'] === a['Theme Park']).length;
                     const aAvailableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === a['Theme Park']).length;
@@ -106,9 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const bPercentage = (bAvailableRidesInPark / bTotalRidesInPark) * 100;
 
                     if (bPercentage === aPercentage) {
-                        if (b.URL && !a.URL) return 1;
-                        if (!b.URL && a.URL) return -1;
-                        return a['Theme Park'].localeCompare(b['Theme Park']);
+                        return b.URL ? -1 : 1; // Prioritize results with a URL
                     }
 
                     return bPercentage - aPercentage;
@@ -127,15 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         return { park, percentage: parseInt(percentage), parkData, filteredRides };
                     });
 
-                    // Sort by percentage desc, then by URL presence, and then by park name asc
-                    parksWithPercentage.sort((a, b) => {
-                        if (a.percentage === b.percentage) {
-                            if (b.parkData.URL && !a.parkData.URL) return 1;
-                            if (!b.parkData.URL && a.parkData.URL) return -1;
-                            return a.park.localeCompare(b.park);
-                        }
-                        return b.percentage - a.percentage;
-                    });
+                    // Sort by percentage desc and then by park name asc
+                    parksWithPercentage.sort((a, b) => b.percentage - a.percentage || a.park.localeCompare(b.park));
 
                     parksWithPercentage.forEach(({ park, percentage, parkData, filteredRides }) => {
                         const parkURL = parkData.URL;
@@ -144,8 +134,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkCard.classList.add('park-card');
 
                         const parkHeader = document.createElement('h3');
-                        parkHeader.innerHTML = `${park} - ${percentage}% of available rides`;
+                        parkHeader.classList.add('park-header');
+                        parkHeader.textContent = park;
                         parkCard.appendChild(parkHeader);
+
+                        const parkInfo = document.createElement('p');
+                        parkInfo.classList.add('park-info');
+                        parkInfo.textContent = `${percentage}% of available rides`;
+                        parkCard.appendChild(parkInfo);
 
                         const actionContainer = document.createElement('div');
                         actionContainer.classList.add('action-container');
@@ -172,7 +168,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     viewToggle.style.display = 'flex'; // Show view toggle buttons
                     resultContainer.style.display = 'flex';
-                    document.querySelector('.container').classList.add('results-shown'); // Expand container
                 } else {
                     resultContainer.textContent = 'No rides available for your height in this theme park.';
                     resultContainer.style.display = 'block';
