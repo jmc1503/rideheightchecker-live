@@ -80,16 +80,13 @@ button:hover {
 
 .park-card {
     flex: 1 1 calc(25% - 20px); /* Set the width of each card to one-fourth of the container minus the gap */
-    max-width: calc(25% - 20px);
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add slight shadow to each card */
+    box-shadow: 0 4px 15px rgba(192, 35, 210, 0.6); /* Increase shadow size and color */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Ensure the More Information button is at the bottom */
-    border: 1px solid #C023D2; /* Border color */
 }
 
 .park-header {
@@ -103,13 +100,13 @@ button:hover {
 }
 
 .more-info-btn {
-    margin-top: 10px; /* Add margin to create space between buttons */
+    margin-top: auto; /* Push the button to the bottom of the card */
     background: none;
     border: none;
     color: #007bff;
     cursor: pointer;
     text-decoration: underline;
-    text-align: center; /* Center the button */
+    font-size: 14px; /* Slightly smaller text */
 }
 
 .more-info-btn:hover {
@@ -117,14 +114,15 @@ button:hover {
 }
 
 .action-btn {
+    width: 100%;
     background-color: #007bff;
     color: #fff;
     border: none;
     padding: 10px;
     cursor: pointer;
-    margin-top: auto; /* Align the button to the bottom */
+    margin-top: 10px;
     text-align: center;
-    font-size: 16px; /* Increase the font size */
+    font-size: 16px; /* Increase text size */
 }
 
 .action-btn:hover {
@@ -219,11 +217,7 @@ button:hover {
         width: 100%;
     }
 
-    #logo {
-        width: 100px; /* Scale down the logo on smaller devices */
-    }
-
-    header.shrink #logo {
-        width: 50px;
+    .park-card {
+        flex: 1 1 100%; /* Set the width to 100% for mobile view */
     }
 }
