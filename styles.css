@@ -1,4 +1,4 @@
-/* Apply Google Righteous font to all elements */
+/* Apply Righteous font to all elements */
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 * {
@@ -29,21 +29,31 @@ header img {
 }
 
 header.shrink img {
-    height: 100px; /* Shrink logo on scroll */
+    height: 100px; /* Adjust this value to make the logo smaller on scroll */
+}
+
+@media (max-width: 768px) {
+    header img {
+        height: 90px; /* Adjust this value for smaller screens */
+    }
+
+    header.shrink img {
+        height: 60px; /* Adjust this value to make the logo smaller on scroll */
+    }
 }
 
 .container {
-    max-width: 800px; /* Adjust this value for initial width */
+    max-width: 600px; /* Set a smaller default width */
     margin: 200px auto 50px auto; /* Adjust margin to account for fixed header */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add slight shadow to the container */
-    transition: max-width 0.3s ease; /* Transition for expanding container */
+    box-shadow: 0 0 300px #007bff; /* Add slight shadow to the container */
+    transition: max-width 0.3s ease; /* Add transition for smooth width change */
 }
 
-.results-shown .container {
-    max-width: 1200px; /* Expand container when results are shown */
+.container.results-shown {
+    max-width: 1200px; /* Expand width when results are shown */
 }
 
 form {
@@ -88,12 +98,11 @@ button:hover {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Add bigger shadow to each card */
+    box-shadow: 0 4px 15px #C023D2; /* Add bigger shadow to each card */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Ensure the More Information button is at the bottom */
-    border: 1px solid #C023D2; /* Border color */
 }
 
 .park-header {
@@ -106,6 +115,10 @@ button:hover {
     margin-bottom: 10px;
 }
 
+.ride-info ul li {
+    font-weight: 300; /* Lighter font weight for ride names */
+}
+
 .more-info-btn {
     margin-top: auto; /* Push the button to the bottom of the card */
     background: none;
@@ -113,6 +126,7 @@ button:hover {
     color: #007bff;
     cursor: pointer;
     text-decoration: underline;
+    text-align: center;
     font-size: smaller; /* Make text slightly smaller */
 }
 
@@ -129,7 +143,7 @@ button:hover {
     cursor: pointer;
     margin-top: 10px;
     text-align: center;
-    font-size: larger; /* Make text and emoji bigger */
+    font-size: 1.2em; /* Make text and emoji bigger */
 }
 
 .action-btn:hover {
@@ -206,8 +220,6 @@ button:hover {
     flex: 1 1 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
 }
 
 .find-rides-container button {
@@ -215,8 +227,18 @@ button:hover {
     padding: 10px;
 }
 
-.find-rides-container .reset-btn {
+.reset-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.reset-container span {
     cursor: pointer;
+    color: lightgrey;
+}
+
+.reset-container span:hover {
     color: grey;
 }
 
@@ -245,6 +267,10 @@ button:hover {
     }
 
     header img {
-        height: 100px; /* Smaller logo on mobile */
+        height: 90px; /* Smaller logo on mobile */
+    }
+
+    header.shrink img {
+        height: 60px; /* Smaller logo on mobile scroll */
     }
 }
