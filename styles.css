@@ -19,7 +19,7 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 header img {
-    height: 100px;
+    height: 200px;
     transition: height 0.3s ease;
 }
 .container {
