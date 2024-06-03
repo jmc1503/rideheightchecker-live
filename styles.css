@@ -1,4 +1,6 @@
-/* Apply Righteous font to all elements */
+/* Apply Google Righteous font to all elements */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 * {
     font-family: 'Righteous', sans-serif;
 }
@@ -10,32 +12,29 @@ body {
 }
 
 header {
-    text-align: center;
+    width: 100%;
+    background-color: transparent; /* Make header background transparent */
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 0;
     z-index: 1000;
-    background-color: transparent;
-    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header.shrink {
-    background-color: transparent;
+header img {
+    height: 200px; /* Adjust this value to make the logo bigger */
+    transition: height 0.3s ease;
 }
 
-#logo {
-    width: 200px;
-}
-
-@media (max-width: 768px) {
-    #logo {
-        width: 100px;
-    }
+header.shrink img {
+    height: 100px; /* Adjust this value to make the logo smaller on scroll */
 }
 
 .container {
-    max-width: 1200px;
-    margin: 100px auto 50px auto; /* Adjust top margin for header space */
+    max-width: 1200px; /* Increase the width of the container */
+    margin: 250px auto 50px auto; /* Adjust margin to account for fixed header */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
