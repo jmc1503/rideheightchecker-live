@@ -10,20 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal');
     const rideInfoContainer = document.getElementById('ride-info');
     const closeModal = document.getElementsByClassName('close')[0];
-    const header = document.querySelector('header');
-    const resetBtn = document.querySelector('.reset-btn');
 
     let map;
     let markers = [];
-
-    // Shrink logo on scroll
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('shrink');
-        } else {
-            header.classList.remove('shrink');
-        }
-    });
 
     // Fetch data from JSON file
     fetch('data.json')
@@ -34,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.json();
         })
         .then(data => {
-            console.log('Data fetched successfully:', data); // Log fetched data
             // Populate country dropdown
             const anyOption = document.createElement('option');
             anyOption.value = '';
@@ -42,8 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
             countrySelect.appendChild(anyOption);
 
             const countries = [...new Set(data.map(item => item.Country))];
-            console.log('Unique countries:', countries); // Log unique countries
-
             countries.forEach(country => {
                 const option = document.createElement('option');
                 option.value = country;
@@ -70,9 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fetch('data.json')
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Filtered data for selected country:', selectedCountry); // Log selected country
                     const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry);
-                    console.log('Filtered data:', filteredData); // Log filtered data
                     const themeParks = [...new Set(filteredData.map(item => item['Theme Park'] || 'Unknown'))];
                     themeParks.forEach(themePark => {
                         const option = document.createElement('option');
@@ -111,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         item['Maximum Height'] >= height;
                 });
 
+                // Sort filtered rides by URL presence, percentage, and park name
                 filteredRides.sort((a, b) => {
                     const aTotalRidesInPark = data.filter(ride => ride['Theme Park'] === a['Theme Park']).length;
                     const aAvailableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === a['Theme Park']).length;
@@ -121,7 +106,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     const bPercentage = (bAvailableRidesInPark / bTotalRidesInPark) * 100;
 
                     if (bPercentage === aPercentage) {
-                        return b.URL ? -1 : 1; // Prioritize results with a URL
+                        if (b.URL && !a.URL) return 1;
+                        if (!b.URL && a.URL) return -1;
+                        return a['Theme Park'].localeCompare(b['Theme Park']);
                     }
 
                     return bPercentage - aPercentage;
@@ -140,8 +127,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         return { park, percentage: parseInt(percentage), parkData, filteredRides };
                     });
 
-                    // Sort by percentage desc and then by park name asc
-                    parksWithPercentage.sort((a, b) => b.percentage - a.percentage || a.park.localeCompare(b.park));
+                    // Sort by percentage desc, then by URL presence, and then by park name asc
+                    parksWithPercentage.sort((a, b) => {
+                        if (a.percentage === b.percentage) {
+                            if (b.parkData.URL && !a.parkData.URL) return 1;
+                            if (!b.parkData.URL && a.parkData.URL) return -1;
+                            return a.park.localeCompare(b.park);
+                        }
+                        return b.percentage - a.percentage;
+                    });
 
                     parksWithPercentage.forEach(({ park, percentage, parkData, filteredRides }) => {
                         const parkURL = parkData.URL;
@@ -150,19 +144,18 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkCard.classList.add('park-card');
 
                         const parkHeader = document.createElement('h3');
-                        parkHeader.innerHTML = `${park}`;
+                        parkHeader.innerHTML = `${park} - ${percentage}% of available rides`;
                         parkCard.appendChild(parkHeader);
 
-                        const parkInfo = document.createElement('p');
-                        parkInfo.innerHTML = `${percentage}% of available rides`;
-                        parkCard.appendChild(parkInfo);
+                        const actionContainer = document.createElement('div');
+                        actionContainer.classList.add('action-container');
 
                         if (parkURL) {
                             const buyTicketsBtn = document.createElement('button');
                             buyTicketsBtn.classList.add('action-btn');
                             buyTicketsBtn.innerHTML = '🎟️ Buy Tickets';
                             buyTicketsBtn.onclick = () => window.open(parkURL, '_blank');
-                            parkCard.appendChild(buyTicketsBtn);
+                            actionContainer.appendChild(buyTicketsBtn);
                         }
 
                         const moreInfoBtn = document.createElement('div');
@@ -171,14 +164,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         moreInfoBtn.addEventListener('click', () => {
                             showRideInfoModal(park, filteredRides.filter(ride => ride['Theme Park'] === park));
                         });
-                        parkCard.appendChild(moreInfoBtn);
+                        actionContainer.appendChild(moreInfoBtn);
 
+                        parkCard.appendChild(actionContainer);
                         resultContainer.appendChild(parkCard);
                     });
 
                     viewToggle.style.display = 'flex'; // Show view toggle buttons
                     resultContainer.style.display = 'flex';
-                    document.querySelector('.container').classList.add('results-shown'); // Expand container when results are shown
+                    document.querySelector('.container').classList.add('results-shown'); // Expand container
                 } else {
                     resultContainer.textContent = 'No rides available for your height in this theme park.';
                     resultContainer.style.display = 'block';
@@ -280,15 +274,5 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
-    });
-
-    // Handle reset button click
-    resetBtn.addEventListener('click', () => {
-        document.getElementById('park-form').reset();
-        themeParkContainer.style.display = 'none';
-        resultContainer.innerHTML = '';
-        resultContainer.style.display = 'none';
-        viewToggle.style.display = 'none';
-        document.querySelector('.container').classList.remove('results-shown');
     });
 });
