@@ -44,7 +44,7 @@ header.shrink img {
 
 .container {
     max-width: 600px; /* Set a smaller default width */
-    margin: 200px auto 50px auto; /* Adjust margin to account for fixed header */
+    margin: 250px auto 50px auto; /* Adjust margin to account for fixed header */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -102,7 +102,7 @@ button:hover {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensure the More Information button is at the bottom */
+    justify-content: space-between; /* Ensure the Buy Tickets button is at the bottom */
 }
 
 .park-header {
@@ -147,6 +147,10 @@ button:hover {
 
 .action-btn:hover {
     background-color: #0056b3;
+}
+
+.action-container {
+    margin-top: auto; /* Push the action buttons to the bottom */
 }
 
 .view-toggle {
@@ -273,7 +277,7 @@ button:hover {
 
     .container {
         margin: 150px auto 50px auto;
-        max-width: 100%;
+        max-width: 90%;
     }
 
     .park-card {
