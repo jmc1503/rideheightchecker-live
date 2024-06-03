@@ -5,25 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theme Park Finder</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1969578899445338" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
 </head>
 <body>
-    <div class="logo-container">
-        <img src="logo.png" alt="Theme Park Finder Logo" class="logo">
-    </div>
+    <header>
+        <img id="logo" src="logo.png" alt="Theme Park Finder Logo">
+    </header>
     <div class="container">
         <form id="park-form" autocomplete="off">
-            <label for="height">Enter your height (in centimeters):</label>
-            <input type="number" id="height" name="height" required autocomplete="off">
-            <label for="country">Select your country:</label>
-            <select id="country" name="country" autocomplete="off"></select>
-            <div id="theme-park-container" style="display: none;">
-                <label for="theme-park">Select theme park:</label>
-                <select id="theme-park" name="theme-park" autocomplete="off"></select>
+            <div class="form-group">
+                <div class="form-field">
+                    <label for="height">Enter your height (in centimeters):</label>
+                    <input type="number" id="height" name="height" required autocomplete="off">
+                </div>
+                <div class="form-field">
+                    <label for="country">Select your country:</label>
+                    <select id="country" name="country" autocomplete="off"></select>
+                </div>
+                <div class="form-field" id="theme-park-container" style="display: none;">
+                    <label for="theme-park">Select theme park:</label>
+                    <select id="theme-park" name="theme-park" autocomplete="off"></select>
+                </div>
             </div>
-            <button type="submit">Find Rides</button>
+            <div class="find-rides-container">
+                <button type="submit">Find Rides</button>
+            </div>
         </form>
         <div class="view-toggle" style="display: none;">
             <button id="list-view-btn">List View</button>
@@ -40,5 +49,16 @@
         </div>
     </div>
     <script src="app.js"></script>
+    <script>
+        // Shrink header on scroll
+        window.onscroll = function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+        };
+    </script>
 </body>
 </html>
