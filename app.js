@@ -10,20 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal');
     const rideInfoContainer = document.getElementById('ride-info');
     const closeModal = document.getElementsByClassName('close')[0];
-    const header = document.querySelector('header');
-    const logo = document.getElementById('logo');
 
     let map;
     let markers = [];
-
-    // Shrink logo on scroll
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('shrink');
-        } else {
-            header.classList.remove('shrink');
-        }
-    });
 
     // Fetch data from JSON file
     fetch('data.json')
@@ -145,7 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkCard.classList.add('park-card');
 
                         const parkHeader = document.createElement('h3');
-                        parkHeader.classList.add('park-header');
                         parkHeader.innerHTML = `${park}`;
                         parkCard.appendChild(parkHeader);
 
