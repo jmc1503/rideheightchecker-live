@@ -34,17 +34,17 @@ header.shrink img {
 
 @media (max-width: 768px) {
     header img {
-        height: 100px; /* Adjust this value for smaller screens */
+        height: 90px; /* Adjust this value for smaller screens */
     }
 
     header.shrink img {
-        height: 75px; /* Adjust this value to make the logo smaller on scroll */
+        height: 60px; /* Adjust this value to make the logo smaller on scroll */
     }
 }
 
 .container {
     max-width: 600px; /* Set a smaller default width */
-    margin: 150px auto 50px auto; /* Adjust margin to account for fixed header */
+    margin: 200px auto 50px auto; /* Adjust margin to account for fixed header */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -113,6 +113,10 @@ button:hover {
 
 .park-info {
     margin-bottom: 10px;
+}
+
+.ride-info ul li {
+    font-weight: 300; /* Lighter font weight for ride names */
 }
 
 .more-info-btn {
@@ -220,6 +224,29 @@ button:hover {
 .find-rides-container button {
     width: 25%;
     padding: 10px;
+}
+
+.reset-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.reset-container button {
+    background: none;
+    border: none;
+    color: lightgrey;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.reset-container button:hover {
+    color: grey;
+}
+
+.reset-container button svg {
+    margin-right: 5px;
 }
 
 @media (max-width: 768px) {
