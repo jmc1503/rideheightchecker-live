@@ -106,7 +106,21 @@ document.addEventListener('DOMContentLoaded', function() {
                         item['Maximum Height'] >= height;
                 });
 
-                filteredRides.sort((a, b) => a.Ride.localeCompare(b.Ride));
+                filteredRides.sort((a, b) => {
+                    const aTotalRidesInPark = data.filter(ride => ride['Theme Park'] === a['Theme Park']).length;
+                    const aAvailableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === a['Theme Park']).length;
+                    const aPercentage = (aAvailableRidesInPark / aTotalRidesInPark) * 100;
+
+                    const bTotalRidesInPark = data.filter(ride => ride['Theme Park'] === b['Theme Park']).length;
+                    const bAvailableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === b['Theme Park']).length;
+                    const bPercentage = (bAvailableRidesInPark / bTotalRidesInPark) * 100;
+
+                    if (bPercentage === aPercentage) {
+                        return b.URL ? -1 : 1; // Prioritize results with a URL
+                    }
+
+                    return bPercentage - aPercentage;
+                });
 
                 resultContainer.innerHTML = '';
 
@@ -142,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             parkCard.appendChild(buyTicketsBtn);
                         }
 
-                        const moreInfoBtn = document.createElement('button');
+                        const moreInfoBtn = document.createElement('div');
                         moreInfoBtn.textContent = 'More Information';
                         moreInfoBtn.classList.add('more-info-btn');
                         moreInfoBtn.addEventListener('click', () => {
