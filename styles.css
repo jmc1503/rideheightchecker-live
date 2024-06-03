@@ -1,4 +1,4 @@
-/* Apply Google Righteous font to all elements */
+/* Apply Righteous font to all elements */
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 * {
@@ -32,13 +32,28 @@ header.shrink img {
     height: 100px; /* Adjust this value to make the logo smaller on scroll */
 }
 
+@media (max-width: 768px) {
+    header img {
+        height: 100px; /* Adjust this value for smaller screens */
+    }
+
+    header.shrink img {
+        height: 75px; /* Adjust this value to make the logo smaller on scroll */
+    }
+}
+
 .container {
-    max-width: 1200px; /* Increase the width of the container */
-    margin: 250px auto 50px auto; /* Adjust margin to account for fixed header */
+    max-width: 600px; /* Set a smaller default width */
+    margin: 150px auto 50px auto; /* Adjust margin to account for fixed header */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 300px #007bff; /* Add slight shadow to the container */
+    transition: max-width 0.3s ease; /* Add transition for smooth width change */
+}
+
+.container.results-shown {
+    max-width: 1200px; /* Expand width when results are shown */
 }
 
 form {
@@ -83,12 +98,11 @@ button:hover {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 15px 15px rgba(192, 35, 210, 0.5); /* Add larger shadow to each card */
+    box-shadow: 0 4px 15px #C023D2; /* Add bigger shadow to each card */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Ensure the More Information button is at the bottom */
-    border: 1px solid #C023D2; /* Border color */
 }
 
 .park-header {
@@ -109,7 +123,6 @@ button:hover {
     cursor: pointer;
     text-decoration: underline;
     text-align: center;
-    font-size: 0.9em;
 }
 
 .more-info-btn:hover {
@@ -125,7 +138,7 @@ button:hover {
     cursor: pointer;
     margin-top: 10px;
     text-align: center;
-    font-size: 1.2em; /* Increase the font size */
+    font-size: 1.2em; /* Make text and emoji bigger */
 }
 
 .action-btn:hover {
@@ -219,8 +232,13 @@ button:hover {
     .find-rides-container button {
         width: 100%;
     }
-
+    
+    .container {
+        margin: 150px auto 50px auto;
+        max-width: 100%;
+    }
+    
     .park-card {
-        flex: 1 1 100%; /* Make cards full width on mobile */
+        flex: 1 1 100%;
     }
 }
