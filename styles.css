@@ -1,62 +1,75 @@
-/* Apply Courier New font to all elements */
+/* Apply Righteous font to all elements */
 * {
-    font-family: 'Courier New', sans-serif;
+    font-family: 'Righteous', sans-serif;
 }
+
 body {
     background-color: #5de8d5;
     margin: 0;
     padding: 0;
 }
-.logo-container {
+
+header {
     text-align: center;
-    background-color: transparent;
-    padding: 20px 0;
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 1000;
+    background-color: transparent;
+    transition: all 0.3s ease;
 }
-.logo {
-    width: 200px; /* Adjust width for the logo */
-    transition: width 0.3s;
+
+header.shrink {
+    background-color: transparent;
 }
+
+#logo {
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+header.shrink #logo {
+    width: 100px;
+}
+
 .container {
-    max-width: 1200px; /* Increase the width of the container */
-    margin: 50px auto;
+    max-width: 1200px;
+    margin: 100px auto 50px auto; /* Adjust top margin for header space */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add slight shadow to the container */
+    box-shadow: 0 0 300px #007bff; /* Add slight shadow to the container */
 }
+
 form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 20px;
 }
-form label {
+
+label {
     display: block;
     margin-bottom: 5px;
-    flex: 1 1 100%;
 }
-form input, form select, form button {
-    width: 32%;
+
+input, select, button {
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
 }
-form button {
-    width: 15%; /* Smaller width for the button */
+
+button {
     background-color: #007bff;
     color: #fff;
     border: none;
     cursor: pointer;
 }
-form button:hover {
+
+button:hover {
     background-color: #0056b3;
 }
+
 #result-container {
     display: none;
     margin-top: 20px;
@@ -64,63 +77,69 @@ form button:hover {
     flex-wrap: wrap;
     gap: 20px; /* Add gap between cards */
 }
+
 .park-card {
     flex: 1 1 calc(25% - 20px); /* Set the width of each card to one-fourth of the container minus the gap */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a bigger shadow to each card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add slight shadow to each card */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Ensure the More Information button is at the bottom */
+    border: 1px solid #C023D2; /* Border color */
 }
+
 .park-header {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
 }
+
 .park-info {
     margin-bottom: 10px;
 }
-.park-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-.buy-tickets-btn {
-    display: block;
-    margin-top: 10px;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    text-decoration: none;
-}
-.buy-tickets-btn:hover {
-    background-color: #0056b3;
-}
+
 .more-info-btn {
-    margin-top: 10px;
+    margin-top: auto; /* Push the button to the bottom of the card */
+    background: none;
+    border: none;
     color: #007bff;
-    text-align: center;
     cursor: pointer;
     text-decoration: underline;
 }
+
 .more-info-btn:hover {
     color: #0056b3;
 }
+
+.action-btn {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.action-btn:hover {
+    background-color: #0056b3;
+}
+
 .view-toggle {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
     display: none; /* Hide view toggle buttons initially */
 }
+
 .view-toggle button {
     width: 45%;
 }
+
 #map {
     height: 400px;
     display: none;
@@ -130,7 +149,7 @@ form button:hover {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
@@ -139,6 +158,7 @@ form button:hover {
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
 }
+
 .modal-content {
     background-color: #fff;
     margin: 15% auto;
@@ -149,12 +169,14 @@ form button:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
     color: black;
@@ -162,13 +184,36 @@ form button:hover {
     cursor: pointer;
 }
 
-/* Responsive design */
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-field {
+    flex: 1 1 calc(33.33% - 10px);
+    margin-right: 10px;
+}
+
+.find-rides-container {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.find-rides-container button {
+    width: 25%;
+    padding: 10px;
+}
+
 @media (max-width: 768px) {
-    form input, form select, form button {
-        width: 100%;
+    .form-field {
+        flex: 1 1 100%;
+        margin-right: 0;
         margin-bottom: 10px;
     }
-    .park-card {
-        flex: 1 1 100%;
+
+    .find-rides-container button {
+        width: 100%;
     }
 }
