@@ -1,8 +1,6 @@
-/* Apply Google Righteous font to all elements */
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-
+/* Apply Righteous font to all elements */
 * {
-    font-family: 'Righteous', sans-serif;
+    font-family: 'Righteous', cursive;
 }
 
 body {
@@ -12,32 +10,33 @@ body {
 }
 
 header {
-    width: 100%;
-    background-color: transparent; /* Make header background transparent */
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
     padding: 10px 0;
+    background: transparent; /* Make the background transparent */
+    z-index: 1; /* Ensure header is above the general container but below the modal */
+    position: relative;
 }
 
 header img {
     width: 100%;
-    max-width: 400px; /* Adjust this value as needed */
+    max-width: 200px; /* Set maximum width for larger screens */
     height: auto;
-    transition: width 0.3s ease;
+    transition: max-width 0.3s ease-in-out;
+}
+
+header.shrink img {
+    max-width: 100px; /* Set smaller size when scrolling */
 }
 
 .container {
     max-width: 1200px; /* Increase the width of the container */
-    margin: 250px auto 50px auto; /* Adjust margin to account for fixed header */
+    margin: 50px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 300px #007bff; /* Add slight shadow to the container */
+    position: relative;
+    z-index: 0; /* Ensure container is below the modal */
 }
 
 form {
@@ -123,7 +122,7 @@ button:hover {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 2; /* Ensure modal is above everything else */
     left: 0;
     top: 0;
     width: 100%;
@@ -156,17 +155,4 @@ button:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
-}
-
-/* Responsive design adjustments */
-@media (max-width: 768px) {
-    .park-card {
-        flex: 1 1 calc(50% - 20px); /* Set the width of each card to half of the container minus the gap on smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .park-card {
-        flex: 1 1 100%; /* Set the width of each card to 100% of the container on very small screens */
-    }
 }
