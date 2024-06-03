@@ -1,4 +1,4 @@
-/* Apply Righteous font to all elements */
+/* Apply Google Righteous font to all elements */
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 * {
@@ -29,16 +29,21 @@ header img {
 }
 
 header.shrink img {
-    height: 100px; /* Adjust this value to make the logo smaller on scroll */
+    height: 100px; /* Shrink logo on scroll */
 }
 
 .container {
-    max-width: 1200px; /* Increase the width of the container */
-    margin: 250px auto 50px auto; /* Adjust margin to account for fixed header */
+    max-width: 800px; /* Adjust this value for initial width */
+    margin: 200px auto 50px auto; /* Adjust margin to account for fixed header */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 300px #007bff; /* Add slight shadow to the container */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add slight shadow to the container */
+    transition: max-width 0.3s ease; /* Transition for expanding container */
+}
+
+.results-shown .container {
+    max-width: 1200px; /* Expand container when results are shown */
 }
 
 form {
@@ -83,11 +88,12 @@ button:hover {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(192, 35, 210, 0.4); /* Add slight shadow to each card */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Add bigger shadow to each card */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Ensure the More Information button is at the bottom */
+    border: 1px solid #C023D2; /* Border color */
 }
 
 .park-header {
@@ -107,7 +113,7 @@ button:hover {
     color: #007bff;
     cursor: pointer;
     text-decoration: underline;
-    font-size: 14px; /* Make text slightly smaller */
+    font-size: smaller; /* Make text slightly smaller */
 }
 
 .more-info-btn:hover {
@@ -123,7 +129,7 @@ button:hover {
     cursor: pointer;
     margin-top: 10px;
     text-align: center;
-    font-size: 18px; /* Make text and emoji bigger */
+    font-size: larger; /* Make text and emoji bigger */
 }
 
 .action-btn:hover {
@@ -189,7 +195,6 @@ button:hover {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 10px;
 }
 
 .form-field {
@@ -198,29 +203,24 @@ button:hover {
 }
 
 .find-rides-container {
+    flex: 1 1 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .find-rides-container button {
-    flex: 1 1 49%;
+    width: 25%;
     padding: 10px;
 }
 
-.reset-btn {
-    background-color: #ccc;
-    color: #fff;
-}
-
-.reset-btn:hover {
-    background-color: #999;
+.find-rides-container .reset-btn {
+    cursor: pointer;
+    color: grey;
 }
 
 @media (max-width: 768px) {
-    header img {
-        height: 100px; /* Adjust this value to make the logo smaller on mobile */
-    }
-
     .form-field {
         flex: 1 1 100%;
         margin-right: 0;
@@ -229,19 +229,22 @@ button:hover {
 
     .find-rides-container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .find-rides-container button {
         width: 100%;
-        margin-bottom: 10px;
     }
 
-    .reset-btn {
-        margin-top: 0;
+    .find-rides-container .reset-btn {
+        margin-top: 10px;
     }
-}
 
-.results-shown .container {
-    max-width: 1200px;
+    #result-container {
+        flex-direction: column; /* Single column on mobile */
+    }
+
+    header img {
+        height: 100px; /* Smaller logo on mobile */
+    }
 }
