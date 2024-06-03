@@ -10,9 +10,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal');
     const rideInfoContainer = document.getElementById('ride-info');
     const closeModal = document.getElementsByClassName('close')[0];
+    const header = document.querySelector('header');
+    const logo = document.getElementById('logo');
 
     let map;
     let markers = [];
+
+    // Shrink logo on scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('shrink');
+        } else {
+            header.classList.remove('shrink');
+        }
+    });
 
     // Fetch data from JSON file
     fetch('data.json')
@@ -137,10 +148,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkHeader.innerHTML = `${park}`;
                         parkCard.appendChild(parkHeader);
 
-                        const parkInfo = document.createElement('p');
-                        parkInfo.textContent = `${percentage}% of available rides`;
-                        parkInfo.classList.add('park-info');
-                        parkCard.appendChild(parkInfo);
+                        const parkPercentage = document.createElement('p');
+                        parkPercentage.innerHTML = `${percentage}% of available rides`;
+                        parkCard.appendChild(parkPercentage);
 
                         if (parkURL) {
                             const buyTicketsBtn = document.createElement('button');
@@ -163,6 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     viewToggle.style.display = 'flex'; // Show view toggle buttons
                     resultContainer.style.display = 'flex';
+                    document.querySelector('.container').classList.add('results-shown'); // Expand container
                 } else {
                     resultContainer.textContent = 'No rides available for your height in this theme park.';
                     resultContainer.style.display = 'block';
