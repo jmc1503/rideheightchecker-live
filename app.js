@@ -138,8 +138,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkCard.appendChild(parkHeader);
 
                         const parkInfo = document.createElement('p');
+                        parkInfo.textContent = `${percentage}% of available rides`;
                         parkInfo.classList.add('park-info');
-                        parkInfo.innerHTML = `${percentage}% of available rides`;
                         parkCard.appendChild(parkInfo);
 
                         if (parkURL) {
