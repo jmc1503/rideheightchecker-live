@@ -135,12 +135,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkCard.appendChild(parkHeader);
 
                         if (parkURL) {
-                            const buyTicketsLink = document.createElement('a');
-                            buyTicketsLink.href = parkURL;
-                            buyTicketsLink.target = '_blank';
-                            buyTicketsLink.textContent = 'Buy Tickets';
-                            parkCard.appendChild(buyTicketsLink);
-                            parkCard.appendChild(document.createElement('br'));
+                            const buyTicketsBtn = document.createElement('button');
+                            buyTicketsBtn.classList.add('action-btn');
+                            buyTicketsBtn.innerHTML = '🎟️ Buy Tickets';
+                            buyTicketsBtn.onclick = () => window.open(parkURL, '_blank');
+                            parkCard.appendChild(buyTicketsBtn);
                         }
 
                         const moreInfoBtn = document.createElement('button');
