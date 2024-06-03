@@ -7,9 +7,24 @@ body {
     margin: 0;
     padding: 0;
 }
+header {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+header img {
+    height: 100px;
+    transition: height 0.3s ease;
+}
 .container {
     max-width: 1200px; /* Increase the width of the container */
-    margin: 50px auto;
+    margin: 150px auto 50px auto; /* Adjust margin to account for fixed header */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
