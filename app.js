@@ -145,8 +145,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkCard.classList.add('park-card');
 
                         const parkHeader = document.createElement('h3');
-                        parkHeader.innerHTML = `${park} - ${percentage}% of available rides`;
+                        parkHeader.classList.add('park-header');
+                        parkHeader.innerHTML = `${park}`;
                         parkCard.appendChild(parkHeader);
+
+                        const parkInfo = document.createElement('p');
+                        parkInfo.classList.add('park-info');
+                        parkInfo.innerHTML = `${percentage}% of available rides`;
+                        parkCard.appendChild(parkInfo);
 
                         if (parkURL) {
                             const buyTicketsBtn = document.createElement('button');
