@@ -1,5 +1,5 @@
-/* Apply Raleway font to all elements */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+/* Apply Righteous font to all elements */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 * {
     font-family: 'Raleway', sans-serif;
@@ -171,6 +171,21 @@ button:hover {
     width: 45%;
 }
 
+.view-toggle .toggle-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+}
+
+.view-toggle .toggle-btn.disabled {
+    background-color: grey;
+    cursor: default;
+}
+
 #map {
     height: 400px;
     display: none;
@@ -231,6 +246,7 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .find-rides-container button {
@@ -242,6 +258,8 @@ button:hover {
     margin-left: 10px;
     display: flex;
     align-items: center;
+    position: absolute;
+    right: 0;
 }
 
 .reset-container .reset-btn {
@@ -274,21 +292,26 @@ button:hover {
 
     .reset-container {
         width: 100%;
-        margin-left: 0;
         justify-content: flex-end;
+        position: static;
     }
 
     .reset-container .reset-btn {
-        font-size: 0.8em;
+        width: 100%;
+        text-align: right;
     }
 
-    .view-toggle {
-        display: flex;
-        flex-wrap: wrap;
+    .container {
+        margin: 150px auto 50px auto;
+        max-width: 90%;
+    }
+
+    .park-card {
+        flex: 1 1 100%;
     }
 
     .view-toggle button {
-        width: 45%;
-        margin-bottom: 10px;
+        width: 100%;
+        margin: 5px 0;
     }
 }
