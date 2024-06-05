@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fetch('data.json')
                 .then(response => response.json())
                 .then(data => {
-                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry && item.Active === 1);
+                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry);
                     const themeParks = [...new Set(filteredData.map(item => item['Theme Park'] || 'Unknown'))];
                     themeParks.forEach(themePark => {
                         const option = document.createElement('option');
@@ -237,74 +237,32 @@ document.addEventListener('DOMContentLoaded', function() {
     listViewBtn.addEventListener('click', () => {
         resultContainer.style.display = 'flex';
         mapElement.style.display = 'none';
-        listViewBtn.classList.add('disabled');
-        mapViewBtn.classList.remove('disabled');
+        listViewBtn.classList.add('active');
+        mapViewBtn.classList.remove('active');
     });
 
     mapViewBtn.addEventListener('click', () => {
         resultContainer.style.display = 'none';
         mapElement.style.display = 'block';
-        mapViewBtn.classList.add('disabled');
-        listViewBtn.classList.remove('disabled');
-
-        if (!map) {
-            map = L.map('map').setView([51.505, -0.09], 2); // Reset to default location
-
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '© OpenStreetMap'
-            }).addTo(map);
-        }
-
-        markers.forEach(marker => {
-            map.removeLayer(marker);
-        });
-
-        markers = [];
-
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                const height = parseInt(document.getElementById('height').value);
-                const country = countrySelect.value;
-                const themePark = themeParkSelect.value;
-
-                let filteredRides = data.filter(item => {
-                    return (country === '' || item.Country === country) &&
-                        (themePark === '' || item['Theme Park'] === themePark) &&
-                        item['Minimum Height'] <= height &&
-                        item['Maximum Height'] >= height;
-                });
-
-                const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
-
-                themeParks.forEach(park => {
-                    const parkData = data.find(item => item['Theme Park'] === park);
-                    if (parkData) {
-                        const totalRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
-                        const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
-                        const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
-
-                        const marker = L.marker([parkData.Latitude, parkData.Longitude]).addTo(map);
-                        marker.bindPopup(`<b>${park}</b><br>${parkData.Country}<br>${percentage}% of rides available`).openPopup();
-                        markers.push(marker);
-                    }
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
+        listViewBtn.classList.remove('active');
+        mapViewBtn.classList.add('active');
+        initMap();
     });
+
+    function initMap() {
+        map = new google.maps.Map(mapElement, {
+            center: { lat: 37.7749, lng: -122.4194 }, // Default to San Francisco, CA
+            zoom: 10,
+        });
+    }
 
     // Handle reset button click
     resetBtn.addEventListener('click', () => {
         parkForm.reset();
-        themeParkContainer.style.display = 'none';
+        resultContainer.innerHTML = '';
         resultContainer.style.display = 'none';
-        viewToggle.style.display = 'none';
-        document.querySelector('.container').classList.remove('results-shown'); // Contract container
-        mapElement.style.display = 'none'; // Hide map
-        listViewBtn.classList.remove('disabled');
-        mapViewBtn.classList.add('disabled');
+        mapElement.style.display = 'none';
+        listViewBtn.classList.add('active');
+        mapViewBtn.classList.remove('active');
     });
 });
