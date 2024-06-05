@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
         listViewBtn.classList.remove('disabled');
 
         if (!map) {
-            map = L.map('map').setView([51.505, -0.09], 2);
+            map = L.map('map').setView([51.505, -0.09], 2); // Reset to default location
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function() {
         viewToggle.style.display = 'none';
         document.querySelector('.container').classList.remove('results-shown'); // Contract container
         mapElement.style.display = 'none'; // Hide map
-        listViewBtn.classList.add('disabled');
-        mapViewBtn.classList.remove('disabled');
+        listViewBtn.classList.remove('disabled');
+        mapViewBtn.classList.add('disabled');
     });
 });
