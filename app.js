@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fetch('data.json')
                 .then(response => response.json())
                 .then(data => {
-                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry && item.Active == 1);
+                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry);
                     const themeParks = [...new Set(filteredData.map(item => item['Theme Park'] || 'Unknown'))];
                     themeParks.forEach(themePark => {
                         const option = document.createElement('option');
@@ -141,6 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     parksWithPercentage.forEach(({ park, percentage, parkData, filteredRides }) => {
                         const parkURL = parkData.URL;
+                        const parkImage = parkData.Image || '';
 
                         const parkCard = document.createElement('div');
                         parkCard.classList.add('park-card');
@@ -153,6 +154,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         parkInfo.classList.add('park-info');
                         parkInfo.innerHTML = `${percentage}% of available rides`;
                         parkCard.appendChild(parkInfo);
+
+                        if (parkImage) {
+                            const parkImgElement = document.createElement('img');
+                            parkImgElement.src = parkImage;
+                            parkImgElement.classList.add('park-image');
+                            parkCard.appendChild(parkImgElement);
+                        }
 
                         const actionContainer = document.createElement('div');
                         actionContainer.classList.add('action-container');
@@ -239,13 +247,17 @@ document.addEventListener('DOMContentLoaded', function() {
         mapElement.style.display = 'none';
         listViewBtn.classList.add('active');
         mapViewBtn.classList.remove('active');
+        listViewBtn.classList.remove('inactive');
+        mapViewBtn.classList.add('inactive');
     });
 
     mapViewBtn.addEventListener('click', () => {
         resultContainer.style.display = 'none';
         mapElement.style.display = 'block';
-        listViewBtn.classList.remove('active');
         mapViewBtn.classList.add('active');
+        listViewBtn.classList.remove('active');
+        mapViewBtn.classList.remove('inactive');
+        listViewBtn.classList.add('inactive');
 
         if (!map) {
             map = L.map('map').setView([51.505, -0.09], 2);
@@ -303,12 +315,9 @@ document.addEventListener('DOMContentLoaded', function() {
         resultContainer.style.display = 'none';
         viewToggle.style.display = 'none';
         document.querySelector('.container').classList.remove('results-shown'); // Contract container
-        mapElement.style.display = 'none';
+
         if (map) {
-            markers.forEach(marker => {
-                map.removeLayer(marker);
-            });
-            markers = [];
+            mapElement.style.display = 'none';
         }
     });
 });
