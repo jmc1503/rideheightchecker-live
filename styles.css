@@ -1,5 +1,5 @@
 /* Apply Raleway font to all elements */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 * {
     font-family: 'Raleway', sans-serif;
@@ -162,24 +162,28 @@ button:hover {
 
 .view-toggle {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10px;
     margin-top: 20px;
     display: none; /* Hide view toggle buttons initially */
-    gap: 10px;
 }
 
 .view-toggle button {
-    width: 45%;
+    flex: 1;
     padding: 10px;
-}
-
-.view-toggle .active {
     background-color: #007bff;
     color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.view-toggle button:not(.active) {
-    background-color: #ccc;
+.view-toggle button.active {
+    background-color: #0056b3;
+}
+
+.view-toggle button.inactive {
+    background-color: #cccccc;
 }
 
 #map {
