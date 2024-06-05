@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fetch('data.json')
                 .then(response => response.json())
                 .then(data => {
-                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry);
+                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry && item.Active === 1);
                     const themeParks = [...new Set(filteredData.map(item => item['Theme Park'] || 'Unknown'))];
                     themeParks.forEach(themePark => {
                         const option = document.createElement('option');
@@ -298,6 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
         themeParkContainer.style.display = 'none';
         resultContainer.style.display = 'none';
         viewToggle.style.display = 'none';
+        mapElement.style.display = 'none';
         document.querySelector('.container').classList.remove('results-shown'); // Contract container
     });
 });
