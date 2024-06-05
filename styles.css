@@ -168,7 +168,14 @@ button:hover {
 }
 
 .view-toggle button {
-    width: 45%;
+    width: 20%; /* Make buttons narrower */
+    padding: 10px; /* Add padding */
+    cursor: pointer;
+}
+
+.view-toggle button.disabled {
+    background-color: #ccc; /* Greyed out color */
+    cursor: not-allowed; /* Disable pointer events */
 }
 
 #map {
@@ -231,7 +238,6 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 .find-rides-container button {
@@ -240,8 +246,7 @@ button:hover {
 }
 
 .reset-container {
-    position: absolute;
-    right: 0;
+    margin-left: 10px;
     display: flex;
     align-items: center;
 }
@@ -252,7 +257,6 @@ button:hover {
     color: lightgrey;
     cursor: pointer;
     text-decoration: underline;
-    font-size: 0.9em;
 }
 
 .reset-container .reset-btn:hover {
@@ -278,8 +282,6 @@ button:hover {
     .reset-container {
         width: 100%;
         justify-content: flex-end;
-        position: static;
-        margin-top: 10px;
     }
 
     .reset-container .reset-btn {
