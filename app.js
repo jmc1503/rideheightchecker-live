@@ -237,11 +237,15 @@ document.addEventListener('DOMContentLoaded', function() {
     listViewBtn.addEventListener('click', () => {
         resultContainer.style.display = 'flex';
         mapElement.style.display = 'none';
+        listViewBtn.classList.add('disabled');
+        mapViewBtn.classList.remove('disabled');
     });
 
     mapViewBtn.addEventListener('click', () => {
         resultContainer.style.display = 'none';
         mapElement.style.display = 'block';
+        mapViewBtn.classList.add('disabled');
+        listViewBtn.classList.remove('disabled');
 
         if (!map) {
             map = L.map('map').setView([51.505, -0.09], 2);
@@ -298,7 +302,9 @@ document.addEventListener('DOMContentLoaded', function() {
         themeParkContainer.style.display = 'none';
         resultContainer.style.display = 'none';
         viewToggle.style.display = 'none';
-        mapElement.style.display = 'none';
         document.querySelector('.container').classList.remove('results-shown'); // Contract container
+        mapElement.style.display = 'none'; // Hide map
+        listViewBtn.classList.add('disabled');
+        mapViewBtn.classList.remove('disabled');
     });
 });
