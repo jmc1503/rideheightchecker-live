@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fetch('data.json')
                 .then(response => response.json())
                 .then(data => {
-                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry && item.Active === 1);
+                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry && item.Active == 1);
                     const themeParks = [...new Set(filteredData.map(item => item['Theme Park'] || 'Unknown'))];
                     themeParks.forEach(themePark => {
                         const option = document.createElement('option');
@@ -237,18 +237,18 @@ document.addEventListener('DOMContentLoaded', function() {
     listViewBtn.addEventListener('click', () => {
         resultContainer.style.display = 'flex';
         mapElement.style.display = 'none';
-        listViewBtn.classList.add('disabled');
-        mapViewBtn.classList.remove('disabled');
+        listViewBtn.classList.add('active');
+        mapViewBtn.classList.remove('active');
     });
 
     mapViewBtn.addEventListener('click', () => {
         resultContainer.style.display = 'none';
         mapElement.style.display = 'block';
-        mapViewBtn.classList.add('disabled');
-        listViewBtn.classList.remove('disabled');
+        listViewBtn.classList.remove('active');
+        mapViewBtn.classList.add('active');
 
         if (!map) {
-            map = L.map('map').setView([51.505, -0.09], 2); // Reset to default location
+            map = L.map('map').setView([51.505, -0.09], 2);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
@@ -303,8 +303,12 @@ document.addEventListener('DOMContentLoaded', function() {
         resultContainer.style.display = 'none';
         viewToggle.style.display = 'none';
         document.querySelector('.container').classList.remove('results-shown'); // Contract container
-        mapElement.style.display = 'none'; // Hide map
-        listViewBtn.classList.remove('disabled');
-        mapViewBtn.classList.add('disabled');
+        mapElement.style.display = 'none';
+        if (map) {
+            markers.forEach(marker => {
+                map.removeLayer(marker);
+            });
+            markers = [];
+        }
     });
 });
