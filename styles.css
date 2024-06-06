@@ -95,7 +95,7 @@ button:hover {
 
 .park-card {
     flex: 1 1 calc(25% - 20px); /* Set the width of each card to one-fourth of the container minus the gap */
-    padding: 10px; /* Reduced padding */
+    padding: 10px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 15px #C023D2; /* Add bigger shadow to each card */
@@ -104,7 +104,6 @@ button:hover {
     flex-direction: column;
     justify-content: space-between; /* Ensure the Buy Tickets button is at the bottom */
     min-height: 500px; /* Ensure cards have equal height */
-    max-height: 500px; /* Max height for the cards */
 }
 
 .empty-card {
@@ -119,16 +118,13 @@ button:hover {
 
 .park-info {
     margin-bottom: 10px;
-    margin-top: auto;
 }
 
 .park-image {
-    width: 100%;
-    max-height: 200px; /* Set a max height for the images */
-    border: 5px solid #ccc; /* Grey border */
-    object-fit: contain; /* Ensure the image fits within the given space */
-    margin: 10px 0;
-    align-self: center;
+    width: 256px;
+    height: 176.656px;
+    margin: 10px auto;
+    border: 5px solid #ccc;
 }
 
 .ride-info ul li {
