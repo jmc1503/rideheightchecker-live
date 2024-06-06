@@ -104,6 +104,7 @@ button:hover {
     flex-direction: column;
     justify-content: space-between; /* Ensure the Buy Tickets button is at the bottom */
     min-height: 300px; /* Ensure cards have equal height */
+    max-height: 300px; /* Ensure cards have equal height */
 }
 
 .empty-card {
@@ -122,6 +123,9 @@ button:hover {
 
 .park-image {
     width: 100%;
+    height: auto;
+    max-height: 150px; /* Ensure image height is consistent */
+    object-fit: cover; /* Cover the space without distorting the image */
     margin: 10px 0;
 }
 
