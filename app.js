@@ -18,7 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fetch data from JSON file
     fetch('data.json')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
             // Populate country dropdown
             const anyOption = document.createElement('option');
@@ -34,7 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 countrySelect.appendChild(option);
             });
         })
-        .catch(error => console.error('Error fetching data:', error));
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
 
     // Handle country change event
     countrySelect.addEventListener('change', () => {
@@ -46,12 +53,12 @@ document.addEventListener('DOMContentLoaded', function() {
         themeParkSelect.appendChild(anyOption);
 
         if (selectedCountry === '') {
-            themeParkContainer.style.display = 'none';
+            themeParkContainer.style.display = 'none'; // Hide theme park container
         } else {
             fetch('data.json')
                 .then(response => response.json())
                 .then(data => {
-                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry);
+                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry && item.Active === 1);
                     const themeParks = [...new Set(filteredData.map(item => item['Theme Park'] || 'Unknown'))];
                     themeParks.forEach(themePark => {
                         const option = document.createElement('option');
@@ -59,9 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         option.textContent = themePark;
                         themeParkSelect.appendChild(option);
                     });
-                    themeParkContainer.style.display = 'block';
+                    themeParkContainer.style.display = 'block'; // Show theme park container
                 })
-                .catch(error => console.error('Error fetching data:', error));
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
         }
     });
 
@@ -74,7 +83,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const themePark = themeParkSelect.value;
 
         fetch('data.json')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 let filteredRides = data.filter(item => {
                     return (country === '' || item.Country === country) &&
@@ -188,7 +202,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     resultContainer.style.display = 'block';
                 }
             })
-            .catch(error => console.error('Error fetching data:', error));
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
     });
 
     function showRideInfoModal(park, rides) {
@@ -208,14 +224,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 rideList.appendChild(listItem);
             });
             rideInfoContainer.appendChild(rideList);
-        });
-
-        // Sort ride list by name
-        const sortedRideList = rideInfoContainer.querySelectorAll('ul');
-        sortedRideList.forEach(list => {
-            Array.from(list.children)
-                .sort((a, b) => a.textContent.localeCompare(b.textContent))
-                .forEach(node => list.appendChild(node));
         });
 
         modal.style.display = 'block';
@@ -295,7 +303,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
             })
-            .catch(error => console.error('Error fetching data:', error));
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
     });
 
     // Handle reset button click
