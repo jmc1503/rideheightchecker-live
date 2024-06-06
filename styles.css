@@ -88,14 +88,13 @@ button:hover {
 #result-container {
     display: none;
     margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
     gap: 20px; /* Add gap between cards */
 }
 
 .park-card {
-    flex: 1 1 calc(25% - 20px); /* Set the width of each card to one-fourth of the container minus the gap */
-    padding: 10px; /* Reduce padding */
+    padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 15px #C023D2; /* Add bigger shadow to each card */
@@ -103,8 +102,8 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Ensure the Buy Tickets button is at the bottom */
-    min-height: 400px; /* Ensure cards have equal height */
-    text-align: center; /* Center-align text elements */
+    max-height: 500px; /* Ensure cards have equal height */
+    text-align: center; /* Center-align text */
 }
 
 .empty-card {
@@ -123,10 +122,10 @@ button:hover {
 
 .park-image {
     width: 256px;
-    height: 176.656px; /* Maintain aspect ratio of Bear Grylls Adventure image */
+    height: 176.656px;
     object-fit: cover;
-    border: 5px solid #ccc; /* Add border */
-    margin: 10px auto; /* Reduce margin around the image and center it */
+    margin: 10px auto; /* Center the image */
+    border: 5px solid #ccc; /* Add border to image */
 }
 
 .ride-info ul li {
@@ -171,13 +170,14 @@ button:hover {
 
 .view-toggle {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 20px;
     display: none; /* Hide view toggle buttons initially */
 }
 
 .view-toggle button {
-    width: 45%;
+    width: 100px;
+    margin: 0 10px; /* Add small gap between buttons */
     padding: 10px;
 }
 
@@ -309,6 +309,11 @@ button:hover {
 
     .park-card {
         flex: 1 1 100%;
+    }
+
+    .view-toggle {
+        flex-direction: column;
+        align-items: center;
     }
 
     .view-toggle button {
