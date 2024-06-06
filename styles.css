@@ -104,6 +104,7 @@ button:hover {
     flex-direction: column;
     justify-content: space-between; /* Ensure the Buy Tickets button is at the bottom */
     min-height: 400px; /* Ensure cards have equal height */
+    text-align: center; /* Center-align text elements */
 }
 
 .empty-card {
@@ -121,11 +122,11 @@ button:hover {
 }
 
 .park-image {
-    width: 100%;
+    width: 256px;
     height: 176.656px; /* Maintain aspect ratio of Bear Grylls Adventure image */
     object-fit: cover;
     border: 5px solid #ccc; /* Add border */
-    margin: 10px 0; /* Reduce margin around the image */
+    margin: 10px auto; /* Reduce margin around the image and center it */
 }
 
 .ride-info ul li {
