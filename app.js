@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fetch('data.json')
                 .then(response => response.json())
                 .then(data => {
-                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry);
+                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry && item.Active === 1);
                     const themeParks = [...new Set(filteredData.map(item => item['Theme Park'] || 'Unknown'))];
                     themeParks.forEach(themePark => {
                         const option = document.createElement('option');
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
 
                     viewToggle.style.display = 'flex'; // Show view toggle buttons
-                    resultContainer.style.display = 'flex';
+                    resultContainer.style.display = 'grid';
                     document.querySelector('.container').classList.add('results-shown'); // Expand container
                 } else {
                     resultContainer.textContent = 'No rides available for your height in this theme park.';
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle view toggling
     listViewBtn.addEventListener('click', () => {
-        resultContainer.style.display = 'flex';
+        resultContainer.style.display = 'grid';
         mapElement.style.display = 'none';
         listViewBtn.classList.add('active');
         mapViewBtn.classList.remove('active');
