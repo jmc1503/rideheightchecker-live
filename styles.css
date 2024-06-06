@@ -43,7 +43,7 @@ header.shrink img {
 }
 
 .container {
-    max-width: 600px; /* Set a smaller default width */
+    max-width: 1400px; /* Set a larger default width */
     margin: 250px auto 50px auto; /* Adjust margin to account for fixed header */
     padding: 20px;
     background-color: #fff;
@@ -53,7 +53,7 @@ header.shrink img {
 }
 
 .container.results-shown {
-    max-width: 1200px; /* Expand width when results are shown */
+    max-width: 1400px; /* Expand width when results are shown */
 }
 
 form {
@@ -89,7 +89,7 @@ button:hover {
     display: none;
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px; /* Add gap between cards */
 }
 
@@ -102,8 +102,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Ensure the Buy Tickets button is at the bottom */
-    max-height: 500px; /* Ensure cards have equal height */
-    text-align: center; /* Center-align text */
+    min-height: 500px; /* Ensure cards have equal height */
 }
 
 .empty-card {
@@ -114,18 +113,20 @@ button:hover {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
+    text-align: center; /* Center align the park name */
 }
 
 .park-info {
     margin-bottom: 10px;
+    text-align: center; /* Center align the % of rides */
 }
 
 .park-image {
     width: 256px;
-    height: 176.656px;
-    object-fit: cover;
-    margin: 10px auto; /* Center the image */
-    border: 5px solid #ccc; /* Add border to image */
+    height: 176px;
+    margin: 10px auto;
+    border: 5px solid #ccc;
+    display: block;
 }
 
 .ride-info ul li {
@@ -170,14 +171,13 @@ button:hover {
 
 .view-toggle {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 20px;
     display: none; /* Hide view toggle buttons initially */
 }
 
 .view-toggle button {
-    width: 100px;
-    margin: 0 10px; /* Add small gap between buttons */
+    width: 45%;
     padding: 10px;
 }
 
@@ -311,13 +311,12 @@ button:hover {
         flex: 1 1 100%;
     }
 
-    .view-toggle {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .view-toggle button {
         width: 100%;
         margin-bottom: 10px;
+    }
+
+    #result-container {
+        grid-template-columns: 1fr; /* Ensure a single column on mobile */
     }
 }
