@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fetch('data.json')
                 .then(response => response.json())
                 .then(data => {
-                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry && item.Active === 1);
+                    const filteredData = selectedCountry === '' ? data : data.filter(item => item.Country === selectedCountry);
                     const themeParks = [...new Set(filteredData.map(item => item['Theme Park'] || 'Unknown'))];
                     themeParks.forEach(themePark => {
                         const option = document.createElement('option');
@@ -148,11 +148,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         const parkHeader = document.createElement('h3');
                         parkHeader.innerHTML = `${park}`;
+                        parkHeader.style.textAlign = 'center'; // Center the park name
+                        parkHeader.style.fontWeight = 'bold'; // Make the park name bold
                         parkCard.appendChild(parkHeader);
 
                         const parkInfo = document.createElement('p');
                         parkInfo.classList.add('park-info');
                         parkInfo.innerHTML = `${percentage}% of available rides`;
+                        parkInfo.style.textAlign = 'center'; // Center the percentage text
                         parkCard.appendChild(parkInfo);
 
                         if (parkImage) {
@@ -164,6 +167,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         const actionContainer = document.createElement('div');
                         actionContainer.classList.add('action-container');
+
+                        const accommodationBtn = document.createElement('button');
+                        accommodationBtn.classList.add('accommodation-btn');
+                        accommodationBtn.innerHTML = 'Find Nearby Accommodation';
+                        accommodationBtn.onclick = (event) => handleAccommodationBtnClick(event, parkData);
+                        actionContainer.appendChild(accommodationBtn);
 
                         if (parkURL) {
                             const buyTicketsBtn = document.createElement('button');
@@ -195,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
 
                     viewToggle.style.display = 'flex'; // Show view toggle buttons
-                    resultContainer.style.display = 'grid';
+                    resultContainer.style.display = 'flex';
                     document.querySelector('.container').classList.add('results-shown'); // Expand container
                 } else {
                     resultContainer.textContent = 'No rides available for your height in this theme park.';
@@ -243,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle view toggling
     listViewBtn.addEventListener('click', () => {
-        resultContainer.style.display = 'grid';
+        resultContainer.style.display = 'flex';
         mapElement.style.display = 'none';
         listViewBtn.classList.add('active');
         mapViewBtn.classList.remove('active');
@@ -320,4 +329,21 @@ document.addEventListener('DOMContentLoaded', function() {
             mapElement.style.display = 'none';
         }
     });
+
+    // Function to create Booking.com search URL
+    function createBookingUrl(lat, lon) {
+        return `https://www.booking.com/searchresults.html?ss=&latitude=${lat}&longitude=${lon}&radius=5`;
+    }
+
+    // Function to handle button click for finding nearby accommodation
+    function handleAccommodationBtnClick(event, parkData) {
+        const lat = parkData.Latitude;
+        const lon = parkData.Longitude;
+        if (lat && lon) {
+            const url = createBookingUrl(lat, lon);
+            window.open(url, '_blank');
+        } else {
+            alert("Coordinates not available for this theme park.");
+        }
+    }
 });
