@@ -1,8 +1,8 @@
-/* Apply Raleway font to all elements */
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+/* Apply Righteous font to all elements */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 * {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Righteous', sans-serif;
 }
 
 body {
@@ -43,7 +43,7 @@ header.shrink img {
 }
 
 .container {
-    max-width: 1400px; /* Set a larger default width */
+    max-width: 600px; /* Set a smaller default width */
     margin: 250px auto 50px auto; /* Adjust margin to account for fixed header */
     padding: 20px;
     background-color: #fff;
@@ -66,7 +66,7 @@ label {
 }
 
 input, select, button {
-    width: 100%;
+    width: 40%; /* Adjust width */
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -75,6 +75,7 @@ input, select, button {
 }
 
 button {
+    width: 15%; /* Adjust width */
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -88,12 +89,13 @@ button:hover {
 #result-container {
     display: none;
     margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px; /* Add gap between cards */
 }
 
 .park-card {
+    flex: 1 1 calc(25% - 20px); /* Set the width of each card to one-fourth of the container minus the gap */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -102,7 +104,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Ensure the Buy Tickets button is at the bottom */
-    min-height: 500px; /* Ensure cards have equal height */
+    min-height: 300px; /* Ensure cards have equal height */
 }
 
 .empty-card {
@@ -113,19 +115,19 @@ button:hover {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
-    text-align: center; /* Center align the park name */
+    text-align: center; /* Center align */
 }
 
 .park-info {
     margin-bottom: 10px;
-    text-align: center; /* Center align the % of rides */
+    text-align: center; /* Center align */
 }
 
 .park-image {
     width: 256px;
-    height: 176px;
-    margin: 10px auto;
+    height: 176.656px;
     border: 5px solid #ccc;
+    margin: 0 auto; /* Center the image */
     display: block;
 }
 
@@ -167,6 +169,7 @@ button:hover {
     margin-top: auto; /* Push the action buttons to the bottom */
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center align */
 }
 
 .view-toggle {
@@ -178,17 +181,6 @@ button:hover {
 
 .view-toggle button {
     width: 45%;
-    padding: 10px;
-}
-
-.view-toggle button.active {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.view-toggle button.inactive {
-    background-color: #ccc;
-    color: #666;
 }
 
 #map {
@@ -254,7 +246,7 @@ button:hover {
 }
 
 .find-rides-container button {
-    width: 25%;
+    width: 15%; /* Adjust width */
     padding: 10px;
 }
 
@@ -309,14 +301,5 @@ button:hover {
 
     .park-card {
         flex: 1 1 100%;
-    }
-
-    .view-toggle button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    #result-container {
-        grid-template-columns: 1fr; /* Ensure a single column on mobile */
     }
 }
