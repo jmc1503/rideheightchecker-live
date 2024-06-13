@@ -46,7 +46,7 @@ header.shrink img {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 20px;
+    gap: 10px; /* Reduce the gap */
     padding-top: 250px;
     width: 90%;
     margin: 0 auto;
@@ -55,13 +55,15 @@ header.shrink img {
 .filter-card {
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 300px #007bff;
+   /* box-shadow: 0 0 300px #007bff;*/
     padding: 20px;
     width: 250px; /* Widen filter card to accommodate filters */
     box-sizing: border-box;
-    position: sticky; /* Make the filter card sticky */
-    top: 10px; /* Adjust as needed */
+    position: fixed; /* Make the filter card fixed */
+    top: 250px; /* Adjust as needed */
+    left: 100px; /* Adjust as needed */
     z-index: 1001; /* Ensure it is above other content */
+    height: auto; /* Ensure the card height adjusts to its content */
 }
 
 .results-container {
@@ -71,7 +73,8 @@ header.shrink img {
     padding: 20px;
     flex-grow: 1;
     box-sizing: border-box;
-    max-width: calc(100% - 300px); /* Reduce the width of results container */
+    margin-left: 270px; /* Reduce the margin to narrow the gap */
+    max-width: calc(100% - 290px); /* Reduce the width of results container */
 }
 
 form {
@@ -284,6 +287,7 @@ button:hover {
 
     .results-container {
         width: 100%;
+        margin-left: 0; /* Remove margin for mobile */
     }
 
     .container {
