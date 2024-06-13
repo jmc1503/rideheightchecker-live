@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             anyOption.textContent = 'Any';
             countrySelect.appendChild(anyOption);
 
-            const countries = [...new Set(data.map(item => item.Country))];
+            const countries = [...new Set(data.map(item => item.Country))].sort();
             countries.forEach(country => {
                 const option = document.createElement('option');
                 option.value = country;
@@ -42,11 +42,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 countrySelect.appendChild(option);
             });
 
+            // Populate theme park dropdown
+            populateThemeParkSelect(data);
+            
             displayResults(data); // Display all theme parks initially
         })
         .catch(error => {
             console.error('Error fetching data:', error);
         });
+
+    function populateThemeParkSelect(data) {
+        themeParkSelect.innerHTML = '';
+        const anyOption = document.createElement('option');
+        anyOption.value = '';
+        anyOption.textContent = 'Any';
+        themeParkSelect.appendChild(anyOption);
+
+        const themeParks = [...new Set(data.filter(item => item.Active === 1).map(item => item['Theme Park']))].sort();
+        themeParks.forEach(themePark => {
+            const option = document.createElement('option');
+            option.value = themePark;
+            option.textContent = themePark;
+            themeParkSelect.appendChild(option);
+        });
+    }
 
     // Handle form submission
     parkForm.addEventListener('submit', function(event) {
@@ -66,10 +85,16 @@ document.addEventListener('DOMContentLoaded', function() {
         displayResults(filteredRides);
     });
 
+    // Handle country change event to filter theme parks
+    countrySelect.addEventListener('change', function() {
+        const selectedCountry = countrySelect.value;
+        const filteredData = selectedCountry ? allData.filter(item => item.Country === selectedCountry) : allData;
+        populateThemeParkSelect(filteredData);
+    });
+
     // Handle reset button click
     resetBtn.addEventListener('click', () => {
         parkForm.reset();
-        themeParkContainer.style.display = 'none';
         displayResults(allData); // Display all theme parks again
     });
 
