@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const listViewBtn = document.getElementById('list-view-btn');
     const mapViewBtn = document.getElementById('map-view-btn');
     const mapElement = document.getElementById('map');
-    const mapContainer = document.getElementById('map-container');
     const viewToggle = document.querySelector('.view-toggle');
     const modal = document.getElementById('modal');
     const rideInfoContainer = document.getElementById('ride-info');
@@ -96,11 +95,72 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle reset button click
     resetBtn.addEventListener('click', () => {
         parkForm.reset();
-        resultContainer.style.display = 'flex';
-        mapContainer.style.display = 'none';
-        listViewBtn.classList.add('active');
-        mapViewBtn.classList.remove('active');
+        listViewBtn.click(); // Simulate list view button click
         displayResults(allData); // Display all theme parks again
+    });
+
+    // Handle view toggling
+    listViewBtn.addEventListener('click', () => {
+        resultContainer.style.display = 'flex';
+        mapElement.style.display = 'none';
+        listViewBtn.classList.add('active');
+        listViewBtn.classList.remove('inactive');
+        mapViewBtn.classList.add('inactive');
+        mapViewBtn.classList.remove('active');
+    });
+
+    mapViewBtn.addEventListener('click', () => {
+        resultContainer.style.display = 'none';
+        mapElement.style.display = 'block';
+        mapViewBtn.classList.add('active');
+        mapViewBtn.classList.remove('inactive');
+        listViewBtn.classList.add('inactive');
+        listViewBtn.classList.remove('active');
+
+        if (!map) {
+            map = L.map('map').setView([51.505, -0.09], 2);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+        }
+
+        markers.forEach(marker => {
+            map.removeLayer(marker);
+        });
+
+        markers = [];
+
+        const height = parseInt(document.getElementById('height').value);
+        const country = countrySelect.value;
+        const themePark = themeParkSelect.value;
+
+        let filteredRides = allData.filter(item => {
+            return (country === '' || item.Country === country) &&
+                (themePark === '' || item['Theme Park'] === themePark) &&
+                item['Minimum Height'] <= height &&
+                item['Maximum Height'] >= height;
+        });
+
+        const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
+
+        themeParks.forEach(park => {
+            const parkData = allData.find(item => item['Theme Park'] === park);
+            if (parkData) {
+                const totalRidesInPark = allData.filter(ride => ride['Theme Park'] === park).length;
+                const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
+                const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
+
+                const marker = L.marker([parkData.Latitude, parkData.Longitude]).addTo(map);
+                marker.bindPopup(`<b>${park}</b><br>${parkData.Country}<br>${percentage}% of rides available`).openPopup();
+                markers.push(marker);
+            }
+        });
+
+        setTimeout(() => {
+            map.invalidateSize();
+        }, 100);
     });
 
     // Display results
@@ -225,65 +285,4 @@ document.addEventListener('DOMContentLoaded', function() {
             modal.style.display = 'none';
         }
     }
-
-    // Handle view toggling
-    listViewBtn.addEventListener('click', () => {
-        resultContainer.style.display = 'flex';
-        mapContainer.style.display = 'none';
-        listViewBtn.classList.add('active');
-        mapViewBtn.classList.remove('active');
-        listViewBtn.classList.remove('inactive');
-        mapViewBtn.classList.add('inactive');
-    });
-
-    mapViewBtn.addEventListener('click', () => {
-        resultContainer.style.display = 'none';
-        mapContainer.style.display = 'block';
-        mapViewBtn.classList.add('active');
-        listViewBtn.classList.remove('active');
-        mapViewBtn.classList.remove('inactive');
-        listViewBtn.classList.add('inactive');
-
-        if (!map) {
-            map = L.map('map').setView([51.505, -0.09], 2);
-
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '© OpenStreetMap'
-            }).addTo(map);
-        }
-
-        markers.forEach(marker => {
-            map.removeLayer(marker);
-        });
-
-        markers = [];
-
-        const height = parseInt(document.getElementById('height').value);
-        const country = countrySelect.value;
-        const themePark = themeParkSelect.value;
-
-        let filteredRides = allData.filter(item => {
-            return (country === '' || item.Country === country) &&
-                (themePark === '' || item['Theme Park'] === themePark) &&
-                item['Minimum Height'] <= height &&
-                item['Maximum Height'] >= height;
-        });
-
-        const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
-
-        themeParks.forEach(park => {
-            const parkData = allData.find(item => item['Theme Park'] === park);
-            if (parkData) {
-                const totalRidesInPark = allData.filter(ride => ride['Theme Park'] === park).length;
-                const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
-                const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
-
-                const marker = L.marker([parkData.Latitude, parkData.Longitude]).addTo(map);
-                marker.bindPopup(`<b>${park}</b><br>${parkData.Country}<br>${percentage}% of rides available`).openPopup();
-                markers.push(marker);
-            }
-        });
-    });
 });
-
