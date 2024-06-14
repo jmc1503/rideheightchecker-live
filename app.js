@@ -17,6 +17,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let markers = [];
     let allData = [];
 
+    const countryEmojiMap = {
+        "United States": "🇺🇸",
+        "United Kingdom": "🇬🇧",
+        "France": "🇫🇷",
+        "Germany": "🇩🇪",
+        "Denmark": "🇩🇰"
+        // Add more mappings as needed
+    };
+
     // Fetch data from JSON file
     fetch('data.json')
         .then(response => {
@@ -191,9 +200,15 @@ document.addEventListener('DOMContentLoaded', function() {
             parksWithPercentage.forEach(({ park, percentage, parkData, data }) => {
                 const parkURL = parkData.URL;
                 const parkImage = parkData.Image || '';
+                const countryEmoji = countryEmojiMap[parkData.Country] || '';
 
                 const parkCard = document.createElement('div');
                 parkCard.classList.add('park-card');
+
+                const flagIcon = document.createElement('div');
+                flagIcon.classList.add('flag-icon');
+                flagIcon.textContent = countryEmoji;
+                parkCard.appendChild(flagIcon);
 
                 const parkHeader = document.createElement('h3');
                 parkHeader.innerHTML = `${park}`;
@@ -201,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const parkInfo = document.createElement('p');
                 parkInfo.classList.add('park-info');
-                parkInfo.innerHTML = `${percentage}% of available rides`;
+                parkInfo.innerHTML = `${percentage}% of rides available`;
                 parkCard.appendChild(parkInfo);
 
                 if (parkImage) {
