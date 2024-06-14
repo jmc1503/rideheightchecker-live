@@ -199,9 +199,13 @@ button:hover {
     width: 45%;
 }
 
+#map-container {
+    display: none;
+    width: 100%;
+}
+
 #map {
     height: 400px;
-    display: none;
 }
 
 /* Modal styles */
