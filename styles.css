@@ -197,15 +197,21 @@ button:hover {
 
 .view-toggle button {
     width: 45%;
+    transition: background-color 0.3s;
 }
 
-#map-container {
-    display: none;
-    width: 100%;
+.view-toggle .inactive {
+    background-color: #ddd;
+}
+
+.view-toggle .active {
+    background-color: #007bff;
+    color: white;
 }
 
 #map {
     height: 400px;
+    display: none;
 }
 
 /* Modal styles */
