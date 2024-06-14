@@ -278,11 +278,15 @@ document.addEventListener('DOMContentLoaded', function() {
             rideInfoContainer.appendChild(heightHeader);
 
             const rideList = document.createElement('ul');
-            rides.filter(ride => ride['Minimum Height'] === height).forEach(ride => {
-                const listItem = document.createElement('li');
-                listItem.textContent = ride.Ride;
-                rideList.appendChild(listItem);
-            });
+  // Filter and sort rides alphabetically by ride name
+  rides.filter(ride => ride['Minimum Height'] === height)
+  .sort((a, b) => a.Ride.localeCompare(b.Ride))
+  .forEach(ride => {
+      const listItem = document.createElement('li');
+      listItem.textContent = ride.Ride;
+      rideList.appendChild(listItem);
+  });
+
             rideInfoContainer.appendChild(rideList);
         });
 
