@@ -1,6 +1,5 @@
-
 /* Apply Raleway font to all elements */
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 * {
     font-family: 'Raleway', sans-serif;
@@ -56,7 +55,6 @@ header.shrink img {
 .filter-card {
     background-color: #fff;
     border-radius: 8px;
-   /* box-shadow: 0 0 300px #007bff;*/
     padding: 20px;
     width: 250px; /* Widen filter card to accommodate filters */
     box-sizing: border-box;
@@ -108,13 +106,12 @@ button:hover {
 }
 
 #result-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px; /* Add gap between cards */
 }
 
 .park-card {
-    flex: 1 1 calc(25% - 20px); /* Set the width of each card to one-fourth of the container minus the gap */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -122,8 +119,9 @@ button:hover {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensure the Buy Tickets button is at the bottom */
-    min-height: 500px; /* Ensure cards have equal height */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center; /* Center align items horizontally */
+    min-height: 400px; /* Ensure cards have equal height */
     position: relative; /* Ensure positioning context for the flag icon */
 }
 
@@ -140,14 +138,20 @@ button:hover {
 
 .park-card h3 {
     font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-weight: 700; /* Make the text bold */
+    width: 251.297px;
+    height: 42px;
     text-align: center; /* Center align the park name */
+    margin: 10px 0 0 0; /* Add top margin to move the text down */
+    padding-top: 10px; /* Add padding to the top if needed for finer control */
+    display: flex;
+    justify-content: center; /* Center align horizontally */
+    align-items: center; /* Center align vertically */
 }
 
 .park-header {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 700; /* Make the text bold */
     margin-bottom: 10px;
     text-align: center; /* Center align the park name */
 }
@@ -228,7 +232,6 @@ button:hover {
 #map {
     height: 700px;
     display: none;
-   
 }
 
 /* Modal styles */
