@@ -66,14 +66,13 @@ header.shrink img {
 }
 
 .results-container {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 300px #ccc; /* Adjust shadow to be below the filter container */
+    background-color: transparent; /* Make the container background transparent */
     padding: 20px;
     flex-grow: 1;
     box-sizing: border-box;
     margin-left: 270px; /* Reduce the margin to narrow the gap */
     max-width: calc(100% - 290px); /* Reduce the width of results container */
+    margin-top: -20px; /* Align top row with filter container */
 }
 
 form {
@@ -142,7 +141,7 @@ button:hover {
     width: 251.297px;
     height: 42px;
     text-align: center; /* Center align the park name */
-    margin: 10px 0 0 0; /* Add top margin to move the text down */
+    margin: 20px 0 0 0; /* Add top margin to move the text down */
     padding-top: 10px; /* Add padding to the top if needed for finer control */
     display: flex;
     justify-content: center; /* Center align horizontally */
