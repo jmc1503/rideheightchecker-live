@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #5de8d5;
+    background-color: #0056b3;
     margin: 0;
     padding: 0;
 }
@@ -118,7 +118,7 @@ button:hover {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 15px #C023D2; /* Add bigger shadow to each card */
+    box-shadow: 0 4px 15px #5EE8D5; /* Add bigger shadow to each card */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -226,8 +226,9 @@ button:hover {
 }
 
 #map {
-    height: 400px;
+    height: 700px;
     display: none;
+   
 }
 
 /* Modal styles */
