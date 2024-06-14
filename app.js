@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             viewToggle.style.display = 'flex'; // Show view toggle buttons
-            resultContainer.style.display = 'flex';
+            resultContainer.style.display = 'grid';
             document.querySelector('.container').classList.add('results-shown'); // Expand container
         } else {
             resultContainer.textContent = 'No rides available for your height in this theme park.';
