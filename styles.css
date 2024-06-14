@@ -1,3 +1,4 @@
+
 /* Apply Raleway font to all elements */
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
@@ -123,10 +124,25 @@ button:hover {
     flex-direction: column;
     justify-content: space-between; /* Ensure the Buy Tickets button is at the bottom */
     min-height: 500px; /* Ensure cards have equal height */
+    position: relative; /* Ensure positioning context for the flag icon */
+}
+
+.flag-icon {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    font-size: 30px;
 }
 
 .empty-card {
     visibility: hidden; /* Hide empty cards but keep space for layout */
+}
+
+.park-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center; /* Center align the park name */
 }
 
 .park-header {
