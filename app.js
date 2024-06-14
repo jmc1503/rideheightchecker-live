@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const listViewBtn = document.getElementById('list-view-btn');
     const mapViewBtn = document.getElementById('map-view-btn');
     const mapElement = document.getElementById('map');
+    const mapContainer = document.getElementById('map-container');
     const viewToggle = document.querySelector('.view-toggle');
     const modal = document.getElementById('modal');
     const rideInfoContainer = document.getElementById('ride-info');
@@ -95,6 +96,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle reset button click
     resetBtn.addEventListener('click', () => {
         parkForm.reset();
+        resultContainer.style.display = 'flex';
+        mapContainer.style.display = 'none';
+        listViewBtn.classList.add('active');
+        mapViewBtn.classList.remove('active');
         displayResults(allData); // Display all theme parks again
     });
 
@@ -224,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle view toggling
     listViewBtn.addEventListener('click', () => {
         resultContainer.style.display = 'flex';
-        mapElement.style.display = 'none';
+        mapContainer.style.display = 'none';
         listViewBtn.classList.add('active');
         mapViewBtn.classList.remove('active');
         listViewBtn.classList.remove('inactive');
@@ -233,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     mapViewBtn.addEventListener('click', () => {
         resultContainer.style.display = 'none';
-        mapElement.style.display = 'block';
+        mapContainer.style.display = 'block';
         mapViewBtn.classList.add('active');
         listViewBtn.classList.remove('active');
         mapViewBtn.classList.remove('inactive');
@@ -281,3 +286,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
