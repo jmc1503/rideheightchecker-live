@@ -20,11 +20,13 @@ header {
     z-index: 1000;
     display: flex;
     justify-content: center;
+    align-items: center; /* Align items vertically */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100px; /* Ensure header height accommodates the logo */
 }
 
 header img {
-    height: 200px; /* Adjust this value to make the logo bigger */
+    height: 150px; /* Adjust this value to make the logo bigger */
     transition: height 0.3s ease;
 }
 
@@ -59,7 +61,7 @@ header.shrink img {
     width: 250px; /* Widen filter card to accommodate filters */
     box-sizing: border-box;
     position: fixed; /* Make the filter card fixed */
-    top: 250px; /* Adjust as needed */
+    top: 119px; /* Adjust as needed */
     left: 100px; /* Adjust as needed */
     z-index: 1001; /* Ensure it is above other content */
     height: auto; /* Ensure the card height adjusts to its content */
@@ -72,7 +74,7 @@ header.shrink img {
     box-sizing: border-box;
     margin-left: 270px; /* Reduce the margin to narrow the gap */
     max-width: calc(100% - 290px); /* Reduce the width of results container */
-    margin-top: -20px; /* Align top row with filter container */
+    margin-top: -151px; /* Align top row with filter container */
 }
 
 form {
@@ -231,6 +233,15 @@ button:hover {
 #map {
     height: 700px;
     display: none;
+}
+
+#map-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px #5EE8D5; /* Same shadow as the results cards */
+    box-sizing: border-box;
+    margin-top: 0px; /* Adjust the margin to fit well with the layout */
 }
 
 /* Modal styles */
