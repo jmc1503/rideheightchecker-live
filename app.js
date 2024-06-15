@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeModal = document.getElementsByClassName('close')[0];
     const resetBtn = document.querySelector('.reset-btn');
     const parkForm = document.getElementById('park-form');
+    const mapContainer = document.getElementById('map-container');
 
     let map;
     let markers = [];
@@ -25,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
         "Denmark": "🇩🇰"
         // Add more mappings as needed
     };
+
+    // Hide map container by default
+    mapContainer.style.display = 'none';
 
     // Fetch data from JSON file
     fetch('data.json')
@@ -106,11 +110,13 @@ document.addEventListener('DOMContentLoaded', function() {
         parkForm.reset();
         listViewBtn.click(); // Simulate list view button click
         displayResults(allData); // Display all theme parks again
+        window.scrollTo(0, 0); // Scroll to top after reset
     });
 
     // Handle view toggling
     listViewBtn.addEventListener('click', () => {
-        resultContainer.style.display = 'flex';
+        resultContainer.style.display = 'grid';
+        mapContainer.style.display = 'none';
         mapElement.style.display = 'none';
         listViewBtn.classList.add('active');
         listViewBtn.classList.remove('inactive');
@@ -120,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     mapViewBtn.addEventListener('click', () => {
         resultContainer.style.display = 'none';
+        mapContainer.style.display = 'block';
         mapElement.style.display = 'block';
         mapViewBtn.classList.add('active');
         mapViewBtn.classList.remove('inactive');
@@ -259,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             viewToggle.style.display = 'flex'; // Show view toggle buttons
-            resultContainer.style.display = 'flex';
+            resultContainer.style.display = 'grid';
             document.querySelector('.container').classList.add('results-shown'); // Expand container
         } else {
             resultContainer.textContent = 'No rides available for your height in this theme park.';
@@ -278,11 +285,15 @@ document.addEventListener('DOMContentLoaded', function() {
             rideInfoContainer.appendChild(heightHeader);
 
             const rideList = document.createElement('ul');
-            rides.filter(ride => ride['Minimum Height'] === height).forEach(ride => {
-                const listItem = document.createElement('li');
-                listItem.textContent = ride.Ride;
-                rideList.appendChild(listItem);
-            });
+            // Filter and sort rides alphabetically by ride name
+            rides.filter(ride => ride['Minimum Height'] === height)
+                .sort((a, b) => a.Ride.localeCompare(b.Ride))
+                .forEach(ride => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = ride.Ride;
+                    rideList.appendChild(listItem);
+                });
+
             rideInfoContainer.appendChild(rideList);
         });
 
