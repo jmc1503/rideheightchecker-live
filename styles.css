@@ -26,7 +26,7 @@ header {
 }
 
 header img {
-    height: 150px; /* Adjust this value to make the logo bigger */
+    height: 220px; /* Adjust this value to make the logo bigger */
     transition: height 0.3s ease;
 }
 
