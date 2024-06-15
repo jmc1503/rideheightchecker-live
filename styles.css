@@ -116,7 +116,7 @@ button:hover {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 15px #5EE8D5; /* Add bigger shadow to each card */
+    box-shadow: 0 4px 15px #007bff; /* Add bigger shadow to each card */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
