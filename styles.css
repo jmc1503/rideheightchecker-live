@@ -34,16 +34,6 @@ header.shrink img {
     height: 100px; /* Adjust this value to make the logo smaller on scroll */
 }
 
-@media (max-width: 768px) {
-    header img {
-        height: 90px; /* Adjust this value for smaller screens */
-    }
-
-    header.shrink img {
-        height: 60px; /* Adjust this value to make the logo smaller on scroll */
-    }
-}
-
 .main-container {
     display: flex;
     justify-content: center;
@@ -74,7 +64,7 @@ header.shrink img {
     box-sizing: border-box;
     margin-left: 270px; /* Reduce the margin to narrow the gap */
     max-width: calc(100% - 290px); /* Reduce the width of results container */
-    margin-top: -151px; /* Align top row with filter container */
+    margin-top: -196px; /* Align top row with filter container */
 }
 
 form {
@@ -320,14 +310,40 @@ button:hover {
     }
 
     .filter-card {
-        width: 100%;
-        margin-bottom: 20px;
-        position: static; /* Disable sticky on mobile */
+        display: none; /* Hide the filter card on mobile */
+    }
+
+    #mobile-filter-btn {
+        display: block;
+        width: 40%;
+        margin: 10px auto;
+        margin-top: 118px;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    #mobile-filter-btn:hover {
+        background-color: #0056b3;
     }
 
     .results-container {
         width: 100%;
-        margin-left: 0; /* Remove margin for mobile */
+        max-width: 98%;
+        margin: 0 auto;
+        margin-top: -260px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .results-container #result-container {
+        width: 100%;
     }
 
     .container {
@@ -336,11 +352,69 @@ button:hover {
     }
 
     .park-card {
-        flex: 1 1 100%;
+        width: 100%;
+        max-width: 98%;
     }
 
-    .view-toggle button {
+    .view-toggle {
+        display: none;
+    }
+
+    #filter-modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50px;
+        width: 80%;
+        max-width: 600px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    #filter-modal.show {
+        display: block;
+    }
+
+    #filter-modal .modal-content {
+        text-align: center;
+    }
+
+    #filter-modal .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    #filter-modal form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #filter-modal label, 
+    #filter-modal input, 
+    #filter-modal select, 
+    #filter-modal button {
         width: 100%;
-        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    #filter-modal button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #filter-modal button:hover {
+        background-color: #0056b3;
     }
 }
