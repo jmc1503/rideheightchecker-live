@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ND3KNJTTX5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -22,6 +21,31 @@
     <header>
         <img src="logo.png" alt="Theme Park Finder Logo">
     </header>
+    <button id="mobile-filter-btn" class="mobile-only">Filter</button>
+    <div id="filter-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="mobile-park-form" autocomplete="off">
+                <div class="form-group">
+                    <div class="form-field">
+                        <label for="mobile-height">Enter your height (in cm):</label>
+                        <input type="number" id="mobile-height" name="height" required autocomplete="off">
+                    </div>
+                    <div class="form-field">
+                        <label for="mobile-country">Select a country:</label>
+                        <select id="mobile-country" name="country" autocomplete="off"></select>
+                    </div>
+                    <div class="form-field" id="mobile-theme-park-container">
+                        <label for="mobile-theme-park">Select a theme park:</label>
+                        <select id="mobile-theme-park" name="theme-park" autocomplete="off"></select>
+                    </div>
+                </div>
+                <div class="find-rides-container">
+                    <button type="submit">Find Rides</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <div class="main-container">
         <div class="filter-card">
             <form id="park-form" autocomplete="off">
@@ -56,13 +80,6 @@
             <div id="map-container">
                 <div id="map"></div>
             </div>
-        </div>
-    </div>
-    <!-- Modal for ride info -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="ride-info"></div>
         </div>
     </div>
     <script src="app.js"></script>
