@@ -14,6 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const parkForm = document.getElementById('park-form');
     const mapContainer = document.getElementById('map-container');
 
+    const mobileFilterBtn = document.getElementById('mobile-filter-btn');
+    const filterModal = document.getElementById('filter-modal');
+    const mobileParkForm = document.getElementById('mobile-park-form');
+    const mobileCloseModal = filterModal.querySelector('.close');
+    const mobileCountrySelect = document.getElementById('mobile-country');
+    const mobileThemeParkSelect = document.getElementById('mobile-theme-park');
+    const mobileHeightInput = document.getElementById('mobile-height');
+
     let map;
     let markers = [];
     let allData = [];
@@ -57,8 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Populate theme park dropdown
             populateThemeParkSelect(data);
-            
+
             displayResults(data); // Display all theme parks initially
+
+            // Populate mobile country dropdown
+            populateMobileCountrySelect(data);
         })
         .catch(error => {
             console.error('Error fetching data:', error);
@@ -77,6 +88,38 @@ document.addEventListener('DOMContentLoaded', function() {
             option.value = themePark;
             option.textContent = themePark;
             themeParkSelect.appendChild(option);
+        });
+    }
+
+    function populateMobileCountrySelect(data) {
+        mobileCountrySelect.innerHTML = '';
+        const anyOption = document.createElement('option');
+        anyOption.value = '';
+        anyOption.textContent = 'Any';
+        mobileCountrySelect.appendChild(anyOption);
+
+        const countries = [...new Set(data.map(item => item.Country))].sort();
+        countries.forEach(country => {
+            const option = document.createElement('option');
+            option.value = country;
+            option.textContent = country;
+            mobileCountrySelect.appendChild(option);
+        });
+    }
+
+    function populateMobileThemeParkSelect(data) {
+        mobileThemeParkSelect.innerHTML = '';
+        const anyOption = document.createElement('option');
+        anyOption.value = '';
+        anyOption.textContent = 'Any';
+        mobileThemeParkSelect.appendChild(anyOption);
+
+        const themeParks = [...new Set(data.filter(item => item.Active === 1).map(item => item['Theme Park']))].sort();
+        themeParks.forEach(themePark => {
+            const option = document.createElement('option');
+            option.value = themePark;
+            option.textContent = themePark;
+            mobileThemeParkSelect.appendChild(option);
         });
     }
 
@@ -103,6 +146,32 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedCountry = countrySelect.value;
         const filteredData = selectedCountry ? allData.filter(item => item.Country === selectedCountry) : allData;
         populateThemeParkSelect(filteredData);
+    });
+
+    // Handle mobile form submission
+    mobileParkForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const height = parseInt(mobileHeightInput.value);
+        const country = mobileCountrySelect.value;
+        const themePark = mobileThemeParkSelect.value;
+
+        let filteredRides = allData.filter(item => {
+            return (country === '' || item.Country === country) &&
+                (themePark === '' || item['Theme Park'] === themePark) &&
+                item['Minimum Height'] <= height &&
+                item['Maximum Height'] >= height;
+        });
+
+        filterModal.classList.remove('show');
+        displayResults(filteredRides);
+    });
+
+    // Handle mobile country change event to filter theme parks
+    mobileCountrySelect.addEventListener('change', function() {
+        const selectedCountry = mobileCountrySelect.value;
+        const filteredData = selectedCountry ? allData.filter(item => item.Country === selectedCountry) : allData;
+        populateMobileThemeParkSelect(filteredData);
     });
 
     // Handle reset button click
@@ -311,4 +380,19 @@ document.addEventListener('DOMContentLoaded', function() {
             modal.style.display = 'none';
         }
     }
+
+    // Mobile filter button event listeners
+    mobileFilterBtn.addEventListener('click', () => {
+        filterModal.classList.add('show');
+    });
+
+    mobileCloseModal.addEventListener('click', () => {
+        filterModal.classList.remove('show');
+    });
+
+    window.onclick = function(event) {
+        if (event.target == filterModal) {
+            filterModal.classList.remove('show');
+        }
+    };
 });
