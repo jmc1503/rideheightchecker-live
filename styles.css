@@ -131,6 +131,7 @@ header.shrink img {
         cursor: pointer; /* Change cursor on hover */
         text-align: center; /* Center text */
         transition: background-color 0.3s ease; /* Smooth transition for background color */
+        z-index: 1001; /* Ensure above other content */
     }
 
     /* Mobile filter button hover styles */
@@ -263,10 +264,10 @@ button:hover {
 
 /* Park card container styles */
 .park-card {
-    padding: 20px; /* Add padding */
+    padding: 19px; /* Add padding */
     background-color: #fff; /* Set background color */
     border-radius: 8px; /* Round corners */
- /*   box-shadow: 0 4px 15px #007bff; /* Add shadow to card */
+  /*  box-shadow: 0 4px 15px #007bff; /* Add shadow to card */
     box-sizing: border-box; /* Include padding in width */
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Arrange items in column */
@@ -325,8 +326,9 @@ button:hover {
     width: 256px; /* Set width */
     height: 176.656px; /* Set height */
     margin: 10px auto; /* Center image */
-    border: 5px solid #ccc; /* Set border */
+   /* border: 5px solid #ccc; /* Set border */
     box-sizing: border-box; /* Include padding in width */
+    border-radius: 19px;
 }
 
 /* Ride info list item styles */
@@ -490,4 +492,30 @@ button:hover {
 /* Reset button hover styles */
 .reset-container .reset-btn:hover {
     color: grey; /* Change text color on hover */
+}
+
+/* Hide mobile filter button on larger screens */
+@media (min-width: 769px) {
+    #mobile-filter-btn {
+        display: none; /* Hide */
+    }
+}
+
+/* Ensure filter card stays to the left on smaller screens */
+@media (max-width: 1200px) {
+    .content-wrapper {
+        flex-direction: row; /* Keep items in row */
+        align-items: flex-start; /* Align items to the top */
+    }
+    .filter-card {
+        position: fixed; /* Fix position */
+        top: 150px; /* Align to the top just below the header */
+        left: 0; /* Align to the left */
+        height: auto; /* Auto height */
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+    .results-container {
+        margin-left: 270px; /* Ensure results container does not overlap filter card */
+        width: calc(100% - 270px); /* Adjust width to fit next to filter card */
+    }
 }
