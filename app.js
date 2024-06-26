@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const viewToggle = document.querySelector('.view-toggle');
     const modal = document.getElementById('modal');
     const rideInfoContainer = document.getElementById('ride-info');
-    const closeModal = document.getElementsByClassName('close')[0];
+    const closeModal = modal.querySelector('.close'); // Adjusted selector for consistency
     const resetBtn = document.querySelector('.reset-btn');
     const parkForm = document.getElementById('park-form');
     const mapContainer = document.getElementById('map-container');
@@ -374,12 +374,21 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'none';
     }
 
-    // Hide modal when clicking outside of it
+    // Hide modal when clicking outside of it or pressing ESC
     window.onclick = function(event) {
-        if (event.target == modal) {
+        if (event.target == modal || event.target == filterModal) {
             modal.style.display = 'none';
+            filterModal.classList.remove('show');
         }
     }
+
+    // Close modal on ESC key press
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            modal.style.display = 'none';
+            filterModal.classList.remove('show');
+        }
+    });
 
     // Mobile filter button event listeners
     mobileFilterBtn.addEventListener('click', () => {
@@ -389,10 +398,4 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileCloseModal.addEventListener('click', () => {
         filterModal.classList.remove('show');
     });
-
-    window.onclick = function(event) {
-        if (event.target == filterModal) {
-            filterModal.classList.remove('show');
-        }
-    };
 });
