@@ -1,420 +1,493 @@
-/* Apply Raleway font to all elements */
+/* Import Raleway font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
+/* Apply Raleway font to all elements */
 * {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif; /* Set font family for all elements */
 }
 
+/* Body styles */
 body {
-    background-color: #fff814;
-    margin: 0;
-    padding: 0;
+    background-color: #fff814; /* Set background color */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
+/* Header styles */
 header {
-    width: 100%;
-    background-color: #fff814; /* Make header background transparent */
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Align items vertically */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 100px; /* Ensure header height accommodates the logo */
+    width: 100%; /* Full width */
+    background-color: #fff814; /* Set header background color */
+    position: fixed; /* Fix header at the top */
+    top: 0; /* Align header to the top */
+    left: 0; /* Align header to the left */
+    z-index: 1000; /* Ensure header is above other content */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow to header */
+    height: 100px; /* Set header height */
 }
 
+/* Header logo styles */
 header img {
-    height: 220px; /* Adjust this value to make the logo bigger */
-    transition: height 0.3s ease;
+    height: 220px; /* Set logo height */
+    transition: height 0.3s ease; /* Smooth transition for height change */
 }
 
+/* Header logo styles when shrinking */
 header.shrink img {
-    height: 100px; /* Adjust this value to make the logo smaller on scroll */
+    height: 100px; /* Reduce logo height on scroll */
 }
 
+/* Main container styles */
 .main-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 10px; /* Reduce the gap */
-    padding-top: 250px;
-    width: 90%;
-    margin: 0 auto;
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding and border in width */
 }
 
+/* Content wrapper styles */
+.content-wrapper {
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-start; /* Align items to the start horizontally */
+    align-items: flex-start; /* Align items to the start vertically */
+    gap: 20px; /* Set gap between elements */
+    max-width: 1200px; /* Set maximum width */
+    width: 100%; /* Full width */
+    margin: 0 auto; /* Center container */
+    margin-top: 150px; /* Adjust this value to control the top position */
+}
+
+/* Filter card styles */
 .filter-card {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    width: 250px; /* Widen filter card to accommodate filters */
-    box-sizing: border-box;
-    position: fixed; /* Make the filter card fixed */
-    top: 119px; /* Adjust as needed */
-    left: 100px; /* Adjust as needed */
-    z-index: 1001; /* Ensure it is above other content */
-    height: auto; /* Ensure the card height adjusts to its content */
+    background-color: #fff; /* Set background color */
+    border-radius: 8px; /* Round corners */
+    padding: 20px; /* Add padding */
+    width: 250px; /* Set width */
+    box-sizing: border-box; /* Include padding in width */
+    position: sticky; /* Fix position */
+    top: 150px; /* Align to the top just below the header */
+    height: 400px; /* Set fixed height */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in column */
+    justify-content: space-between; /* Distribute space between items */
+    border-style: solid;
+    border-color: #007bff;
+    border-width: 5px;
 }
 
+/* Results container styles */
 .results-container {
-    background-color: transparent; /* Make the container background transparent */
-    padding: 20px;
-    flex-grow: 1;
-    box-sizing: border-box;
-    margin-left: 270px; /* Reduce the margin to narrow the gap */
-    max-width: calc(100% - 290px); /* Reduce the width of results container */
-    margin-top: -196px; /* Align top row with filter container */
+    background-color: transparent; /* Make background transparent */
+    flex-grow: 1; /* Allow container to grow */
+    box-sizing: border-box; /* Include padding in width */
+    overflow-x: auto; /* Add horizontal scroll if content overflows */
 }
 
-form {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input, select, button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
+/* Result container styles */
 #result-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px; /* Add gap between cards */
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid columns */
+    gap: 20px; /* Set gap between cards */
+    max-width: 1000px; /* Set max width to limit number of columns */
+    margin: 0 auto; /* Center grid within container */
+    top: 100px;
 }
 
-.park-card {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px #007bff; /* Add bigger shadow to each card */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align items to the top */
-    align-items: center; /* Center align items horizontally */
-    min-height: 400px; /* Ensure cards have equal height */
-    position: relative; /* Ensure positioning context for the flag icon */
-}
-
-.flag-icon {
-    position: absolute;
-    top: 0px;
-    left: 10px;
-    font-size: 30px;
-}
-
-.empty-card {
-    visibility: hidden; /* Hide empty cards but keep space for layout */
-}
-
-.park-card h3 {
-    font-size: 18px;
-    font-weight: 700; /* Make the text bold */
-    width: 251.297px;
-    height: 42px;
-    text-align: center; /* Center align the park name */
-    margin: 20px 0 0 0; /* Add top margin to move the text down */
-    padding-top: 10px; /* Add padding to the top if needed for finer control */
-    display: flex;
-    justify-content: center; /* Center align horizontally */
-    align-items: center; /* Center align vertically */
-}
-
-.park-header {
-    font-size: 18px;
-    font-weight: 700; /* Make the text bold */
-    margin-bottom: 10px;
-    text-align: center; /* Center align the park name */
-}
-
-.park-info {
-    margin-bottom: 10px;
-    text-align: center; /* Center align the park info */
-}
-
-.park-image {
-    width: 256px;
-    height: 176.656px;
-    margin: 10px auto;
-    border: 5px solid #ccc;
-    box-sizing: border-box;
-}
-
-.ride-info ul li {
-    font-weight: 300; /* Lighter font weight for ride names */
-}
-
-.more-info-btn {
-    background: none;
-    border: none;
-    color: #007bff;
-    cursor: pointer;
-    text-decoration: underline;
-    text-align: center;
-    font-size: 0.9em; /* Slightly smaller text */
-}
-
-.more-info-btn:hover {
-    color: #0056b3;
-}
-
-.action-btn {
-    width: 100%;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    margin-top: 10px;
-    text-align: center;
-    font-size: 1.2em; /* Make text and emoji bigger */
-}
-
-.action-btn:hover {
-    background-color: #0056b3;
-}
-
-.action-container {
-    margin-top: auto; /* Push the action buttons to the bottom */
-    display: flex;
-    flex-direction: column;
-}
-
-.view-toggle {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.view-toggle button {
-    width: 45%;
-    transition: background-color 0.3s;
-}
-
-.view-toggle .inactive {
-    background-color: #ddd;
-}
-
-.view-toggle .active {
-    background-color: #007bff;
-    color: white;
-}
-
-#map {
-    height: 700px;
-    display: none;
-}
-
-#map-container {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px #5EE8D5; /* Same shadow as the results cards */
-    box-sizing: border-box;
-    margin-top: 0px; /* Adjust the margin to fit well with the layout */
-}
-
-/* Modal styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.find-rides-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.reset-container {
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.reset-container .reset-btn {
-    background: none;
-    border: none;
-    color: lightgrey;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.reset-container .reset-btn:hover {
-    color: grey;
-}
-
-@media (max-width: 768px) {
-    .form-field {
-        width: 100%;
-        margin-bottom: 10px;
+/* Media query for screens smaller than 1200px */
+@media (max-width: 1200px) {
+    .content-wrapper {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
     }
-
     .filter-card {
-        display: none; /* Hide the filter card on mobile */
+        position: relative; /* Change position to relative */
+        top: auto; /* Reset top position */
+        margin-bottom: 20px; /* Add bottom margin */
     }
-
-    #mobile-filter-btn {
-        display: block;
-        width: 40%;
-        margin: 10px auto;
-        margin-top: 118px;
-        padding: 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        text-align: center;
-        transition: background-color 0.3s ease;
-    }
-
-    #mobile-filter-btn:hover {
-        background-color: #0056b3;
-    }
-
     .results-container {
-        width: 100%;
-        max-width: 98%;
-        margin: 0 auto;
-        margin-top: -260px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        margin-top: 0; /* Reset top margin */
+    }
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    .filter-card {
+        display: none; /* Hide filter card on mobile */
     }
 
+    /* Mobile filter button styles */
+    #mobile-filter-btn {
+        display: block; /* Show button */
+        width: 40%; /* Set width */
+        margin: 10px auto; /* Center button */
+        margin-top: 118px; /* Add top margin */
+        padding: 10px; /* Add padding */
+        background-color: #007bff; /* Set background color */
+        color: white; /* Set text color */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Round corners */
+        cursor: pointer; /* Change cursor on hover */
+        text-align: center; /* Center text */
+        transition: background-color 0.3s ease; /* Smooth transition for background color */
+    }
+
+    /* Mobile filter button hover styles */
+    #mobile-filter-btn:hover {
+        background-color: #0056b3; /* Change background color on hover */
+    }
+
+    /* Results container styles on mobile */
+    .results-container {
+        width: 100%; /* Full width */
+        max-width: 98%; /* Set max width */
+        margin: 0 auto; /* Center container */
+        margin-top: -260px; /* Adjust top margin */
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Arrange items in column */
+        align-items: center; /* Center items horizontally */
+    }
+
+    /* Result container styles on mobile */
     .results-container #result-container {
-        width: 100%;
+        width: 100%; /* Full width */
     }
 
+    /* Container styles on mobile */
     .container {
-        margin: 150px auto 50px auto;
-        max-width: 90%;
+        margin: 150px auto 50px auto; /* Set margins */
+        max-width: 90%; /* Set max width */
     }
 
+    /* Park card styles on mobile */
     .park-card {
-        width: 100%;
-        max-width: 98%;
+        width: 100%; /* Full width */
+        max-width: 98%; /* Set max width */
     }
 
+    /* Hide view toggle buttons on mobile */
     .view-toggle {
-        display: none;
+        display: none; /* Hide */
     }
 
+    /* Filter modal styles on mobile */
     #filter-modal {
-        display: none;
-        position: fixed;
-        z-index: 2000;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 50px;
-        width: 80%;
-        max-width: 600px;
-        background-color: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        padding: 20px;
-        box-sizing: border-box;
+        display: none; /* Hide */
+        position: fixed; /* Fix position */
+        z-index: 2000; /* Ensure above other content */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center horizontally */
+        top: 50px; /* Align to the top */
+        width: 80%; /* Set width */
+        max-width: 600px; /* Set max width */
+        background-color: white; /* Set background color */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+        border-radius: 8px; /* Round corners */
+        padding: 20px; /* Add padding */
+        box-sizing: border-box; /* Include padding in width */
     }
 
+    /* Show filter modal */
     #filter-modal.show {
-        display: block;
+        display: block; /* Show */
     }
 
+    /* Modal content styles on mobile */
     #filter-modal .modal-content {
-        text-align: center;
+        text-align: center; /* Center text */
     }
 
+    /* Close button styles on mobile */
     #filter-modal .close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 24px;
-        cursor: pointer;
+        position: absolute; /* Fix position */
+        top: 10px; /* Align to the top */
+        right: 10px; /* Align to the right */
+        font-size: 24px; /* Set font size */
+        cursor: pointer; /* Change cursor on hover */
     }
 
+    /* Form styles in filter modal */
     #filter-modal form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Arrange items in column */
+        gap: 10px; /* Set gap between elements */
     }
 
+    /* Label, input, select, and button styles in filter modal */
     #filter-modal label, 
     #filter-modal input, 
     #filter-modal select, 
     #filter-modal button {
-        width: 100%;
-        padding: 10px;
+        width: 100%; /* Full width */
+        padding: 10px; /* Add padding */
     }
 
+    /* Button styles in filter modal */
     #filter-modal button {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+        background-color: #007bff; /* Set background color */
+        color: white; /* Set text color */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Round corners */
+        cursor: pointer; /* Change cursor on hover */
     }
 
+    /* Button hover styles in filter modal */
     #filter-modal button:hover {
-        background-color: #0056b3;
+        background-color: #0056b3; /* Change background color on hover */
     }
+}
+
+/* Input, select, and button common styles */
+input, select, button {
+    width: 100%; /* Full width */
+    padding: 10px; /* Add padding */
+    margin-bottom: 10px; /* Add bottom margin */
+    border: 1px solid #ccc; /* Set border */
+    border-radius: 5px; /* Round corners */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Button styles */
+button {
+    background-color: #007bff; /* Set background color */
+    color: #fff; /* Set text color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+/* Button hover styles */
+button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
+
+/* Park card container styles */
+.park-card {
+    padding: 20px; /* Add padding */
+    background-color: #fff; /* Set background color */
+    border-radius: 8px; /* Round corners */
+ /*   box-shadow: 0 4px 15px #007bff; /* Add shadow to card */
+    box-sizing: border-box; /* Include padding in width */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in column */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center; /* Center items horizontally */
+    min-height: 400px; /* Set minimum height */
+    position: relative; /* Set positioning context */
+    border-style: solid;
+    border-width: medium;
+    border-color: #007bff;
+}
+
+/* Flag icon styles */
+.flag-icon {
+    position: absolute; /* Fix position */
+    top: 0px; /* Align to the top */
+    left: 10px; /* Align to the left */
+    font-size: 30px; /* Set font size */
+}
+
+/* Empty card styles */
+.empty-card {
+    visibility: hidden; /* Hide but keep space */
+}
+
+/* Park card header styles */
+.park-card h3 {
+    font-size: 18px; /* Set font size */
+    font-weight: 700; /* Set font weight */
+    width: 251.297px; /* Set width */
+    height: 42px; /* Set height */
+    text-align: center; /* Center text */
+    margin: 20px 0 0 0; /* Set margins */
+    padding-top: 10px; /* Add top padding */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+/* Park header styles */
+.park-header {
+    font-size: 18px; /* Set font size */
+    font-weight: 700; /* Set font weight */
+    margin-bottom: 10px; /* Add bottom margin */
+    text-align: center; /* Center text */
+}
+
+/* Park info styles */
+.park-info {
+    margin-bottom: 10px; /* Add bottom margin */
+    text-align: center; /* Center text */
+}
+
+/* Park image styles */
+.park-image {
+    width: 256px; /* Set width */
+    height: 176.656px; /* Set height */
+    margin: 10px auto; /* Center image */
+    border: 5px solid #ccc; /* Set border */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Ride info list item styles */
+.ride-info ul li {
+    font-weight: 300; /* Set lighter font weight */
+}
+
+/* More info button styles */
+.more-info-btn {
+    background: none; /* No background */
+    border: none; /* No border */
+    color: #007bff; /* Set text color */
+    cursor: pointer; /* Change cursor on hover */
+    text-decoration: underline; /* Underline text */
+    text-align: center; /* Center text */
+    font-size: 0.9em; /* Set font size */
+}
+
+/* More info button hover styles */
+.more-info-btn:hover {
+    color: #0056b3; /* Change text color on hover */
+}
+
+/* Action button styles */
+.action-btn {
+    width: 100%; /* Full width */
+    background-color: #007bff; /* Set background color */
+    color: #fff; /* Set text color */
+    border: none; /* Remove border */
+    padding: 10px; /* Add padding */
+    cursor: pointer; /* Change cursor on hover */
+    margin-top: 10px; /* Add top margin */
+    text-align: center; /* Center text */
+    font-size: 1.2em; /* Set font size */
+}
+
+/* Action button hover styles */
+.action-btn:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
+
+/* Action container styles */
+.action-container {
+    margin-top: auto; /* Push to the bottom */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in column */
+}
+
+/* View toggle button container styles */
+.view-toggle {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-around; /* Distribute space evenly */
+    margin-top: 20px; /* Add top margin */
+}
+
+/* View toggle button common styles */
+.view-toggle button {
+    width: 45%; /* Set width */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Inactive view toggle button styles */
+.view-toggle .inactive {
+    background-color: #ddd; /* Set background color */
+}
+
+/* Active view toggle button styles */
+.view-toggle .active {
+    background-color: #007bff; /* Set background color */
+    color: white; /* Set text color */
+}
+
+/* Map container styles */
+#map {
+    height: 700px; /* Set height */
+    display: none; /* Hide map by default */
+}
+
+/* Map container styles */
+#map-container {
+    padding: 20px; /* Add padding */
+    background-color: #fff; /* Set background color */
+    border-radius: 8px; /* Round corners */
+    box-shadow: 0 4px 15px #5EE8D5; /* Add shadow to container */
+    box-sizing: border-box; /* Include padding in width */
+    margin-top: 0px; /* Adjust top margin */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hide by default */
+    position: fixed; /* Fix position */
+    z-index: 2000; /* Ensure above other content */
+    left: 0; /* Align to the left */
+    top: 0; /* Align to the top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scrolling */
+    background-color: rgb(0, 0, 0); /* Set background color */
+    background-color: rgba(0, 0, 0, 0.4); /* Add transparency */
+}
+
+/* Modal content styles */
+.modal-content {
+    background-color: #fff; /* Set background color */
+    margin: 15% auto; /* Center content */
+    padding: 20px; /* Add padding */
+    border: 1px solid #888; /* Set border */
+    width: 80%; /* Set width */
+    max-width: 600px; /* Set max width */
+    border-radius: 8px; /* Round corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+/* Close button styles */
+.close {
+    color: #aaa; /* Set text color */
+    float: right; /* Align to the right */
+    font-size: 28px; /* Set font size */
+    font-weight: bold; /* Set font weight */
+}
+
+/* Close button hover and focus styles */
+.close:hover,
+.close:focus {
+    color: black; /* Change text color */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+/* Form group styles */
+.form-group {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in column */
+    gap: 10px; /* Set gap between elements */
+}
+
+/* Find rides container styles */
+.find-rides-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+/* Reset container styles */
+.reset-container {
+    margin-left: 10px; /* Add left margin */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+}
+
+/* Reset button styles */
+.reset-container .reset-btn {
+    background: none; /* No background */
+    border: none; /* No border */
+    color: lightgrey; /* Set text color */
+    cursor: pointer; /* Change cursor on hover */
+    text-decoration: underline; /* Underline text */
+}
+
+/* Reset button hover styles */
+.reset-container .reset-btn:hover {
+    color: grey; /* Change text color on hover */
 }
