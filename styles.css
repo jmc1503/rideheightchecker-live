@@ -142,9 +142,9 @@ header.shrink img {
     /* Results container styles on mobile */
     .results-container {
         width: 100%; /* Full width */
-        max-width: 98%; /* Set max width */
+        max-width: 87%; /* Set max width */
         margin: 0 auto; /* Center container */
-        margin-top: -260px; /* Adjust top margin */
+        margin-top: -143px; /* Adjust top margin */
         display: flex; /* Use flexbox for layout */
         flex-direction: column; /* Arrange items in column */
         align-items: center; /* Center items horizontally */
@@ -152,7 +152,11 @@ header.shrink img {
 
     /* Result container styles on mobile */
     .results-container #result-container {
-        width: 100%; /* Full width */
+        width: 87%; /* Full width */
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Arrange items in column */
+        align-items: center; /* Center items horizontally */
+        gap: 20px; /* Set gap between cards */
     }
 
     /* Container styles on mobile */
@@ -165,6 +169,7 @@ header.shrink img {
     .park-card {
         width: 100%; /* Full width */
         max-width: 98%; /* Set max width */
+        padding: 14px; /* Add padding */
     }
 
     /* Hide view toggle buttons on mobile */
@@ -264,7 +269,7 @@ button:hover {
 
 /* Park card container styles */
 .park-card {
-    padding: 19px; /* Add padding */
+    padding: 14px; /* Add padding */
     background-color: #fff; /* Set background color */
     border-radius: 8px; /* Round corners */
   /*  box-shadow: 0 4px 15px #007bff; /* Add shadow to card */
@@ -515,7 +520,7 @@ button:hover {
         margin-bottom: 0; /* Remove bottom margin */
     }
     .results-container {
-        margin-left: 270px; /* Ensure results container does not overlap filter card */
+        margin-left: 27px; /* Ensure results container does not overlap filter card */
         width: calc(100% - 270px); /* Adjust width to fit next to filter card */
     }
 }
