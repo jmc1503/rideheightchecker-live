@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const viewToggle = document.querySelector('.view-toggle');
     const modal = document.getElementById('modal');
     const rideInfoContainer = document.getElementById('ride-info');
-    const closeModal = modal.querySelector('.close'); // Adjusted selector for consistency
+    const closeModal = modal.querySelector('.close');
     const resetBtn = document.querySelector('.reset-btn');
     const parkForm = document.getElementById('park-form');
     const mapContainer = document.getElementById('map-container');
@@ -345,57 +345,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showRideInfoModal(park, rides) {
         rideInfoContainer.innerHTML = `<h3>${park}</h3>`;
-        let heights = [...new Set(rides.map(ride => ride['Minimum Height']))];
+        let heights = [...new Set(rides.map(ride => parseInt(ride['Minimum Height'])))]; // Ensure heights are integers
         heights.sort((a, b) => a - b);
 
         heights.forEach(height => {
-            const heightHeader = document.createElement('h4');
-            heightHeader.textContent = `Minimum Height: ${height} cm`;
-            rideInfoContainer.appendChild(heightHeader);
-
+            const heightSection = document.createElement('div');
+            heightSection.innerHTML = `<h4>Minimum Height: ${height} cm</h4>`;
             const rideList = document.createElement('ul');
-            // Filter and sort rides alphabetically by ride name
-            rides.filter(ride => ride['Minimum Height'] === height)
-                .sort((a, b) => a.Ride.localeCompare(b.Ride))
-                .forEach(ride => {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = ride.Ride;
-                    rideList.appendChild(listItem);
-                });
-
-            rideInfoContainer.appendChild(rideList);
+            rides.filter(ride => parseInt(ride['Minimum Height']) === height).forEach(ride => {
+                const rideItem = document.createElement('li');
+                rideItem.textContent = ride.Ride;
+                rideList.appendChild(rideItem);
+            });
+            heightSection.appendChild(rideList);
+            rideInfoContainer.appendChild(heightSection);
         });
 
         modal.style.display = 'block';
     }
 
-    // Hide modal on close
-    closeModal.onclick = function() {
+    closeModal.onclick = () => {
         modal.style.display = 'none';
-    }
+    };
 
-    // Hide modal when clicking outside of it or pressing ESC
-    window.onclick = function(event) {
-        if (event.target == modal || event.target == filterModal) {
+    window.onclick = (event) => {
+        if (event.target === modal) {
             modal.style.display = 'none';
-            filterModal.classList.remove('show');
         }
-    }
+    };
 
-    // Close modal on ESC key press
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            modal.style.display = 'none';
-            filterModal.classList.remove('show');
-        }
-    });
-
-    // Mobile filter button event listeners
+    // Mobile filter modal logic
     mobileFilterBtn.addEventListener('click', () => {
         filterModal.classList.add('show');
     });
 
     mobileCloseModal.addEventListener('click', () => {
         filterModal.classList.remove('show');
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === filterModal) {
+            filterModal.classList.remove('show');
+        }
     });
 });
