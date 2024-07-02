@@ -30,13 +30,13 @@ header {
 
 /* Header logo styles */
 header img {
-    height: 220px; /* Set logo height */
+    height: 87px; /* Set logo height */
     transition: height 0.3s ease; /* Smooth transition for height change */
 }
 
 /* Header logo styles when shrinking */
 header.shrink img {
-    height: 100px; /* Reduce logo height on scroll */
+    height: 50px; /* Reduce logo height on scroll */
 }
 
 /* Main container styles */
@@ -184,7 +184,7 @@ header.shrink img {
         z-index: 2000; /* Ensure above other content */
         left: 50%; /* Center horizontally */
         transform: translateX(-50%); /* Center horizontally */
-        top: 50px; /* Align to the top */
+        top: 150px; /* Align to the top just below the header */
         width: 80%; /* Set width */
         max-width: 600px; /* Set max width */
         background-color: white; /* Set background color */
