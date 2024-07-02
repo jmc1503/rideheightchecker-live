@@ -336,7 +336,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             viewToggle.style.display = 'flex'; // Show view toggle buttons
             resultContainer.style.display = 'grid';
-            document.querySelector('.container').classList.add('results-shown'); // Expand container
+            const container = document.querySelector('.container');
+            if (container) {
+                container.classList.add('results-shown'); // Expand container
+            }
         } else {
             resultContainer.textContent = 'No rides available for your height in this theme park.';
             resultContainer.style.display = 'block';
@@ -369,8 +372,9 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     window.onclick = (event) => {
-        if (event.target === modal) {
+        if (event.target === modal || event.target === filterModal) {
             modal.style.display = 'none';
+            filterModal.classList.remove('show');
         }
     };
 
@@ -388,4 +392,79 @@ document.addEventListener('DOMContentLoaded', function() {
             filterModal.classList.remove('show');
         }
     });
+
+    // Ensure list and map views work for mobile
+    const mobileListViewBtn = document.createElement('button');
+    mobileListViewBtn.classList.add('view-toggle', 'mobile-only');
+    mobileListViewBtn.innerHTML = 'List View';
+    mobileListViewBtn.addEventListener('click', () => {
+        resultContainer.style.display = 'grid';
+        mapContainer.style.display = 'none';
+        mapElement.style.display = 'none';
+        mobileListViewBtn.classList.add('active');
+        mobileListViewBtn.classList.remove('inactive');
+        mapViewBtn.classList.add('inactive');
+        mapViewBtn.classList.remove('active');
+    });
+
+    const mobileMapViewBtn = document.createElement('button');
+    mobileMapViewBtn.classList.add('view-toggle', 'mobile-only');
+    mobileMapViewBtn.innerHTML = 'Map View';
+    mobileMapViewBtn.addEventListener('click', () => {
+        resultContainer.style.display = 'none';
+        mapContainer.style.display = 'block';
+        mapElement.style.display = 'block';
+        mobileMapViewBtn.classList.add('active');
+        mobileMapViewBtn.classList.remove('inactive');
+        listViewBtn.classList.add('inactive');
+        listViewBtn.classList.remove('active');
+
+        if (!map) {
+            map = L.map('map').setView([51.505, -0.09], 2);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+        }
+
+        markers.forEach(marker => {
+            map.removeLayer(marker);
+        });
+
+        markers = [];
+
+        const height = parseInt(mobileHeightInput.value);
+        const country = mobileCountrySelect.value;
+        const themePark = mobileThemeParkSelect.value;
+
+        let filteredRides = allData.filter(item => {
+            return (country === '' || item.Country === country) &&
+                (themePark === '' || item['Theme Park'] === themePark) &&
+                item['Minimum Height'] <= height &&
+                item['Maximum Height'] >= height;
+        });
+
+        const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
+
+        themeParks.forEach(park => {
+            const parkData = allData.find(item => item['Theme Park'] === park);
+            if (parkData) {
+                const totalRidesInPark = allData.filter(ride => ride['Theme Park'] === park).length;
+                const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
+                const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
+
+                const marker = L.marker([parkData.Latitude, parkData.Longitude]).addTo(map);
+                marker.bindPopup(`<b>${park}</b><br>${parkData.Country}<br>${percentage}% of rides available`).openPopup();
+                markers.push(marker);
+            }
+        });
+
+        setTimeout(() => {
+            map.invalidateSize();
+        }, 100);
+    });
+
+    filterModal.querySelector('.view-toggle').appendChild(mobileListViewBtn);
+    filterModal.querySelector('.view-toggle').appendChild(mobileMapViewBtn);
 });
