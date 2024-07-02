@@ -30,7 +30,7 @@ header {
 
 /* Header logo styles */
 header img {
-    height: 87px; /* Set logo height */
+    height: 375px; /* Set logo height */
     transition: height 0.3s ease; /* Smooth transition for height change */
 }
 
@@ -186,11 +186,12 @@ header.shrink img {
         transform: translateX(-50%); /* Center horizontally */
         top: 150px; /* Align to the top just below the header */
         width: 80%; /* Set width */
+        height: 420px; /* Set height to 400px */
         max-width: 600px; /* Set max width */
-        background-color: white; /* Set background color */
+        background-color: #fff814; /* Set background color */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
         border-radius: 8px; /* Round corners */
-        padding: 20px; /* Add padding */
+        padding: 0px; /* Add padding */
         box-sizing: border-box; /* Include padding in width */
     }
 
@@ -241,6 +242,22 @@ header.shrink img {
     /* Button hover styles in filter modal */
     #filter-modal button:hover {
         background-color: #0056b3; /* Change background color on hover */
+    }
+
+    /* Reset button styles in filter modal */
+    #filter-modal .reset-btn {
+        background: none; /* No background */
+        border: none; /* No border */
+        color: #007bff; /* Set text color */
+        cursor: pointer; /* Change cursor on hover */
+        text-decoration: underline; /* Underline text */
+        font-size: 0.8em; /* Set font size */
+        text-align: center; /* Center text */
+    }
+
+    /* Reset button hover styles in filter modal */
+    #filter-modal .reset-btn:hover {
+        color: #0056b3; /* Change text color on hover */
     }
 }
 
@@ -439,7 +456,7 @@ button:hover {
 /* Modal content styles */
 .modal-content {
     background-color: #fff; /* Set background color */
-    margin: 15% auto; /* Center content */
+    margin: 7% auto; /* Center content */
     padding: 20px; /* Add padding */
     border: 1px solid #888; /* Set border */
     width: 80%; /* Set width */
