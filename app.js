@@ -21,6 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileCountrySelect = document.getElementById('mobile-country');
     const mobileThemeParkSelect = document.getElementById('mobile-theme-park');
     const mobileHeightInput = document.getElementById('mobile-height');
+    const mobileResetBtn = document.createElement('button'); // Create reset button for mobile
+
+    mobileResetBtn.type = 'button';
+    mobileResetBtn.className = 'reset-btn';
+    mobileResetBtn.textContent = 'Reset';
+    mobileParkForm.appendChild(mobileResetBtn);
 
     let map;
     let markers = [];
@@ -180,6 +186,13 @@ document.addEventListener('DOMContentLoaded', function() {
         listViewBtn.click(); // Simulate list view button click
         displayResults(allData); // Display all theme parks again
         window.scrollTo(0, 0); // Scroll to top after reset
+    });
+
+    // Handle mobile reset button click
+    mobileResetBtn.addEventListener('click', () => {
+        mobileParkForm.reset();
+        populateMobileThemeParkSelect(allData);
+        displayResults(allData); // Display all theme parks again
     });
 
     // Handle view toggling
