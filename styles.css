@@ -30,8 +30,15 @@ header {
 
 /* Header logo styles */
 header img {
-    height: 85px; /* Set logo height */
+    height: 85px; /* Set desktop logo height */
     transition: height 0.3s ease; /* Smooth transition for height change */
+}
+
+/* Mobile header logo styles */
+@media (max-width: 768px) {
+    header img {
+        height: 56px; /* Set mobile logo height */
+    }
 }
 
 /* Header logo styles when shrinking */
