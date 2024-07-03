@@ -255,7 +255,7 @@ header.shrink img {
     #filter-modal .reset-btn {
         background: none; /* No background */
         border: none; /* No border */
-        color: #007bff; /* Set text color */
+        color: lightgrey; /* Set text color to light grey to match desktop */
         cursor: pointer; /* Change cursor on hover */
         text-decoration: underline; /* Underline text */
         font-size: 0.8em; /* Set font size */
@@ -264,7 +264,7 @@ header.shrink img {
 
     /* Reset button hover styles in filter modal */
     #filter-modal .reset-btn:hover {
-        color: #0056b3; /* Change text color on hover */
+        color: grey; /* Change text color on hover */
     }
 }
 
