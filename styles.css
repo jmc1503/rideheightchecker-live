@@ -247,9 +247,9 @@ header.shrink img {
     }
 
     /* Button hover styles in filter modal */
-    #filter-modal button:hover {
+/*    #filter-modal button:hover {
         background-color: #0056b3; /* Change background color on hover */
-    }
+   /* } 
 
     /* Reset button styles in filter modal */
     #filter-modal .reset-btn {
