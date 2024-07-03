@@ -215,9 +215,9 @@ header.shrink img {
     /* Close button styles on mobile */
     #filter-modal .close {
         position: absolute; /* Fix position */
-        top: 10px; /* Align to the top */
-        right: 10px; /* Align to the right */
-        font-size: 24px; /* Set font size */
+        top: -3px; /* Align to the top */
+        right: 6px; /* Align to the right */
+        font-size: 25px; /* Set font size */
         cursor: pointer; /* Change cursor on hover */
     }
 
