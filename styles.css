@@ -30,7 +30,7 @@ header {
 
 /* Header logo styles */
 header img {
-    height: 375px; /* Set logo height */
+    height: 85px; /* Set logo height */
     transition: height 0.3s ease; /* Smooth transition for height change */
 }
 
@@ -457,7 +457,7 @@ button:hover {
 .modal-content {
     background-color: #fff; /* Set background color */
     margin: 7% auto; /* Center content */
-    padding: 20px; /* Add padding */
+    padding: 17px; /* Add padding */
     border: 1px solid #888; /* Set border */
     width: 80%; /* Set width */
     max-width: 600px; /* Set max width */
