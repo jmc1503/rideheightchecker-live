@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ride Height Checker</title>
+    <title>Ride Height Checker - Theme Park Ride Height Requirements</title>
+    <meta name="description" content="Check theme park ride height requirements with Ride Height Checker. Find rides suitable for your height at various theme parks.">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="rhcfavicon.png" type="image/png"> <!-- Add favicon -->
+    <link rel="icon" href="rhcfavicon.png" type="image/png">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1969578899445338" crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ND3KNJTTX5"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -14,7 +15,9 @@
 </head>
 <body>
     <header>
-        <img src="rhcheader.png" alt="Theme Park Finder Logo">
+        <h1 class="visually-hidden">Ride Height Checker</h1>
+        <p class="visually-hidden">Find theme park rides suitable for your height. Check ride height requirements for various theme parks.</p>
+        <img src="rhcheader.png" alt="Ride Height Checker Logo - Find Theme Park Rides by Height">
     </header>
     <button id="mobile-filter-btn" class="mobile-only">Filter</button>
     <div id="filter-modal" class="modal">
@@ -42,13 +45,13 @@
         </div>
     </div>
     <div class="main-container">
-        <div class="content-wrapper"> <!-- New wrapper to centralize filter and results -->
+        <div class="content-wrapper">
             <div class="filter-card">
                 <form id="park-form" autocomplete="off">
                     <div class="form-group">
                         <div class="form-field">
                             <label for="height">Enter your height (in cm):</label>
-                            <input type="number" id="height" name="height" required autocomplete="off">
+                            <input type="number" id="height" name="height" required autocomplete="off" placeholder="Enter your height (in cm)">
                         </div>
                         <div class="form-field">
                             <label for="country">Select a country:</label>
