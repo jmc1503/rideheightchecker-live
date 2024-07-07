@@ -264,10 +264,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Display results
     function displayResults(data) {
         resultContainer.innerHTML = '';
-
+    
         if (data.length > 0) {
             const themeParks = [...new Set(data.map(item => item['Theme Park']))];
-
+    
             let parksWithPercentage = themeParks.map(park => {
                 const parkData = data.find(ride => ride['Theme Park'] === park);
                 const totalRidesInPark = allData.filter(ride => ride['Theme Park'] === park).length;
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
                 return { park, percentage: parseInt(percentage), parkData, data };
             });
-
+    
             // Sort by percentage desc, then by URL presence, and then by park name asc
             parksWithPercentage.sort((a, b) => {
                 if (a.percentage === b.percentage) {
@@ -285,39 +285,40 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 return b.percentage - a.percentage;
             });
-
+    
             parksWithPercentage.forEach(({ park, percentage, parkData, data }) => {
                 const parkURL = parkData.URL;
                 const parkImage = parkData.Image || '';
                 const countryEmoji = countryEmojiMap[parkData.Country] || '';
-
+    
                 const parkCard = document.createElement('div');
                 parkCard.classList.add('park-card');
-
+    
                 const flagIcon = document.createElement('div');
                 flagIcon.classList.add('flag-icon');
                 flagIcon.textContent = countryEmoji;
                 parkCard.appendChild(flagIcon);
-
+    
                 const parkHeader = document.createElement('h3');
                 parkHeader.innerHTML = `${park}`;
                 parkCard.appendChild(parkHeader);
-
+    
                 const parkInfo = document.createElement('p');
                 parkInfo.classList.add('park-info');
                 parkInfo.innerHTML = `${percentage}% of rides available`;
                 parkCard.appendChild(parkInfo);
-
+    
                 if (parkImage) {
                     const parkImgElement = document.createElement('img');
                     parkImgElement.src = parkImage;
                     parkImgElement.classList.add('park-image');
+                    parkImgElement.alt = parkData.Alt || `${park} theme park in ${parkData.Country}`;
                     parkCard.appendChild(parkImgElement);
                 }
-
+    
                 const actionContainer = document.createElement('div');
                 actionContainer.classList.add('action-container');
-
+    
                 if (parkURL) {
                     const buyTicketsBtn = document.createElement('button');
                     buyTicketsBtn.classList.add('action-btn');
@@ -325,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     buyTicketsBtn.onclick = () => window.open(parkURL, '_blank');
                     actionContainer.appendChild(buyTicketsBtn);
                 }
-
+    
                 const moreInfoBtn = document.createElement('div');
                 moreInfoBtn.textContent = 'More Information';
                 moreInfoBtn.classList.add('more-info-btn');
@@ -333,11 +334,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     showRideInfoModal(park, data.filter(ride => ride['Theme Park'] === park));
                 });
                 actionContainer.appendChild(moreInfoBtn);
-
+    
                 parkCard.appendChild(actionContainer);
                 resultContainer.appendChild(parkCard);
             });
-
+    
             // Ensure 4 cards per row with equal size
             const numCards = resultContainer.children.length;
             const numEmptyCards = (4 - (numCards % 4)) % 4;
@@ -346,7 +347,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 emptyCard.classList.add('park-card', 'empty-card');
                 resultContainer.appendChild(emptyCard);
             }
-
+    
             viewToggle.style.display = 'flex'; // Show view toggle buttons
             resultContainer.style.display = 'grid';
             const container = document.querySelector('.container');
@@ -358,6 +359,7 @@ document.addEventListener('DOMContentLoaded', function() {
             resultContainer.style.display = 'block';
         }
     }
+    
 
     function showRideInfoModal(park, rides) {
         rideInfoContainer.innerHTML = `<h3>${park}</h3>`;
