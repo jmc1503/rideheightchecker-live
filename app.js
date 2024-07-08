@@ -313,6 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     parkImgElement.src = parkImage;
                     parkImgElement.classList.add('park-image');
                     parkImgElement.alt = parkData.Alt || `${park} theme park in ${parkData.Country}`;
+                    parkImgElement.loading = 'lazy';
                     parkCard.appendChild(parkImgElement);
                 }
     
