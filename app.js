@@ -37,7 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
         "United Kingdom": "🇬🇧",
         "France": "🇫🇷",
         "Germany": "🇩🇪",
-        "Denmark": "🇩🇰"
+        "Denmark": "🇩🇰",
+        "Canada": "🇨🇦",
+        "Costa Rica": "🇨🇷"
         // Add more mappings as needed
     };
 
