@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Denmark": "🇩🇰",
         "Canada": "🇨🇦",
         "Costa Rica": "🇨🇷"
+        "Åland Islands": "🇦🇽"
         // Add more mappings as needed
     };
 
