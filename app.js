@@ -41,7 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
         "Canada": "🇨🇦",
         "Costa Rica": "🇨🇷",
         "Åland Islands": "🇦🇽",
-        "Brazil": "🇧🇷"
+        "Brazil": "🇧🇷",
+        "Netherlands": "🇳🇱"
         // Add more mappings as needed
     };
 
