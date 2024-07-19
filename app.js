@@ -42,7 +42,11 @@ document.addEventListener('DOMContentLoaded', function() {
         "Costa Rica": "🇨🇷",
         "Åland Islands": "🇦🇽",
         "Brazil": "🇧🇷",
-        "Netherlands": "🇳🇱"
+        "Netherlands": "🇳🇱",
+        "Mexico": "🇲🇽",
+        "Italy": "🇮🇹",
+        "Sweden": "🇸🇪",
+        "Spain": "🇪🇸"
         // Add more mappings as needed
     };
 
