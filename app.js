@@ -37,7 +37,16 @@ document.addEventListener('DOMContentLoaded', function() {
         "United Kingdom": "🇬🇧",
         "France": "🇫🇷",
         "Germany": "🇩🇪",
-        "Denmark": "🇩🇰"
+        "Denmark": "🇩🇰",
+        "Canada": "🇨🇦",
+        "Costa Rica": "🇨🇷",
+        "Åland Islands": "🇦🇽",
+        "Brazil": "🇧🇷",
+        "Netherlands": "🇳🇱",
+        "Mexico": "🇲🇽",
+        "Italy": "🇮🇹",
+        "Sweden": "🇸🇪",
+        "Spain": "🇪🇸"
         // Add more mappings as needed
     };
 
@@ -313,6 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     parkImgElement.src = parkImage;
                     parkImgElement.classList.add('park-image');
                     parkImgElement.alt = parkData.Alt || `${park} theme park in ${parkData.Country}`;
+                    parkImgElement.loading = 'lazy';
                     parkCard.appendChild(parkImgElement);
                 }
     
