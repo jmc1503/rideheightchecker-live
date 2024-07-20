@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let markers = [];
     let allData = [];
 
-    const countryEmojiMap = {
+   /* const countryEmojiMap = {
         "United States": "🇺🇸",
         "United Kingdom": "🇬🇧",
         "France": "🇫🇷",
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Sweden": "🇸🇪",
         "Spain": "🇪🇸"
         // Add more mappings as needed
-    };
+    };*/
 
     // Hide map container by default
     mapContainer.style.display = 'none';
@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
             parksWithPercentage.forEach(({ park, percentage, parkData, data }) => {
                 const parkURL = parkData.URL;
                 const parkImage = parkData.Image || '';
-                const countryEmoji = countryEmojiMap[parkData.Country] || '';
+                const countryEmoji = parkData.Flag || '';
     
                 const parkCard = document.createElement('div');
                 parkCard.classList.add('park-card');
