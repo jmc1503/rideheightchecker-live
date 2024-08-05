@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileHeightInput = document.getElementById('mobile-height');
     const mobileResetBtn = document.createElement('button'); // Create reset button for mobile
 
+    const burgerMenuIcon = document.getElementById('burger-menu-icon');
+    const burgerMenuModal = document.getElementById('burger-menu-modal');
+    const closeBurgerMenuModal = document.getElementById('close-burger-menu-modal');
+
     mobileResetBtn.type = 'button';
     mobileResetBtn.className = 'reset-btn';
     mobileResetBtn.textContent = 'Reset';
@@ -422,6 +426,21 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('click', (event) => {
         if (event.target === filterModal) {
             filterModal.classList.remove('show');
+        }
+    });
+
+    // Burger menu logic
+    burgerMenuIcon.addEventListener('click', () => {
+        burgerMenuModal.style.display = 'block';
+    });
+
+    closeBurgerMenuModal.addEventListener('click', () => {
+        burgerMenuModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === burgerMenuModal) {
+            burgerMenuModal.style.display = 'none';
         }
     });
 
