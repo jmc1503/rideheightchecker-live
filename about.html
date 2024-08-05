@@ -26,6 +26,7 @@
         <h1 class="visually-hidden">Ride Height Checker</h1>
         <p class="visually-hidden">Find theme park rides suitable for your height. Check ride height requirements for various theme parks.</p>
         <a href="index.html"><img src="rhcheader.png" alt="Ride Height Checker Logo - Find Theme Park Rides by Height"></a>
+        <img id="burger-menu-icon" src="burgermenuicon.png" alt="Menu Icon" class="burger-menu-icon">
     </header>
     <div class="main-container">
         <div class="content-wrapper">
@@ -50,6 +51,35 @@
             </div>
         </div>
     </div>
-    <script src="app.js"></script>
+    <div id="burger-menu-modal" class="modal">
+        <div class="modal-content burger-modal-content">
+            <span id="close-burger-menu-modal" class="close">&times;</span>
+            <div class="burger-modal-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var burgerMenuIcon = document.getElementById('burger-menu-icon');
+            var burgerMenuModal = document.getElementById('burger-menu-modal');
+            var closeBurgerMenuModal = document.getElementById('close-burger-menu-modal');
+
+            burgerMenuIcon.addEventListener('click', function() {
+                burgerMenuModal.style.display = 'block';
+            });
+
+            closeBurgerMenuModal.addEventListener('click', function() {
+                burgerMenuModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target == burgerMenuModal) {
+                    burgerMenuModal.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
