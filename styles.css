@@ -46,6 +46,14 @@ header.shrink img {
     height: 50px; /* Reduce logo height on scroll */
 }
 
+/* Burger menu icon base styles */
+.burger-menu-icon {
+    position: absolute; /* Fix position */
+    width: 30px; /* Set width */
+    height: 30px; /* Set height */
+    cursor: pointer; /* Change cursor on hover */
+}
+
 /* Main container styles */
 .main-container {
     display: flex; /* Use flexbox for layout */
@@ -311,7 +319,6 @@ button:hover {
     padding: 14px; /* Add padding */
     background-color: #fff; /* Set background color */
     border-radius: 8px; /* Round corners */
-  /*  box-shadow: 0 4px 15px #007bff; /* Add shadow to card */
     box-sizing: border-box; /* Include padding in width */
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Arrange items in column */
@@ -370,7 +377,6 @@ button:hover {
     width: 256px; /* Set width */
     height: 176.656px; /* Set height */
     margin: 10px auto; /* Center image */
-   /* border: 5px solid #ccc; /* Set border */
     box-sizing: border-box; /* Include padding in width */
     border-radius: 19px;
 }
@@ -503,6 +509,18 @@ button:hover {
     cursor: pointer; /* Change cursor on hover */
 }
 
+/* Burger menu modal styles */
+.burger-modal-content {
+    width: 150px; /* Set width */
+    height: 150px; /* Set height */
+    position: absolute; /* Fix position */
+    background-color: #fff814; /* Set background color */
+    border-radius: 8px; /* Round corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    padding: 10px; /* Add padding */
+    box-sizing: border-box; /* Include padding in width */
+}
+
 /* Form group styles */
 .form-group {
     display: flex; /* Use flexbox for layout */
@@ -543,6 +561,31 @@ button:hover {
     #mobile-filter-btn {
         display: none; /* Hide */
     }
+
+    .burger-menu-icon {
+        top: 33px; /* Align to the top for desktop */
+        right: 24px; /* Align to the right for desktop */
+    }
+
+    .burger-modal-content {
+        width: 121px; /* Set new width for desktop */
+        height: 125px; /* Set new height for desktop */
+        top: -93px; /* Align to the top for desktop */
+        right: 36px; /* Align to the right for desktop */
+        background-color: rgba(254, 249, 119, 0.91); /* 0.5 for 50% transparency */
+    }
+
+    .burger-modal-content .close {
+        position: absolute; /* Fix position */
+        top: 3px; /* Align to the top for desktop */
+        right: 11px; /* Align to the right for desktop */
+    }
+
+    /* Grouping the links for desktop */
+    .burger-modal-links {
+        margin-top: 10px; /* Adjust this value as needed */
+        margin-left: 10px; /* Adjust this value as needed */
+    }
 }
 
 /* Ensure filter card stays to the left on smaller screens */
@@ -564,6 +607,34 @@ button:hover {
     }
 }
 
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    .burger-menu-icon {
+        top: 34px; /* Align to the top for mobile */
+        right: 12px; /* Align to the right for mobile */
+    }
+
+    .burger-modal-content {
+        width: 111px; /* Set new width for mobile */
+        height: 120px; /* Set new height for mobile */
+        top: 12px; /* Align to the top for mobile */
+        right: 19px; /* Align to the right for mobile */
+        background-color: rgba(254, 249, 119, 0.91); /* 0.5 for 50% transparency */
+    }
+
+    .burger-modal-content .close {
+        position: absolute; /* Fix position */
+        top: -1px; /* Align to the top for mobile */
+        right: 9px; /* Align to the right for mobile */
+    }
+
+    /* Grouping the links for mobile */
+    .burger-modal-links {
+        margin-top: 10px; /* Adjust this value as needed */
+        margin-left: 5px; /* Adjust this value as needed */
+    }
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -574,3 +645,23 @@ button:hover {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
+
+/* Grouping the links */
+.burger-modal-links {
+    display: flex;
+    flex-direction: column; /* Arrange items in column */
+    gap: 10px; /* Set gap between links */
+    font-size: 25px; /* Set font size */
+}
+
+/* Close button base styles */
+.burger-modal-content .close {
+    font-size: 25px; /* Set font size */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+    /* Make about-content narrower on mobile */
+    .about-content {
+        max-width: 75%;
+        margin: 0 auto; /* Center the content */
+    }
