@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Denmark": "🇩🇰",
         "Canada": "🇨🇦",
         "Costa Rica": "🇨🇷",
-        "Åland Islands": "🇦🇽",
+        "Åland Islands": "🇦",
         "Brazil": "🇧🇷",
         "Netherlands": "🇳🇱",
         "Mexico": "🇲🇽",
@@ -285,14 +285,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 return { park, percentage: parseInt(percentage), parkData, data };
             });
     
-            // Sort by percentage desc, then by URL presence, and then by park name asc
+            // Sort by affiliated status, then by percentage of rides available, then alphabetically by park name
             parksWithPercentage.sort((a, b) => {
-                if (a.percentage === b.percentage) {
-                    if (b.parkData.URL && !a.parkData.URL) return 1;
-                    if (!b.parkData.URL && a.parkData.URL) return -1;
-                    return a.park.localeCompare(b.park);
+                if (a.parkData.Affiliated !== b.parkData.Affiliated) {
+                    return b.parkData.Affiliated - a.parkData.Affiliated;
                 }
-                return b.percentage - a.percentage;
+                if (a.percentage !== b.percentage) {
+                    return b.percentage - a.percentage;
+                }
+                return a.park.localeCompare(b.park);
             });
     
             parksWithPercentage.forEach(({ park, percentage, parkData, data }) => {
@@ -329,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const actionContainer = document.createElement('div');
                 actionContainer.classList.add('action-container');
     
-                if (parkURL) {
+                if (parkData.Affiliated === 1 && parkURL) {
                     const buyTicketsBtn = document.createElement('button');
                     buyTicketsBtn.classList.add('action-btn');
                     buyTicketsBtn.innerHTML = '🎟️ Buy Tickets';
@@ -375,20 +376,26 @@ document.addEventListener('DOMContentLoaded', function() {
         rideInfoContainer.innerHTML = `<h3>${park}</h3>`;
         let heights = [...new Set(rides.map(ride => parseInt(ride['Minimum Height'])))]; // Ensure heights are integers
         heights.sort((a, b) => a - b);
-
+    
         heights.forEach(height => {
             const heightSection = document.createElement('div');
             heightSection.innerHTML = `<h4>Minimum Height: ${height} cm</h4>`;
             const rideList = document.createElement('ul');
-            rides.filter(ride => parseInt(ride['Minimum Height']) === height).forEach(ride => {
-                const rideItem = document.createElement('li');
-                rideItem.textContent = ride.Ride;
-                rideList.appendChild(rideItem);
-            });
+            rides.filter(ride => parseInt(ride['Minimum Height']) === height)
+                .sort((a, b) => {
+                    const nameA = a.Ride.toLowerCase().replace(/^the\s+/i, '');
+                    const nameB = b.Ride.toLowerCase().replace(/^the\s+/i, '');
+                    return nameA.localeCompare(nameB);
+                })
+                .forEach(ride => {
+                    const rideItem = document.createElement('li');
+                    rideItem.textContent = ride.Ride;
+                    rideList.appendChild(rideItem);
+                });
             heightSection.appendChild(rideList);
             rideInfoContainer.appendChild(heightSection);
         });
-
+    
         modal.style.display = 'block';
     }
 
