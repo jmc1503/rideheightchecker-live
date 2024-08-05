@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ND3KNJTTX5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ND3KNJTTX5');
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ND3KNJTTX5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ND3KNJTTX5');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +16,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="rhcfavicon.png" type="image/png">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1969578899445338" crossorigin="anonymous"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ND3KNJTTX5"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
@@ -27,6 +25,7 @@
         <h1 class="visually-hidden">Ride Height Checker</h1>
         <p class="visually-hidden">Find theme park rides suitable for your height. Check ride height requirements for various theme parks.</p>
         <a href="index.html"><img src="rhcheader.png" alt="Ride Height Checker Logo - Find Theme Park Rides by Height"></a>
+        <img id="burger-menu-icon" src="burgermenuicon.png" alt="Menu Icon" class="burger-menu-icon">
     </header>
     <button id="mobile-filter-btn" class="mobile-only">Filter</button>
     <div id="filter-modal" class="modal">
@@ -51,6 +50,15 @@
                     <button type="submit">Find Rides</button>
                 </div>
             </form>
+        </div>
+    </div>
+    <div id="burger-menu-modal" class="modal">
+        <div class="modal-content burger-modal-content">
+            <span id="close-burger-menu-modal" class="close">&times;</span>
+            <div class="burger-modal-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </div>
         </div>
     </div>
     <div class="main-container">
