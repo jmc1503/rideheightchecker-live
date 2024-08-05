@@ -74637,7 +74637,7 @@
    "Latitude": 7.8905193,
    "Longitude": 98.2977471,
    "Active": 1,
-   "Image": "https://optim.tildacdn.com/tild3335-6361-4533-b739-643939656233/-/format/webp/99-min.png",
+   "Image": "https://lh5.googleusercontent.com/p/AF1QipOh-qJRnJrmbpCJlW5Iqd-YG1Ye5eAzCLwToeyp=w408-h306-k-no",
    "Alt": "Froggy's Fun Park theme park in the Thailand, featuring various rides and attractions",
    "Flag": "🇹🇭",
    "City": "Kathu District",
@@ -74655,13 +74655,13 @@
    "Latitude": 7.8905193,
    "Longitude": 98.2977471,
    "Active": 1,
-   "Image": "https://optim.tildacdn.com/tild3335-6361-4533-b739-643939656233/-/format/webp/99-min.png",
+   "Image": "https://lh5.googleusercontent.com/p/AF1QipOh-qJRnJrmbpCJlW5Iqd-YG1Ye5eAzCLwToeyp=w408-h306-k-no",
    "Alt": "Froggy's Fun Park theme park in the Thailand, featuring various rides and attractions",
    "Flag": "🇹🇭",
    "City": "Kathu District",
    "State": "Phuket",
    "Affiliated": 1,
-   "Source": ""
+   "Source": "Tiqets"
  },
  {
    "Country": "Thailand",
@@ -74673,13 +74673,13 @@
    "Latitude": 7.8905193,
    "Longitude": 98.2977471,
    "Active": 1,
-   "Image": "https://optim.tildacdn.com/tild3335-6361-4533-b739-643939656233/-/format/webp/99-min.png",
+   "Image": "https://lh5.googleusercontent.com/p/AF1QipOh-qJRnJrmbpCJlW5Iqd-YG1Ye5eAzCLwToeyp=w408-h306-k-no",
    "Alt": "Froggy's Fun Park theme park in the Thailand, featuring various rides and attractions",
    "Flag": "🇹🇭",
    "City": "Kathu District",
    "State": "Phuket",
    "Affiliated": 1,
-   "Source": ""
+   "Source": "Tiqets"
  },
  {
    "Country": "Thailand",
@@ -74691,13 +74691,13 @@
    "Latitude": 7.8905193,
    "Longitude": 98.2977471,
    "Active": 1,
-   "Image": "https://optim.tildacdn.com/tild3335-6361-4533-b739-643939656233/-/format/webp/99-min.png",
+   "Image": "https://lh5.googleusercontent.com/p/AF1QipOh-qJRnJrmbpCJlW5Iqd-YG1Ye5eAzCLwToeyp=w408-h306-k-no",
    "Alt": "Froggy's Fun Park theme park in the Thailand, featuring various rides and attractions",
    "Flag": "🇹🇭",
    "City": "Kathu District",
    "State": "Phuket",
    "Affiliated": 1,
-   "Source": ""
+   "Source": "Tiqets"
  },
  {
    "Country": "Thailand",
@@ -74709,12 +74709,30 @@
    "Latitude": 7.8905193,
    "Longitude": 98.2977471,
    "Active": 1,
-   "Image": "https://optim.tildacdn.com/tild3335-6361-4533-b739-643939656233/-/format/webp/99-min.png",
+   "Image": "https://lh5.googleusercontent.com/p/AF1QipOh-qJRnJrmbpCJlW5Iqd-YG1Ye5eAzCLwToeyp=w408-h306-k-no",
    "Alt": "Froggy's Fun Park theme park in the Thailand, featuring various rides and attractions",
    "Flag": "🇹🇭",
    "City": "Kathu District",
    "State": "Phuket",
    "Affiliated": 1,
-   "Source": ""
+   "Source": "Tiqets"
+ },
+ {
+   "Country": "France",
+   "Theme Park": "Jardin d’Acclimatation",
+   "Ride": "Speed Rockets",
+   "Minimum Height": "",
+   "Maximum Height": null,
+   "URL": "https://www.tiqets.com/widgets/booking_engine/1012162?partner=ride_height_checker-165506&tq_campaign=Jardin+d%E2%80%99Acclimatation",
+   "Latitude": 48.877836,
+   "Longitude": 2.2547029,
+   "Active": 1,
+   "Image": "",
+   "Alt": "Jardin d’Acclimatation theme park in the France, featuring various rides and attractions",
+   "Flag": "🇫🇷",
+   "City": "Paris",
+   "State": "Île-de-France",
+   "Affiliated": 1,
+   "Source": "Tiqets"
  }
 ]
