@@ -66,6 +66,21 @@ header.shrink img {
     margin-top: 150px; /* Adjust this value to control the top position */
 }
 
+/* Specific styles for the about page */
+.about-page .content-wrapper {
+    max-width: 77%; /* Set maximum width to 77% for about page */
+}
+
+.about-page h2, 
+.about-page h3 {
+    color: #40768E; /* Set font color */
+    font-weight: bold; /* Make titles bold */
+}
+
+.about-page p {
+    color: #40768E; /* Set font color */
+}
+
 /* Filter card styles */
 .filter-card {
     background-color: #fff; /* Set background color */
@@ -247,9 +262,9 @@ header.shrink img {
     }
 
     /* Button hover styles in filter modal */
-/*    #filter-modal button:hover {
+    #filter-modal button:hover {
         background-color: #0056b3; /* Change background color on hover */
-   /* } 
+    }
 
     /* Reset button styles in filter modal */
     #filter-modal .reset-btn {
