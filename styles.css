@@ -583,8 +583,8 @@ button:hover {
 
     /* Grouping the links for desktop */
     .burger-modal-links {
-        margin-top: 10px; /* Adjust this value as needed */
-        margin-left: 10px; /* Adjust this value as needed */
+        margin-top: 17px; /* Adjust this value as needed */
+        margin-left: 15px; /* Adjust this value as needed */
     }
 }
 
@@ -630,8 +630,8 @@ button:hover {
 
     /* Grouping the links for mobile */
     .burger-modal-links {
-        margin-top: 10px; /* Adjust this value as needed */
-        margin-left: 5px; /* Adjust this value as needed */
+        margin-top: 17px; /* Adjust this value as needed */
+        margin-left: 15px; /* Adjust this value as needed */
     }
 }
 
@@ -651,7 +651,7 @@ button:hover {
     display: flex;
     flex-direction: column; /* Arrange items in column */
     gap: 10px; /* Set gap between links */
-    font-size: 25px; /* Set font size */
+    font-size: 19px; /* Set font size */
 }
 
 /* Close button base styles */
