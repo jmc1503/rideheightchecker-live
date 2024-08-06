@@ -112,7 +112,7 @@ header.shrink img {
     background-color: transparent; /* Make background transparent */
     flex-grow: 1; /* Allow container to grow */
     box-sizing: border-box; /* Include padding in width */
-    overflow-x: auto; /* Add horizontal scroll if content overflows */
+    overflow: visible; /* Change to visible to remove scrollbar */
 }
 
 /* Result container styles */
@@ -453,7 +453,7 @@ button:hover {
 
 /* Map container styles */
 #map {
-    height: 700px; /* Set height */
+    height: 557px; /* Set height */
     display: none; /* Hide map by default */
 }
 
@@ -464,7 +464,7 @@ button:hover {
     border-radius: 8px; /* Round corners */
     box-shadow: 0 4px 15px #5EE8D5; /* Add shadow to container */
     box-sizing: border-box; /* Include padding in width */
-    margin-top: 0px; /* Adjust top margin */
+    margin-top: 336px; /* Adjust top margin */
 }
 
 /* Modal styles */
@@ -665,3 +665,77 @@ button:hover {
         max-width: 75%;
         margin: 0 auto; /* Center the content */
     }
+
+    .pagination-list {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        margin-top: -385px; /* Adjust the margin as needed */
+    }
+    
+    .pagination-item {
+        margin: 0 5px;
+    }
+    
+    .pagination-link {
+        background-color: transparent;
+        border: none;
+        color: blue;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    .pagination-link.active {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    
+    .pagination-link:disabled {
+        color: grey;
+        cursor: not-allowed;
+    }
+    
+    /* Styles for pagination on mobile devices */
+@media (max-width: 768px) {
+    .pagination-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        margin-top: -387px;
+        margin-bottom: 20px;
+    }
+    
+    .pagination-item {
+        margin: 5px;
+    }
+    
+    .pagination-link {
+        background-color: transparent;
+      /*  border: 1px solid #007bff; */
+      /*  border-radius: 5px; */
+        color: #007bff;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 5px 10px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .pagination-link.active {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    .pagination-link:disabled {
+        color: grey;
+        cursor: not-allowed;
+    }
+    
+    .pagination-item .pagination-link {
+        display: inline-block;
+        text-align: center;
+    }
+}
