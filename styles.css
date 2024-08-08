@@ -1,9 +1,9 @@
-/* Import Raleway font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-/* Apply Raleway font to all elements */
+/* Apply Poppins font to all elements */
 * {
-    font-family: 'Raleway', sans-serif; /* Set font family for all elements */
+    font-family: 'Poppins', sans-serif; /* Set font family for all elements */
 }
 
 /* Body styles */
