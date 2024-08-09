@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ND3KNJTTX5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-ND3KNJTTX5');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ride Height Checker | Find Theme Park Rides by Height</title>
+    <meta name="description" content="Learn about Ride Height Checker, a tool to find theme park rides suitable for your height. Discover our mission and how to use our tool.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="rhcfavicon.png" type="image/png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1969578899445338" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="visually-hidden">Ride Height Checker</h1>
+        <p class="visually-hidden">Find theme park rides suitable for your height. Check ride height requirements for various theme parks.</p>
+        <a href="index.html"><img src="rhcheader.png" alt="Ride Height Checker Logo - Find Theme Park Rides by Height"></a>
+        <img id="burger-menu-icon" src="burgermenu.png" alt="Menu Icon" class="burger-menu-icon">
+        <div class="header-social-icons">
+            <a href="https://www.instagram.com/rideheightcheckerteam/" target="_blank">
+                <img src="instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.tiktok.com/@rideheightchecker?lang=en" target="_blank">
+                <img src="tik-tok.png" alt="TikTok">
+            </a>
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="content-wrapper">
+            <div class="about-content">
+                <h2>About Ride Height Checker</h2>
+                <p>Welcome to Ride Height Checker! We're here to help you find theme park rides that are perfect for your height. Whether you're planning a fun-filled day at a theme park or just curious about the rides available to you, our tool provides detailed information on height requirements for rides at theme parks around the world.</p>
+                
+                <h3>Our Story</h3>
+                <p>The idea for Ride Height Checker was born out of our own frustration as parents of three kids aged 7, 4, and 1, all of whom love going to theme parks and riding the rides. We wanted a simple way to know which rides our kids could go on without scouring every website, and now we’re sharing that solution with you. Our mission is to make your theme park visits enjoyable and safe by giving you accurate, up-to-date information on ride height requirements. We want to help families and thrill-seekers alike plan their park visits with confidence and ease.</p>
+                
+                <h3>How It Works</h3>
+                <p>Using Ride Height Checker is a breeze:</p>
+                <ol>
+                    <li>Enter your height.</li>
+                    <li>Pick a country.</li>
+                    <li>Choose a theme park.</li>
+                </ol>
+                <p>Our tool will show you all the theme parks that suit your family and all the rides you can enjoy at that park. You can view your results in a list or on a handy map. Once you've found your perfect theme park - click 'Buy Tickets'!</p>
+                
+                <h3>Contact Us</h3>
+                <p>If you have any questions or feedback, feel free to <a href="mailto:hello@rideheightchecker.com">contact us</a>.</p>
+            </div>
+        </div>
+    </div>
+    <div id="burger-menu-modal" class="modal">
+        <div class="modal-content burger-modal-content">
+            <span id="close-burger-menu-modal" class="close">&times;</span>
+            <div class="burger-modal-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="partner-with-us.html">Partner With Us</a>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="footer-icons">
+            <a href="https://www.instagram.com/rideheightcheckerteam/" target="_blank">
+                <img src="instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.tiktok.com/@rideheightchecker?lang=en" target="_blank">
+                <img src="tik-tok.png" alt="TikTok">
+            </a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var burgerMenuIcon = document.getElementById('burger-menu-icon');
+            var burgerMenuModal = document.getElementById('burger-menu-modal');
+            var closeBurgerMenuModal = document.getElementById('close-burger-menu-modal');
+
+            burgerMenuIcon.addEventListener('click', function() {
+                burgerMenuModal.style.display = 'block';
+            });
+
+            closeBurgerMenuModal.addEventListener('click', function() {
+                burgerMenuModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target == burgerMenuModal) {
+                    burgerMenuModal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
