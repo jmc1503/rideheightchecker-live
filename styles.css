@@ -236,7 +236,7 @@ header.shrink img {
         width: 80%; /* Set width */
         height: 455px; /* Set height to 400px */
         max-width: 600px; /* Set max width */
-        background-color: #ffffff00; /* Set background color */
+        background-color: #40768e; /* Set background color */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
         border-radius: 8px; /* Round corners */
         padding: 0px; /* Add padding */
@@ -480,7 +480,7 @@ button:hover {
     padding: 20px; /* Add padding */
     background-color: #fff; /* Set background color */
     border-radius: 8px; /* Round corners */
-    box-shadow: 0 4px 15px #5EE8D5; /* Add shadow to container */
+    box-shadow: 0 4px 15px #40768e; /* Add shadow to container */
     box-sizing: border-box; /* Include padding in width */
     margin-top: 0px; /* Adjust top margin */
 }
@@ -522,7 +522,7 @@ button:hover {
 /* Close button hover and focus styles */
 .close:hover,
 .close:focus {
-    color: black; /* Change text color */
+    color: rgb(255, 255, 255); /* Change text color */
     text-decoration: none; /* Remove underline */
     cursor: pointer; /* Change cursor on hover */
 }
@@ -586,11 +586,11 @@ button:hover {
     }
 
     .burger-modal-content {
-        width: 160px; /* Set new width for desktop */
-        height: 250px; /* Set new height for desktop */
-        top: -88px; /* Align to the top for desktop */
-        right: 23px; /* Align to the right for desktop */
-        background-color: rgb(255, 255, 255); /* 0.5 for 50% transparency */
+        width: 250px; /* Set new width for desktop */
+        height: 185px; /* Set new height for desktop */
+        top: -100px; /* Align to the top for desktop */
+        right: 22px; /* Align to the right for desktop */
+        background-color: #40768e; /* 0.5 for 50% transparency */
     }
 
     .burger-modal-content .close {
@@ -604,11 +604,11 @@ button:hover {
         margin-top: 17px; /* Adjust this value as needed */
         margin-left: 15px; /* Adjust this value as needed */
         font-size: 24px; /* Set desktop font size */
-        color: #000000; /* Set desktop font color */
+        color: #ffffff; /* Set desktop font color */
     }
 
     .burger-modal-links a {
-        color: #000000; /* Set link color on desktop */
+        color: #ffffff; /* Set link color on desktop */
         font-size: 24px; /* Set link font size on desktop */
         text-decoration: none; /* Remove underline from links */
     }
