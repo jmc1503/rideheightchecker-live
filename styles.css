@@ -94,7 +94,7 @@ header.shrink img {
     background-color: #fff; /* Set background color */
     border-radius: 8px; /* Round corners */
     padding: 20px; /* Add padding */
-    width: 250px; /* Set width */
+    width: 252px; /* Set width */
     box-sizing: border-box; /* Include padding in width */
     position: sticky; /* Fix position */
     top: 150px; /* Align to the top just below the header */
