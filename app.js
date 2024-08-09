@@ -397,6 +397,50 @@ document.addEventListener('DOMContentLoaded', function () {
         return parkCard;
     }
 
+        // Function to update the dynamic content on the Partner with Us page
+        function updatePartnerInfo(data) {
+            console.log('Running updatePartnerInfo...');
+        
+            const countries = [...new Set(data.map(item => item.Country))];
+            console.log('Countries:', countries);
+        
+            const themeParks = [...new Set(data.map(item => item['Theme Park']))];
+            console.log('Theme Parks:', themeParks);
+        
+            const rides = [...new Set(data.map(item => item.Ride))];
+            console.log('Rides:', rides);
+        
+            const dynamicText = `At present, we are live in ${countries.length} countries, hosting over ${themeParks.length} theme parks and more than ${rides.length} rides! Every day, new parks are added to our site.`;
+            console.log('Generated dynamic text:', dynamicText);
+        
+            const dynamicPartnerInfo = document.getElementById('dynamic-partner-info');
+            console.log("Element found:", dynamicPartnerInfo); // Check if the element exists
+        
+            if (dynamicPartnerInfo) {
+                dynamicPartnerInfo.textContent = dynamicText;
+                console.log("Text successfully updated."); // Confirm the update
+            } else {
+                console.error("Element with ID 'dynamic-partner-info' not found.");
+            }
+        }
+
+            // Fetch the data and update the partner info
+            fetch('data.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Data fetched:', data); // Log the fetched data
+                updatePartnerInfo(data); // Call the function with the fetched data
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+
+
     function createPaginationControls(totalResults, itemsPerPage) {
         const totalPages = Math.ceil(totalResults / itemsPerPage);
         const paginationContainer = document.getElementById('pagination-container');
