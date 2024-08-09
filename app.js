@@ -34,9 +34,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let map;
     let markers = [];
-    let allData = [];
-    let filteredRides = [];
-    let currentPage = 1;
+    let allData = []; // Store all data for later use
+    let filteredRides = []; // Store filtered data
+    let currentPage = 1; // Track the current page
+    // Set default values for rows and columns
+    let desktopRows = 5;
+    let desktopColumns = 3;
+    let mobileRows = 15; // Mobile will just show one column with 15 items per page
     const resultsPerPage = 15;
 
     // Hide map container by default
@@ -216,48 +220,51 @@ document.addEventListener('DOMContentLoaded', function () {
         mapViewBtn.classList.remove('inactive');
         listViewBtn.classList.add('inactive');
         listViewBtn.classList.remove('active');
-
+    
+        const paginationContainer = document.getElementById('pagination-container');
+        paginationContainer.style.display = 'none'; // Hide pagination when map view is selected
+    
         if (!map) {
             map = L.map('map').setView([51.505, -0.09], 2);
-
+    
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: '© OpenStreetMap'
             }).addTo(map);
         }
-
+    
         markers.forEach(marker => {
             map.removeLayer(marker);
         });
-
+    
         markers = [];
-
+    
         const height = parseInt(document.getElementById('height').value);
         const country = countrySelect.value;
         const themePark = themeParkSelect.value;
-
+    
         let filteredRides = allData.filter(item => {
             return (country === '' || item.Country === country) &&
                 (themePark === '' || item['Theme Park'] === themePark) &&
                 item['Minimum Height'] <= height &&
                 item['Maximum Height'] >= height;
         });
-
+    
         const themeParks = [...new Set(filteredRides.map(item => item['Theme Park']))];
-
+    
         themeParks.forEach(park => {
             const parkData = allData.find(item => item['Theme Park'] === park);
             if (parkData) {
                 const totalRidesInPark = allData.filter(ride => ride['Theme Park'] === park).length;
                 const availableRidesInPark = filteredRides.filter(ride => ride['Theme Park'] === park).length;
                 const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
-
+    
                 const marker = L.marker([parkData.Latitude, parkData.Longitude]).addTo(map);
                 marker.bindPopup(`<b>${park}</b><br>${parkData.Country}<br>${percentage}% of rides available`).openPopup();
                 markers.push(marker);
             }
         });
-
+    
         setTimeout(() => {
             map.invalidateSize();
         }, 100);
@@ -265,10 +272,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function displayResults(data) {
         resultContainer.innerHTML = '';
-
+    
         if (data.length > 0) {
             const themeParks = [...new Set(data.map(item => item['Theme Park']))];
-
+    
             let parksWithPercentage = themeParks.map(park => {
                 const parkData = data.find(ride => ride['Theme Park'] === park);
                 const totalRidesInPark = allData.filter(ride => ride['Theme Park'] === park).length;
@@ -276,7 +283,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const percentage = ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0);
                 return { park, percentage: parseInt(percentage), parkData, data };
             });
-
+    
             // Sort by affiliated status, then by percentage of rides available, then alphabetically by park name
             parksWithPercentage.sort((a, b) => {
                 if (a.parkData.Affiliated !== b.parkData.Affiliated) {
@@ -287,28 +294,41 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 return a.park.localeCompare(b.park);
             });
-
+    
+            // Determine number of columns based on screen width
+            const isMobile = window.innerWidth <= 768;
+            const rows = isMobile ? 15 : 5;
+            const columns = isMobile ? 1 : 3;
+            const itemsPerPage = rows * columns;
+    
             // Pagination logic
-            const startIndex = (currentPage - 1) * resultsPerPage;
-            const endIndex = startIndex + resultsPerPage;
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
             const paginatedParks = parksWithPercentage.slice(startIndex, endIndex);
-
+    
             paginatedParks.forEach(({ park, percentage, parkData }) => {
                 const parkCard = createParkCard(park, percentage, parkData, data);
                 resultContainer.appendChild(parkCard);
             });
-
-            // Ensure 4 cards per row with equal size
+    
+            // Ensure equal-sized rows and fill remaining space with empty cards
             const numCards = resultContainer.children.length;
-            const numEmptyCards = (4 - (numCards % 4)) % 4;
+            const numEmptyCards = (columns - (numCards % columns)) % columns;
             for (let i = 0; i < numEmptyCards; i++) {
                 const emptyCard = document.createElement('div');
                 emptyCard.classList.add('park-card', 'empty-card');
                 resultContainer.appendChild(emptyCard);
             }
-
-            createPaginationControls(parksWithPercentage.length);
-
+    
+            // Show pagination controls only if there are multiple pages
+            const paginationContainer = document.getElementById('pagination-container');
+            if (parksWithPercentage.length > itemsPerPage) {
+                createPaginationControls(parksWithPercentage.length, itemsPerPage);
+                paginationContainer.style.display = 'block'; // Show pagination
+            } else {
+                paginationContainer.style.display = 'none'; // Hide pagination if not needed
+            }
+    
             viewToggle.style.display = 'flex'; // Show view toggle buttons
             resultContainer.style.display = 'grid';
             const container = document.querySelector('.container');
@@ -319,6 +339,8 @@ document.addEventListener('DOMContentLoaded', function () {
             resultContainer.textContent = 'No rides available for your height in this theme park.';
             resultContainer.style.display = 'block';
         }
+    
+        adjustFooterPosition(); // Adjust footer position after displaying results
     }
 
     function createParkCard(park, percentage, parkData, data) {
@@ -375,15 +397,14 @@ document.addEventListener('DOMContentLoaded', function () {
         return parkCard;
     }
 
-    function createPaginationControls(totalResults) {
-        const totalPages = Math.ceil(totalResults / resultsPerPage);
+    function createPaginationControls(totalResults, itemsPerPage) {
+        const totalPages = Math.ceil(totalResults / itemsPerPage);
         const paginationContainer = document.getElementById('pagination-container');
         paginationContainer.innerHTML = '';
     
         const paginationList = document.createElement('ul');
         paginationList.classList.add('pagination-list');
     
-        // Function to create a pagination link
         function createPageLink(page) {
             const pageItem = document.createElement('li');
             pageItem.classList.add('pagination-item');
@@ -396,7 +417,7 @@ document.addEventListener('DOMContentLoaded', function () {
             pageLink.addEventListener('click', () => {
                 currentPage = page;
                 displayResults(filteredRides.length > 0 ? filteredRides : allData);
-                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top smoothly
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
             pageItem.appendChild(pageLink);
             return pageItem;
@@ -427,6 +448,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     
         paginationContainer.appendChild(paginationList);
+        paginationContainer.style.display = 'block';  // Ensure the pagination container is shown
     }
 
     function showRideInfoModal(park, rides) {
@@ -571,4 +593,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     filterModal.querySelector('.view-toggle').appendChild(mobileListViewBtn);
     filterModal.querySelector('.view-toggle').appendChild(mobileMapViewBtn);
+
+    // Adjust footer position on window resize
+    window.addEventListener('resize', adjustFooterPosition);
 });
+
+function adjustFooterPosition() {
+    const footer = document.getElementById('footer');
+    const resultContainer = document.getElementById('result-container');
+    const containerHeight = resultContainer.scrollHeight;
+    const windowHeight = window.innerHeight;
+
+    if (containerHeight + 100 > windowHeight) { // Check if content height is greater than window height
+        footer.style.position = 'relative'; // Use relative positioning if content is taller
+    } else {
+        footer.style.position = 'fixed'; // Fix footer to bottom if content is shorter
+        footer.style.bottom = '0';
+        footer.style.width = '100%';
+    }
+}
