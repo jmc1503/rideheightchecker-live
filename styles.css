@@ -866,3 +866,45 @@ footer {
     width: 40px; /* Increase size on hover */
     height: 40px; /* Increase size on hover */
 }
+
+/* Mobile default view styles */
+#mobile-default-view {
+    display: none; /* Hide by default on larger screens */
+    text-align: center;
+    padding: 20px;
+    margin-top: 150px; /* Align with other content */
+}
+
+#default-text-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#default-text {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#find-park-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#find-park-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Ensure this is visible on mobile screens only */
+@media (max-width: 768px) {
+    #mobile-default-view {
+        display: block;
+    }
+}
