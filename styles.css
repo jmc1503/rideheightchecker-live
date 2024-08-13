@@ -877,7 +877,7 @@ footer {
 
 #default-text-container {
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 16px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -889,13 +889,14 @@ footer {
 }
 
 #find-park-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    width: 50%; /* or any desired width, e.g., 50%, 200px, etc. */
+    max-width: 300px; /* Optional: to cap the maximum width */
+    padding: 10px; /* Adjust padding as needed */
+    background-color: #007bff; /* Optional: change button color */
+    color: white; /* Optional: change text color */
+    border: none; /* Optional: remove border */
+    border-radius: 5px; /* Optional: round the corners */
+    cursor: pointer; /* Change cursor on hover */
 }
 
 #find-park-btn:hover {
@@ -907,4 +908,11 @@ footer {
     #mobile-default-view {
         display: block;
     }
+}
+
+#mobile-default-view p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
 }
