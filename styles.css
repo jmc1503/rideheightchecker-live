@@ -477,10 +477,10 @@ button:hover {
 
 /* Map container styles */
 #map-container {
-    padding: 20px; /* Add padding */
+    padding: 0px; /* Add padding */
     background-color: #fff; /* Set background color */
     border-radius: 8px; /* Round corners */
-    box-shadow: 0 4px 15px #40768e; /* Add shadow to container */
+    border: 3px solid #40768e; /* Add border with desired color and thickness */
     box-sizing: border-box; /* Include padding in width */
     margin-top: 0px; /* Adjust top margin */
 }
@@ -587,7 +587,7 @@ button:hover {
 
     .burger-modal-content {
         width: 250px; /* Set new width for desktop */
-        height: 185px; /* Set new height for desktop */
+        height: 220px; /* Set new height for desktop */
         top: -100px; /* Align to the top for desktop */
         right: 22px; /* Align to the right for desktop */
         background-color: #40768e; /* 0.5 for 50% transparency */
