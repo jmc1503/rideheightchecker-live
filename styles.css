@@ -916,3 +916,20 @@ footer {
     margin-bottom: 10px;
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    /* Ensure result container is a flexbox or grid */
+    #result-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts columns based on available space */
+        justify-content: center; /* Center the grid within its container */
+        align-items: center; /* Center items within the grid */
+        gap: 20px; /* Adds space between the grid items */
+        padding: 20px; /* Optional: Adds padding inside the container */
+    }
+
+    /* Add margin to each park card */
+    .park-card {
+        margin-bottom: 20px; /* Add space below each card */
+    }
+}
