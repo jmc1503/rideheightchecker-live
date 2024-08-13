@@ -8,7 +8,7 @@
 
 /* Body styles */
 body {
-    background-color: #fff814; /* Set background color */
+    background-color: #ffffff; /* Set background color */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
 }
@@ -16,7 +16,7 @@ body {
 /* Header styles */
 header {
     width: 100%; /* Full width */
-    background-color: #fff814; /* Set header background color */
+    background-color: #ffffff; /* Set header background color */
     position: fixed; /* Fix header at the top */
     top: 0; /* Align header to the top */
     left: 0; /* Align header to the left */
@@ -30,14 +30,14 @@ header {
 
 /* Header logo styles */
 header img {
-    height: 85px; /* Set desktop logo height */
+    height: 58px; /* Set desktop logo height */
     transition: height 0.3s ease; /* Smooth transition for height change */
 }
 
 /* Mobile header logo styles */
 @media (max-width: 768px) {
     header img {
-        height: 56px; /* Set mobile logo height */
+        height: 45px; /* Set mobile logo height */
     }
 }
 
@@ -52,6 +52,20 @@ header.shrink img {
     width: 30px; /* Set width */
     height: 30px; /* Set height */
     cursor: pointer; /* Change cursor on hover */
+}
+
+/* Social icons in the header for desktop */
+.header-social-icons {
+    position: absolute; /* Fix position */
+    top: 10px; /* Align to the top */
+    left: 10px; /* Align to the left */
+}
+
+/* Hide social icons in the header on mobile */
+@media (max-width: 768px) {
+    .header-social-icons {
+        display: none; /* Hide */
+    }
 }
 
 /* Main container styles */
@@ -76,7 +90,7 @@ header.shrink img {
 
 /* Specific styles for the about page */
 .about-page .content-wrapper {
-    max-width: 77%; /* Set maximum width to 77% for about page */
+    max-width: 79%; /* Set maximum width to 77% for about page */
 }
 
 .about-page h2, 
@@ -103,7 +117,7 @@ header.shrink img {
     flex-direction: column; /* Arrange items in column */
     justify-content: space-between; /* Distribute space between items */
     border-style: solid;
-    border-color: #007bff;
+    border-color: #40768e;
     border-width: 5px;
 }
 
@@ -113,6 +127,8 @@ header.shrink img {
     flex-grow: 1; /* Allow container to grow */
     box-sizing: border-box; /* Include padding in width */
     overflow: visible; /* Change to visible to remove scrollbar */
+    position: relative; /* Position relative to allow absolute positioning inside */
+    padding-bottom: 50px; /* Add padding to create space for footer */
 }
 
 /* Result container styles */
@@ -200,6 +216,8 @@ header.shrink img {
         width: 100%; /* Full width */
         max-width: 98%; /* Set max width */
         padding: 14px; /* Add padding */
+        display: block; /* Ensure block display */
+        visibility: visible; /* Ensure visibility */
     }
 
     /* Hide view toggle buttons on mobile */
@@ -216,9 +234,9 @@ header.shrink img {
         transform: translateX(-50%); /* Center horizontally */
         top: 150px; /* Align to the top just below the header */
         width: 80%; /* Set width */
-        height: 420px; /* Set height to 400px */
+        height: 455px; /* Set height to 400px */
         max-width: 600px; /* Set max width */
-        background-color: #fff814; /* Set background color */
+        background-color: #40768e; /* Set background color */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
         border-radius: 8px; /* Round corners */
         padding: 0px; /* Add padding */
@@ -328,7 +346,7 @@ button:hover {
     position: relative; /* Set positioning context */
     border-style: solid;
     border-width: medium;
-    border-color: #007bff;
+    border-color: #40768e;
 }
 
 /* Flag icon styles */
@@ -431,7 +449,7 @@ button:hover {
 .view-toggle {
     display: flex; /* Use flexbox for layout */
     justify-content: space-around; /* Distribute space evenly */
-    margin-top: 20px; /* Add top margin */
+    margin-top: 6px; /* Add top margin */
 }
 
 /* View toggle button common styles */
@@ -459,12 +477,12 @@ button:hover {
 
 /* Map container styles */
 #map-container {
-    padding: 20px; /* Add padding */
+    padding: 0px; /* Add padding */
     background-color: #fff; /* Set background color */
     border-radius: 8px; /* Round corners */
-    box-shadow: 0 4px 15px #5EE8D5; /* Add shadow to container */
+    border: 3px solid #40768e; /* Add border with desired color and thickness */
     box-sizing: border-box; /* Include padding in width */
-    margin-top: 336px; /* Adjust top margin */
+    margin-top: 0px; /* Adjust top margin */
 }
 
 /* Modal styles */
@@ -504,7 +522,7 @@ button:hover {
 /* Close button hover and focus styles */
 .close:hover,
 .close:focus {
-    color: black; /* Change text color */
+    color: rgb(255, 255, 255); /* Change text color */
     text-decoration: none; /* Remove underline */
     cursor: pointer; /* Change cursor on hover */
 }
@@ -514,9 +532,9 @@ button:hover {
     width: 150px; /* Set width */
     height: 150px; /* Set height */
     position: absolute; /* Fix position */
-    background-color: #fff814; /* Set background color */
+    background-color: #ffffff; /* Set background color */
     border-radius: 8px; /* Round corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.45); /* Add shadow */
     padding: 10px; /* Add padding */
     box-sizing: border-box; /* Include padding in width */
 }
@@ -568,11 +586,11 @@ button:hover {
     }
 
     .burger-modal-content {
-        width: 121px; /* Set new width for desktop */
-        height: 125px; /* Set new height for desktop */
-        top: -93px; /* Align to the top for desktop */
-        right: 36px; /* Align to the right for desktop */
-        background-color: rgba(254, 249, 119, 0.91); /* 0.5 for 50% transparency */
+        width: 250px; /* Set new width for desktop */
+        height: 220px; /* Set new height for desktop */
+        top: -100px; /* Align to the top for desktop */
+        right: 22px; /* Align to the right for desktop */
+        background-color: #40768e; /* 0.5 for 50% transparency */
     }
 
     .burger-modal-content .close {
@@ -585,6 +603,18 @@ button:hover {
     .burger-modal-links {
         margin-top: 17px; /* Adjust this value as needed */
         margin-left: 15px; /* Adjust this value as needed */
+        font-size: 24px; /* Set desktop font size */
+        color: #ffffff; /* Set desktop font color */
+    }
+
+    .burger-modal-links a {
+        color: #ffffff; /* Set link color on desktop */
+        font-size: 24px; /* Set link font size on desktop */
+        text-decoration: none; /* Remove underline from links */
+    }
+
+    .burger-modal-links a:hover {
+        color: #555555; /* Set hover color on desktop */
     }
 }
 
@@ -615,23 +645,58 @@ button:hover {
     }
 
     .burger-modal-content {
-        width: 111px; /* Set new width for mobile */
-        height: 120px; /* Set new height for mobile */
-        top: 12px; /* Align to the top for mobile */
-        right: 19px; /* Align to the right for mobile */
-        background-color: rgba(254, 249, 119, 0.91); /* 0.5 for 50% transparency */
+        width: 100%; /* Full width */
+        height: 100vh; /* Full height */
+        top: 0; /* Align to the top */
+        left: 0; /* Align to the left */
+        background-color: #40768e; /* Background color */
+        border-radius: 0; /* Remove border radius for full screen */
+        box-shadow: none; /* Remove shadow */
+        padding: 20px; /* Add padding */
+        box-sizing: border-box; /* Include padding in width */
+        overflow: hidden; /* Prevent scrolling */
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Arrange items in column */
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        position: fixed; /* Fix position to ensure it covers the full screen */
+        z-index: 9999; /* Ensure it's above other content */
     }
 
     .burger-modal-content .close {
         position: absolute; /* Fix position */
-        top: -1px; /* Align to the top for mobile */
-        right: 9px; /* Align to the right for mobile */
+        top: 10px; /* Align to the top */
+        right: 20px; /* Align to the right */
+        font-size: 50px; /* Set font size */
+        color: #ffffff; /* Set text color */
+        cursor: pointer; /* Change cursor on hover */
     }
 
     /* Grouping the links for mobile */
     .burger-modal-links {
-        margin-top: 17px; /* Adjust this value as needed */
+        margin-top: -400px; /* Adjust this value as needed */
         margin-left: 15px; /* Adjust this value as needed */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 41px; /* Set font size */
+        color: #ffffff; /* Set text color */
+    }
+
+    .burger-modal-links a {
+        color: #ffffff; /* Set link color */
+        font-size: 41px; /* Set link font size */
+        text-decoration: none; /* Remove underline from links */
+        margin: -2px 0; /* Add margin between links */
+    }
+
+    .burger-modal-links a:hover {
+        color: #ffffff; /* Set hover color */
+    }
+
+    /* Prevent body scrolling when the modal is open */
+    body.modal-open {
+        overflow: hidden;
     }
 }
 
@@ -650,29 +715,32 @@ button:hover {
 .burger-modal-links {
     display: flex;
     flex-direction: column; /* Arrange items in column */
-    gap: 10px; /* Set gap between links */
-    font-size: 19px; /* Set font size */
+    gap: 8px; /* Set gap between links */
+    font-size: 37px; /* Set font size */
 }
 
 /* Close button base styles */
 .burger-modal-content .close {
-    font-size: 25px; /* Set font size */
+    font-size: 50px; /* Set font size */
     cursor: pointer; /* Change cursor on hover */
 }
 
     /* Make about-content narrower on mobile */
     .about-content {
-        max-width: 75%;
+        max-width: 79%;
         margin: 0 auto; /* Center the content */
     }
 
-    .pagination-list {
-        display: flex;
-        justify-content: center;
-        list-style-type: none;
-        padding: 0;
-        margin-top: -385px; /* Adjust the margin as needed */
-    }
+
+/* Pagination list styles */
+.pagination-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px; /* Adjust this margin as needed to control the gap above the pagination */
+    margin-bottom: 50px; /* Adjust this margin as needed to control the gap between pagination and footer */
+}
     
     .pagination-item {
         margin: 0 5px;
@@ -696,46 +764,105 @@ button:hover {
         cursor: not-allowed;
     }
     
-    /* Styles for pagination on mobile devices */
+ /* Pagination list styles for mobile */
 @media (max-width: 768px) {
     .pagination-list {
         flex-wrap: wrap;
         justify-content: center;
         list-style-type: none;
         padding: 0;
-        margin-top: -387px;
-        margin-bottom: 20px;
+        margin-top: 20px; /* Adjust the margin as needed */
+        margin-bottom: 50px; /* Adjust the margin as needed to control the gap between pagination and footer */
     }
-    
+
     .pagination-item {
         margin: 5px;
     }
-    
+
     .pagination-link {
         background-color: transparent;
-      /*  border: 1px solid #007bff; */
-      /*  border-radius: 5px; */
         color: #007bff;
         cursor: pointer;
         font-size: 14px;
         padding: 5px 10px;
         transition: background-color 0.3s, color 0.3s;
     }
-    
+
     .pagination-link.active {
         background-color: #007bff;
         color: white;
         font-weight: bold;
         text-decoration: none;
     }
-    
+
     .pagination-link:disabled {
         color: grey;
         cursor: not-allowed;
     }
-    
+
     .pagination-item .pagination-link {
         display: inline-block;
         text-align: center;
     }
+}
+
+/* Footer styles */
+footer {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed; /* Fix position to always be visible */
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Social media icons in the footer for mobile */
+.footer-icons {
+    display: none; /* Hide by default */
+}
+
+@media (max-width: 768px) {
+    .footer-icons {
+        display: flex; /* Show on mobile */
+    }
+}
+
+.footer-icons img {
+    width: 32px;
+    height: 32px;
+    margin: 0 10px;
+    transition: width 0.3s, height 0.3s; /* Add transition for smooth resizing */
+}
+
+.footer-icons img:hover {
+    width: 40px;
+    height: 40px;
+}
+
+/* Desktop social media icons */
+.header-social-icons {
+    position: absolute;
+    top: 33px;
+    left: 24px;
+}
+
+.header-social-icons a {
+    text-decoration: none; /* Remove underline from links */
+}
+
+.header-social-icons img {
+    width: 32px; /* Set the desired width */
+    height: 32px; /* Set the desired height */
+    margin: 0 5px; /* Set the margin between icons */
+    transition: width 0.3s, height 0.3s; /* Smooth resizing transition */
+}
+
+.header-social-icons img:hover {
+    width: 40px; /* Increase size on hover */
+    height: 40px; /* Increase size on hover */
 }
