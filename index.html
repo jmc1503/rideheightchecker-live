@@ -35,16 +35,18 @@
             </a>
         </div>
     </header>
+    
     <div id="mobile-default-view" class="mobile-only">
-    <div id="default-text-container">
-        <p id="default-text">
-            <p>Looking for your perfect Theme Park?</p>
-            <p>We've got you covered!</p>
-            <p>Enter your height, choose a country anywhere in the world and find the best suited parks for you and your family!</p>
-        </p>
-        <button id="find-park-btn" class="default-btn">Find a Park</button>
+        <div id="default-text-container">
+            <p id="default-text">
+                <p>Looking for your perfect Theme Park?</p>
+                <p>We've got you covered!</p>
+                <p>Enter your height, choose a country anywhere in the world and find the best suited parks for you and your family!</p>
+            </p>
+            <button id="find-park-btn" class="default-btn">Find a Park</button>
+        </div>
     </div>
-</div>
+
     <button id="mobile-filter-btn" class="mobile-only">Filter</button>
     <div id="filter-modal" class="modal">
         <div class="modal-content">
@@ -70,6 +72,7 @@
             </form>
         </div>
     </div>
+
     <div id="burger-menu-modal" class="modal">
         <div class="modal-content burger-modal-content">
             <span id="close-burger-menu-modal" class="close">&times;</span>
@@ -81,6 +84,7 @@
             </div>
         </div>
     </div>
+
     <div class="main-container">
         <div class="content-wrapper">
             <div class="filter-card">
@@ -112,9 +116,33 @@
                     <button id="map-view-btn" class="inactive">Map View</button>
                 </div>
             </div>
+
             <div class="results-container">
                 <h3 class="visually-hidden">Available Rides</h3>
-                <div id="result-container"></div>
+                <div id="result-container">
+                    <!-- Example park card -->
+                    <div class="park-card">
+                        <div class="image-container">
+                            <img class="park-image" src="your-image-source.jpg" alt="Park Image">
+                            <div class="flag-icon">🇬🇧</div>
+                        </div>
+                        <div class="park-info-container">
+                            <div class="park-title-container">
+                                <h3 class="park-title">Legoland Discovery Centre Birmingham</h3>
+                            </div>
+                            <div class="park-location-container">
+                                <p class="park-location">Birmingham, UK</p>
+                            </div>
+                            <div class="park-availability-container">
+                                <p class="park-availability">90% (27 rides) available</p>
+                            </div>
+                        </div>
+                        <div class="action-container">
+                            <button class="buy-tickets-btn">Buy Tickets</button>
+                            <a href="#" class="more-info-link">More Information</a>
+                        </div>
+                    </div>
+                </div>
                 <div id="pagination-container">
                     <ul class="pagination-list">
                         <!-- Pagination items will be inserted here dynamically -->
@@ -127,12 +155,14 @@
             </div>
         </div>
     </div>
+
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <div id="ride-info"></div>
         </div>
     </div>
+
     <footer id="footer">
         <div class="footer-icons">
             <a href="https://www.instagram.com/rideheightcheckerteam/" target="_blank">
@@ -143,6 +173,20 @@
             </a>
         </div>
     </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const parkTitles = document.querySelectorAll('.park-title');
+    parkTitles.forEach(title => {
+        if (title.textContent.trim() === 'Legoland Discovery Centre Manchester' || 
+            title.textContent.trim() === 'Legoland Discovery Centre Birmingham') {
+            title.style.setProperty('font-size', '13px', 'important');  // Apply font size with !important
+        } else {
+            title.style.setProperty('font-size', '15px', 'important');  // Default font size with !important
+        }
+    });
+});
+    </script>
     <script src="app.js"></script>
 </body>
 </html>
