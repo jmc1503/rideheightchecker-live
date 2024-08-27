@@ -76,16 +76,21 @@ header.shrink img {
     box-sizing: border-box; /* Include padding and border in width */
 }
 
-/* Content wrapper styles */
 .content-wrapper {
-    display: flex; /* Use flexbox for layout */
-    justify-content: flex-start; /* Align items to the start horizontally */
-    align-items: flex-start; /* Align items to the start vertically */
-    gap: 20px; /* Set gap between elements */
-    max-width: 1200px; /* Set maximum width */
-    width: 100%; /* Full width */
-    margin: 0 auto; /* Center container */
-    margin-top: 150px; /* Adjust this value to control the top position */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 110px; /* Add padding to push content below header */
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding-top: 0; /* Remove the padding on mobile */
+    }
 }
 
 /* Specific styles for the about page */
@@ -105,40 +110,38 @@ header.shrink img {
 
 /* Filter card styles */
 .filter-card {
-    background-color: #fff; /* Set background color */
-    border-radius: 8px; /* Round corners */
-    padding: 20px; /* Add padding */
-    width: 252px; /* Set width */
-    box-sizing: border-box; /* Include padding in width */
-    position: sticky; /* Fix position */
-    top: 150px; /* Align to the top just below the header */
-    height: 400px; /* Set fixed height */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange items in column */
-    justify-content: space-between; /* Distribute space between items */
-    border-style: solid;
-    border-color: #40768e;
-    border-width: 5px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 18px;
+    width: 252px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 150px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 5px solid #40768e; /* Add border to match park card */
 }
 
 /* Results container styles */
 .results-container {
-    background-color: transparent; /* Make background transparent */
-    flex-grow: 1; /* Allow container to grow */
-    box-sizing: border-box; /* Include padding in width */
-    overflow: visible; /* Change to visible to remove scrollbar */
-    position: relative; /* Position relative to allow absolute positioning inside */
-    padding-bottom: 50px; /* Add padding to create space for footer */
+    background-color: transparent;
+    flex-grow: 1;
+    box-sizing: border-box;
+    overflow: visible;
+    position: relative;
+    padding-bottom: 50px;
+    margin-top: 39; /* Ensure the container aligns with the filter card */
 }
-
 /* Result container styles */
 #result-container {
     display: grid; /* Use grid layout */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid columns */
-    gap: 20px; /* Set gap between cards */
+    grid-template-columns: repeat(auto-fill, minmax(250px, max-content)); /* Fixed size cards aligned to the left */
+    gap: 14px; /* Set gap between cards */
     max-width: 1000px; /* Set max width to limit number of columns */
-    margin: 0 auto; /* Center grid within container */
-    top: 100px;
+    margin: 40px auto; /* Center grid within container */
+    justify-content: start; /* Ensure cards align to the start (left) */
 }
 
 /* Media query for screens smaller than 1200px */
@@ -185,24 +188,24 @@ header.shrink img {
         background-color: #0056b3; /* Change background color on hover */
     }
 
-    /* Results container styles on mobile */
-    .results-container {
-        width: 100%; /* Full width */
-        max-width: 87%; /* Set max width */
-        margin: 0 auto; /* Center container */
-        margin-top: -143px; /* Adjust top margin */
-        display: flex; /* Use flexbox for layout */
-        flex-direction: column; /* Arrange items in column */
-        align-items: center; /* Center items horizontally */
-    }
+/* Results container styles on mobile */
+.results-container {
+    width: 100%; /* Full width */
+    max-width: 90%; /* Set max width */
+    margin: 0 auto; /* Center container */
+    padding-top: 0px; /* Adjust this value as needed */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in column */
+    align-items: flex-start; /* Aligns items to the left */
+}
 
     /* Result container styles on mobile */
     .results-container #result-container {
-        width: 87%; /* Full width */
+        width: 90%; /* Full width */
         display: flex; /* Use flexbox for layout */
         flex-direction: column; /* Arrange items in column */
         align-items: center; /* Center items horizontally */
-        gap: 20px; /* Set gap between cards */
+        gap: 10px; /* Increase gap between cards */
     }
 
     /* Container styles on mobile */
@@ -214,8 +217,8 @@ header.shrink img {
     /* Park card styles on mobile */
     .park-card {
         width: 100%; /* Full width */
-        max-width: 98%; /* Set max width */
-        padding: 14px; /* Add padding */
+        max-width: 100%; /* Set max width */
+        padding: 0px; /* Remove padding */
         display: block; /* Ensure block display */
         visibility: visible; /* Ensure visibility */
     }
@@ -227,39 +230,44 @@ header.shrink img {
 
     /* Filter modal styles on mobile */
     #filter-modal {
-        display: none; /* Hide */
+        display: none; /* Hide by default */
         position: fixed; /* Fix position */
-        z-index: 2000; /* Ensure above other content */
+        z-index: 2003; /* Ensure it appears above other content */
         left: 50%; /* Center horizontally */
         transform: translateX(-50%); /* Center horizontally */
         top: 150px; /* Align to the top just below the header */
         width: 80%; /* Set width */
-        height: 455px; /* Set height to 400px */
+        height: auto; /* Auto height */
         max-width: 600px; /* Set max width */
-        background-color: #40768e; /* Set background color */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
-        border-radius: 8px; /* Round corners */
-        padding: 0px; /* Add padding */
+        background-color: #ffffff; /* Remove background color */
+        border: none; /* Remove border */
+        box-shadow: none; /* Remove box shadow */
+        padding: 0; /* Remove padding */
         box-sizing: border-box; /* Include padding in width */
     }
 
     /* Show filter modal */
     #filter-modal.show {
-        display: block; /* Show */
+        display: block; /* Show the modal */
     }
 
-    /* Modal content styles on mobile */
+    /* Modal content styles */
     #filter-modal .modal-content {
         text-align: center; /* Center text */
+        background-color: #ffffff; /* Set content background color if needed */
+        padding: 20px; /* Add padding */
+        border-radius: 8px; /* Round corners if needed */
+        z-index: 2004; /* Ensure it's above other content */
     }
 
     /* Close button styles on mobile */
     #filter-modal .close {
         position: absolute; /* Fix position */
-        top: -3px; /* Align to the top */
-        right: 6px; /* Align to the right */
+        top: 10px; /* Align to the top */
+        right: 10px; /* Align to the right */
         font-size: 25px; /* Set font size */
         cursor: pointer; /* Change cursor on hover */
+        z-index: 2005; /* Ensure it is above the modal content */
     }
 
     /* Form styles in filter modal */
@@ -309,6 +317,10 @@ header.shrink img {
     }
 }
 
+
+
+
+
 /* Input, select, and button common styles */
 input, select, button {
     width: 100%; /* Full width */
@@ -334,115 +346,104 @@ button:hover {
 
 /* Park card container styles */
 .park-card {
-    padding: 14px; /* Add padding */
-    background-color: #fff; /* Set background color */
-    border-radius: 8px; /* Round corners */
-    box-sizing: border-box; /* Include padding in width */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange items in column */
-    justify-content: flex-start; /* Align items to the top */
-    align-items: center; /* Center items horizontally */
-    min-height: 400px; /* Set minimum height */
-    position: relative; /* Set positioning context */
-    border-style: solid;
-    border-width: medium;
-    border-color: #40768e;
+    width: 100%;
+    max-width: 330px; /* Limit the max width of each card */
+    margin: 0px auto; /* Center the card within its container */
+    box-sizing: border-box;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the content doesn't overflow the card */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* Flag icon styles */
-.flag-icon {
-    position: absolute; /* Fix position */
-    top: 0px; /* Align to the top */
-    left: 10px; /* Align to the left */
-    font-size: 30px; /* Set font size */
+/* Image container at the top of the card */
+.image-container {
+    width: 100%;
+    height: 40%; /* Takes up the top 40% of the card */
+    background-color: #f0f0f0; /* Fallback color if no image */
+    display: flex;
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    overflow: hidden; /* Ensure the image doesn't overflow the container */
 }
 
-/* Empty card styles */
-.empty-card {
-    visibility: hidden; /* Hide but keep space */
-}
-
-/* Park card header styles */
-.park-card h3 {
-    font-size: 18px; /* Set font size */
-    font-weight: 700; /* Set font weight */
-    width: 251.297px; /* Set width */
-    height: 42px; /* Set height */
-    text-align: center; /* Center text */
-    margin: 20px 0 0 0; /* Set margins */
-    padding-top: 10px; /* Add top padding */
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-}
-
-/* Park header styles */
-.park-header {
-    font-size: 18px; /* Set font size */
-    font-weight: 700; /* Set font weight */
-    margin-bottom: 10px; /* Add bottom margin */
-    text-align: center; /* Center text */
-}
-
-/* Park info styles */
-.park-info {
-    margin-bottom: 10px; /* Add bottom margin */
-    text-align: center; /* Center text */
-}
-
-/* Park image styles */
+/* Image inside the container */
 .park-image {
-    width: 256px; /* Set width */
-    height: 176.656px; /* Set height */
-    margin: 10px auto; /* Center image */
-    box-sizing: border-box; /* Include padding in width */
-    border-radius: 19px;
+    max-width: 100%; /* Ensure the image doesn't exceed the container's width */
+    max-height: 100%; /* Ensure the image doesn't exceed the container's height */
+    object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
 }
 
-/* Ride info list item styles */
-.ride-info ul li {
-    font-weight: 300; /* Set lighter font weight */
+/* Container for the park information */
+.park-info-container {
+    padding: 20px;
+    height: 50%; /* Takes up the bottom 60% of the card */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out elements vertically */
 }
 
-/* More info button styles */
-.more-info-btn {
-    background: none; /* No background */
-    border: none; /* No border */
-    color: #007bff; /* Set text color */
-    cursor: pointer; /* Change cursor on hover */
-    text-decoration: underline; /* Underline text */
-    text-align: center; /* Center text */
-    font-size: 0.9em; /* Set font size */
+/* Park header section */
+.park-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Add space below the header */
 }
 
-/* More info button hover styles */
-.more-info-btn:hover {
-    color: #0056b3; /* Change text color on hover */
+/* Country flag */
+.country-flag {
+    font-size: 24px;
+    margin-right: 8px; /* Add space between the flag and park name */
 }
 
-/* Action button styles */
+/* Park name */
+.park-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Action buttons */
 .action-btn {
-    width: 100%; /* Full width */
-    background-color: #007bff; /* Set background color */
-    color: #fff; /* Set text color */
-    border: none; /* Remove border */
-    padding: 10px; /* Add padding */
-    cursor: pointer; /* Change cursor on hover */
-    margin-top: 10px; /* Add top margin */
-    text-align: center; /* Center text */
-    font-size: 1.2em; /* Set font size */
+    width: 55%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Action button hover styles */
+/* Different background for each button */
+.buy-tickets {
+    background-color: #007bff;
+}
+
+.more-info {
+    background-color: #6c757d;
+}
+
+/* Hover effects */
 .action-btn:hover {
-    background-color: #0056b3; /* Change background color on hover */
+    background-color: #0056b3;
+}
+
+.more-info:hover {
+    background-color: #5a6268;
 }
 
 /* Action container styles */
 .action-container {
     margin-top: auto; /* Push to the bottom */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange items in column */
+    display: flex;
+    flex-direction: column;
 }
 
 /* View toggle button container styles */
@@ -477,12 +478,12 @@ button:hover {
 
 /* Map container styles */
 #map-container {
-    padding: 0px; /* Add padding */
+    padding: 1px; /* Add padding */
     background-color: #fff; /* Set background color */
     border-radius: 8px; /* Round corners */
     border: 3px solid #40768e; /* Add border with desired color and thickness */
     box-sizing: border-box; /* Include padding in width */
-    margin-top: 0px; /* Adjust top margin */
+    margin-top: 40px; /* Adjust top margin */
 }
 
 /* Modal styles */
@@ -504,11 +505,11 @@ button:hover {
     background-color: #fff; /* Set background color */
     margin: 7% auto; /* Center content */
     padding: 17px; /* Add padding */
-    border: 1px solid #888; /* Set border */
+ 
     width: 80%; /* Set width */
     max-width: 600px; /* Set max width */
     border-radius: 8px; /* Round corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+  
 }
 
 /* Close button styles */
@@ -618,8 +619,8 @@ button:hover {
     }
 }
 
-/* Ensure filter card stays to the left on smaller screens */
-@media (max-width: 1200px) {
+/* For screens between 769px and 1200px */
+@media (max-width: 1200px) and (min-width: 769px) {
     .content-wrapper {
         flex-direction: row; /* Keep items in row */
         align-items: flex-start; /* Align items to the top */
@@ -634,6 +635,16 @@ button:hover {
     .results-container {
         margin-left: 27px; /* Ensure results container does not overlap filter card */
         width: calc(100% - 270px); /* Adjust width to fit next to filter card */
+    }
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+    .results-container {
+        margin-left: 0; /* Remove left margin */
+        width: 100%; /* Full width */
+        max-width: 90%; /* Set max width */
+        margin: 0 auto; /* Center the container */
     }
 }
 
@@ -764,47 +775,74 @@ button:hover {
         cursor: not-allowed;
     }
     
- /* Pagination list styles for mobile */
-@media (max-width: 768px) {
-    .pagination-list {
-        flex-wrap: wrap;
-        justify-content: center;
-        list-style-type: none;
-        padding: 0;
-        margin-top: 20px; /* Adjust the margin as needed */
-        margin-bottom: 50px; /* Adjust the margin as needed to control the gap between pagination and footer */
-    }
+    @media (max-width: 768px) {
+        /* Ensure the parent container is centered */
+        .results-container {
+            display: flex;
+            justify-content: center; /* Center the pagination container */
+            width: 100%;
+            padding: 0;
+        }
 
-    .pagination-item {
-        margin: 5px;
+        .pagination-container {
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center the contents horizontally */
+            align-items: center; /* Center the contents vertically */
+            width: 100%; /* Ensure it takes up full width */
+            margin: 0 auto; /* Center the container itself */
+        }
+    
+        /* Center the pagination list */
+        .pagination-list {
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center the pagination list */
+            align-items: center; /* Center items vertically (optional) */
+            list-style-type: none; /* Remove default list styling */
+            padding: 0; /* Remove padding */
+            margin: 20px auto 50px auto; /* Center and adjust margins */
+            width: 100%; /* Ensure it takes up full width */
+            max-width: 100%; /* Ensure no max-width constraints */
+            text-align: center; /* Center text if any */
+        }
+    
+        /* Adjust pagination items */
+        .pagination-item {
+            margin: 5px; /* Set margin between pagination items */
+        }
+    
+        /* Adjust pagination links */
+        .pagination-link {
+            background-color: transparent;
+            color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 5px 10px;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center; /* Center the text inside each pagination link */
+        }
+    
+        /* Active pagination link */
+        .pagination-link.active {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    
+        /* Disabled pagination link */
+        .pagination-link:disabled {
+            color: grey;
+            cursor: not-allowed;
+        }
+    
+        /* Ensure pagination link is centered */
+        .pagination-item .pagination-link {
+            display: inline-block;
+            text-align: center;
+        }
     }
-
-    .pagination-link {
-        background-color: transparent;
-        color: #007bff;
-        cursor: pointer;
-        font-size: 14px;
-        padding: 5px 10px;
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    .pagination-link.active {
-        background-color: #007bff;
-        color: white;
-        font-weight: bold;
-        text-decoration: none;
-    }
-
-    .pagination-link:disabled {
-        color: grey;
-        cursor: not-allowed;
-    }
-
-    .pagination-item .pagination-link {
-        display: inline-block;
-        text-align: center;
-    }
-}
+    
+    
 
 /* Footer styles */
 footer {
@@ -925,11 +963,288 @@ footer {
         justify-content: center; /* Center the grid within its container */
         align-items: center; /* Center items within the grid */
         gap: 20px; /* Adds space between the grid items */
-        padding: 20px; /* Optional: Adds padding inside the container */
+        padding: 0px; /* Optional: Adds padding inside the container */
     }
 
     /* Add margin to each park card */
     .park-card {
-        margin-bottom: 20px; /* Add space below each card */
+        margin-bottom: 5px; /* Add space below each card */
+   }
+}
+
+/* General card structure */
+.park-card {
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    margin: 0px auto; /* Center the card within its container */
+    box-sizing: border-box;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the content doesn't overflow the card */
+    border: 2px solid #40768e; /* Add a border with your preferred color */
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Image container */
+.image-container {
+    width: 100%;
+    height: 240px;
+    background-color: #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Image inside the container */
+.park-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Flag icon with opaque background */
+.flag-icon {
+    font-size: 33px; /* Adjust this to control the size of the flag */
+    position: absolute;
+    top: 2px; /* Adjust vertical position */
+    left: 2px; /* Adjust horizontal position */
+    background-color: rgba(255, 255, 255, 0.8); /* White opaque background */
+    padding: 3px 5px; /* Control padding (top/bottom, left/right) */
+    border-radius: 5px; /* Rounded corners */
+    line-height: 0.7; /* Adjust line height to minimize height of the background */
+    z-index: 10; /* Ensure it stays above the image */
+}
+
+/* Park info container */
+.park-info-container {
+    padding: 0px;
+    position: relative; /* Positioned relative to the park card */
+    text-align: left; /* Align text content to the left */
+    flex-grow: 1; /* Allow it to grow and fill the available space */
+}
+
+/* Park title */
+.park-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Park title container */
+.park-title-container {
+    position: relative;
+    top: -8px; /* Adjust this value for vertical positioning */
+    margin-left: 10px; /* Adjust this value for horizontal positioning */
+    text-align: left;
+}
+
+/* Country and State */
+.park-location {
+    font-size: 13px;
+    color: #777; /* Lighter font color */
+    margin-top: -5px; /* Adjust top margin */
+    margin-bottom: 10px; /* Adjust bottom margin */
+}
+
+/* Park location container */
+.park-location-container {
+    position: relative;
+    top: -8px; /* Adjust this value for vertical positioning */
+    margin-left: 10px; /* Adjust this value for horizontal positioning */
+    text-align: left;
+}
+
+/* Action container */
+.action-container {
+    position: relative;
+    top: -25px; /* Adjust this value for vertical positioning */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px; /* Space between buttons */
+}
+
+/* Buy tickets button */
+.buy-tickets-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    font-size: 16px;
+    width: 50%;
+    max-width: 200px;
+}
+
+.buy-tickets-btn:hover {
+    background-color: #0056b3;
+}
+
+/* More information link */
+.more-info-link {
+    color: #6c757d;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.9em;
+}
+.more-info-link:hover {
+    color: #5a6268;
+}
+
+/* Individual element controls */
+
+/* Control the flag icon's position */
+.flag-icon-control {
+    top: 2px; /* Adjust vertical position */
+    left: 2px; /* Adjust horizontal position */
+}
+
+/* Control the park title's position */
+.park-title-control {
+    margin-top: -7px; /* Adjust top margin */
+    margin-bottom: -7px; /* Adjust bottom margin */
+}
+
+/* Control the park location's position */
+.park-location-control {
+    margin-top: -95px; /* Adjust top margin */
+    margin-bottom: 9px; /* Adjust bottom margin */
+}
+
+/* Control the action buttons container's position */
+.action-container-control {
+    margin-top: -106px; /* Move the container up by 10px */
+    margin-bottom: 50px; /* Optional: Adjust bottom margin if needed */
+}
+
+/* Ride availability container */
+.park-availability-container {
+    position: relative;
+    top: -18px; /* Adjust this value for vertical positioning */
+    margin-left: 10px; /* Adjust this value for horizontal positioning */
+    text-align: center;
+}
+
+/* Modal styling for park name, height sections, and rides */
+.modal-park-name {
+    text-align: center; /* Center align the park name */
+    font-size: 24px; /* Set font size */
+    margin-bottom: 15px; /* Add margin below the park name */
+}
+
+.modal-height-section {
+    text-align: left; /* Align text to the left */
+    margin-bottom: 20px; /* Add space between height sections */
+}
+
+.modal-height-title {
+    font-size: 20px; /* Set font size for height title */
+    color: #333; /* Set color */
+    margin-bottom: 10px; /* Add space below the height title */
+}
+
+.modal-ride-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.modal-ride-list li {
+    font-size: 16px; /* Set font size for ride names */
+    margin-bottom: 5px; /* Add space between ride names */
+}
+
+.available-ride {
+    color: green; /* Color available rides green */
+}
+
+.unavailable-ride {
+    color: red; /* Color unavailable rides red */
+}
+
+/* Modal alignment and positioning */
+#ride-info {
+    text-align: center; /* Align the entire content in the center */
+    padding: 20px; /* Add padding for better spacing */
+}
+
+.modal-content {
+    text-align: left; /* Default text alignment */
+    padding: 20px; /* Ensure padding inside modal content */
+}
+
+.modal-content.center-content {
+    text-align: center; /* Center text if the class is added */
+}
+
+.modal-content.right-content {
+    text-align: right; /* Align text to the right if the class is added */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    /* Image container */
+    .park-card .image-container {
+        width: 100%;
+        height: 240px; /* Keeps the image height consistent */
+
+        background-color: #f0f0f0;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
+    /* Image inside the container */
+    .park-card .park-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+/* Adjust park card width and gap on mobile */
+@media (max-width: 768px) {
+    /* Park card adjustments */
+    .park-card {
+        width: 95%; /* Make the card width wider on mobile */
+        max-width: 95%; /* Ensure the maximum width is also set */
+        margin-bottom: 10px; /* Increase space between cards */
+    }
+
+    /* Adjust the gap between cards in the grid */
+    #result-container {
+        gap: 10px; /* Increase the gap between park cards */
+    }
+}
+
+/* Styles for the pagination container */
+#pagination-container {
+    display: flex;
+    justify-content: center; /* Center the pagination list horizontally */
+    width: 100%; /* Full width of the parent container */
+    margin: 10px 0; /* Reduce vertical margin (top and bottom) */
+}
+
+/* Styles for the pagination list */
+.pagination-list {
+    display: flex;
+    justify-content: center; /* Center the pagination items */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+/* Individual pagination items */
+.pagination-item {
+    margin: 0 5px; /* Spacing between pagination items */
 }
