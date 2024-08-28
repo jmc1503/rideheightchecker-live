@@ -77,10 +77,33 @@ document.addEventListener('DOMContentLoaded', function () {
             populateThemeParkSelect(data);
             displayResults(data);
             populateMobileCountrySelect(data);
+            loadRandomBackgroundImages(data);
         })
         .catch(error => {
             console.error('Error fetching data:', error);
         });
+
+    // Function to shuffle an array
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    function loadRandomBackgroundImages(data) {
+        const imageContainer = document.getElementById('background-image-container');
+        const uniqueImages = [...new Set(data.map(item => item.Image))].filter(image => image);
+        const shuffledImages = shuffleArray(uniqueImages).slice(0, 3); // Select 3 unique images
+    
+        shuffledImages.forEach(image => {
+            const div = document.createElement('div');
+            div.classList.add('background-image');
+            div.style.backgroundImage = `url('${image}')`; // Set the background image from the Image field
+            imageContainer.appendChild(div);
+        });
+    }
 
     function populateThemeParkSelect(data) {
         themeParkSelect.innerHTML = '';
@@ -696,9 +719,9 @@ resetBtn.addEventListener('click', () => {
     }
 
     function showResultsView() {
-        mobileDefaultView.style.display = 'none'; 
-        mobileFilterBtn.style.display = 'block'; 
-        resultContainer.style.display = 'block'; 
+        mobileDefaultView.style.display = 'none';
+        mobileFilterBtn.style.display = 'block';
+        resultContainer.style.display = 'block';
         paginationContainer.style.display = 'block';
         mainContainer.style.display = 'block'; // Show the main container
     }
