@@ -95,17 +95,17 @@ header.shrink img {
 
 /* Specific styles for the about page */
 .about-page .content-wrapper {
-    max-width: 79%; /* Set maximum width to 77% for about page */
+    max-width: 83%; /* Set maximum width to 77% for about page */
 }
 
 .about-page h2, 
 .about-page h3 {
-    color: #40768E; /* Set font color */
+    color: #000000; /* Set font color */
     font-weight: bold; /* Make titles bold */
 }
 
 .about-page p {
-    color: #40768E; /* Set font color */
+    color: #000000; /* Set font color */
 }
 
 /* Filter card styles */
@@ -249,6 +249,7 @@ header.shrink img {
     /* Show filter modal */
     #filter-modal.show {
         display: block; /* Show the modal */
+        border-radius: 15px
     }
 
     /* Modal content styles */
@@ -738,7 +739,7 @@ button:hover {
 
     /* Make about-content narrower on mobile */
     .about-content {
-        max-width: 79%;
+        max-width: 83%;
         margin: 0 auto; /* Center the content */
     }
 
@@ -1247,4 +1248,80 @@ footer {
 /* Individual pagination items */
 .pagination-item {
     margin: 0 5px; /* Spacing between pagination items */
+}
+
+/* Overlay styles */
+#overlay {
+    display: none; /* Hide by default */
+    position: fixed; /* Fix the position */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent grey background */
+    z-index: 2002; /* Place it behind the modal but above other content */
+}
+
+/* Show the overlay when modal is active */
+#filter-modal.show ~ #overlay {
+    display: block; /* Show the overlay */
+}
+
+/* Ensure the main container starts below the header and ends above the footer only on the about page */
+@media (max-width: 768px) {
+    .about-page .main-container {
+        padding-top: 120px; /* Adjust based on your header height */
+        padding-bottom: 20px; /* Ensure content does not touch the footer */
+        box-sizing: border-box;
+    }
+    
+    .about-page .content-wrapper {
+        margin: 0 auto;
+        padding: 0 15px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Ensure the content does not overlap the footer */
+    .about-page body {
+        min-height: 100vh;
+        position: relative;
+        color: #000000; /* Set font color */
+        padding-bottom: 60px; /* Equal to footer height */
+        box-sizing: border-box;
+    }
+
+    .about-page footer {
+        position: static; /* Make the footer static */
+        margin-top: 40px; /* Add margin to separate it from content */
+    }
+}
+
+/* Specific adjustments for mobile */
+@media (max-width: 768px) {
+    .about-page .main-container {
+        padding-top: 100px; /* Adjust for mobile header height */
+        padding-bottom: 20px; /* Add space before the footer */
+    }
+}
+
+/* Specific styles for the partner-with-us page */
+.partner-page .main-container {
+    padding-top: 120px; /* Adjust based on your header height */
+    box-sizing: border-box;
+}
+
+.partner-page .content-wrapper {
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+    max-width: 83%; /* Set maximum width for the content */
+}
+
+@media (max-width: 768px) {
+    .partner-page .main-container {
+        padding-top: 100px; /* Adjust for mobile header height */
+        padding-bottom: 20px; /* Ensure content does not touch the bottom */
+        box-sizing: border-box;
+    }
 }
