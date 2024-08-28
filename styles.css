@@ -915,10 +915,25 @@ footer {
 }
 
 #default-text-container {
-    background-color: #f9f9f9;
+    position: absolute; /* Position it over the background images */
+    top: 150px; /* Position it near the top (adjust as needed) */
+    left: 50%;
+    transform: translateX(-50%); /* Center the container horizontally */
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: Add a semi-transparent background for readability */
     padding: 16px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    z-index: 10; /* Ensure it stays above the background images */
+    text-align: center;
+    width: 80%; /* Set the width of the container */
+    max-width: 800px; /* Set a maximum width for larger screens */
+}
+
+@media (max-width: 768px) {
+    #default-text-container {
+        width: 77%; /* Adjust width for smaller screens */
+        top: 150px; /* Adjust top position for smaller screens */
+    }
 }
 
 #default-text {
@@ -1345,4 +1360,35 @@ footer {
         padding-bottom: 20px; /* Ensure content does not touch the bottom */
         box-sizing: border-box;
     }
+}
+
+/* Background Image Container */
+#background-image-container {
+    width: 100%;
+    height: calc(100vh - 100px - 50px); /* Subtract header (100px) and footer (50px) height from viewport height */
+    display: flex;
+    flex-direction: column; /* Stack background images vertically */
+    overflow: hidden; /* Hide any overflow */
+    position: relative; /* Ensure correct positioning */
+    margin-top: -49px; /* Push the container down by the height of the header */
+}
+
+.background-image {
+    width: 100%;
+    height: 33.33%; /* Adjust as needed */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Ensure the polygons are applied */
+.background-image:nth-child(1) {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.background-image:nth-child(2) {
+    clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+}
+
+.background-image:nth-child(3) {
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
 }
