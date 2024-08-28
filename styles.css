@@ -1325,3 +1325,24 @@ footer {
         box-sizing: border-box;
     }
 }
+
+/* Specific styles for the terms-and-conditions page */
+.terms-page .main-container {
+    padding-top: 120px; /* Adjust based on your header height */
+    box-sizing: border-box;
+}
+
+.terms-page .content-wrapper {
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+    max-width: 83%; /* Set maximum width for the content */
+}
+
+@media (max-width: 768px) {
+    .terms-page .main-container {
+        padding-top: 100px; /* Adjust for mobile header height */
+        padding-bottom: 20px; /* Ensure content does not touch the bottom */
+        box-sizing: border-box;
+    }
+}
