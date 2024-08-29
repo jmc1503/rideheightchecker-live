@@ -965,8 +965,8 @@ footer {
 }
 
 #mobile-default-view p {
-    font-size: 18px;
-    color: #333;
+    font-size: 16px;
+    color: #000000;
     margin-bottom: 10px;
     text-align: center;
 }
