@@ -313,18 +313,41 @@ resetBtn.addEventListener('click', () => {
                 const totalRidesInPark = allData.filter(ride => ride['Theme Park'] === park).length;
                 const availableRidesInPark = data.filter(ride => ride['Theme Park'] === park).length;
                 const percentage = totalRidesInPark > 0 ? ((availableRidesInPark / totalRidesInPark) * 100).toFixed(0) : 0;
-                return { park, percentage: parseInt(percentage), parkData, availableRides: availableRidesInPark };
+                
+                // Convert the Commission Rate to a number for comparison
+                const commissionRate = parseFloat(parkData['Commission Rate'].replace('%', ''));
+            
+                return { 
+                    park, 
+                    percentage: parseInt(percentage), 
+                    commissionRate, 
+                    parkData, 
+                    availableRides: availableRidesInPark 
+                };
             });
-    
+            
             parksWithPercentage.sort((a, b) => {
+                // 1. Prioritize parks where Affiliated is 1
                 if (a.parkData.Affiliated !== b.parkData.Affiliated) {
                     return b.parkData.Affiliated - a.parkData.Affiliated;
                 }
+            
+                // 2. Order by Commission Rate (descending)
+                if (a.commissionRate !== b.commissionRate) {
+                    return b.commissionRate - a.commissionRate;
+                }
+            
+                // 3. Order by % Available rides (descending) when Commission Rate is the same
                 if (a.percentage !== b.percentage) {
                     return b.percentage - a.percentage;
                 }
+            
+                // 4. Order by Park Name (alphabetically) when both Commission Rate and % Available rides are the same
                 return a.park.localeCompare(b.park);
             });
+            
+            
+            
     
             const isMobile = window.innerWidth <= 768;
             const rows = isMobile ? 15 : 5;
