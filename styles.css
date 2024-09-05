@@ -70,13 +70,14 @@
 
     /* Main container styles */
     .main-container {
-        display: flex; /* Use flexbox for layout */
-        justify-content: center; /* Center items horizontally */
-        width: 100%; /* Full width */
-        box-sizing: border-box; /* Include padding and border in width */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure it takes the full screen */
+        justify-content: space-between; /* Space between header and footer */
     }
 
     .content-wrapper {
+        flex-grow: 1; /* Make the content grow to fill the space between header and footer */
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
@@ -84,14 +85,13 @@
         max-width: 1200px;
         width: 100%;
         margin: 0 auto;
-        padding-top: 110px; /* Add padding to push content below header */
+        padding-top: 110px; /* Push content below the header */
     }
 
     @media (max-width: 768px) {
         .content-wrapper {
-            padding-top: 110px; /* Slightly less padding for mobile view */
+            padding-top: 110px; /* Ensure content sits below the header on mobile */
         }
-        
     }
 
     /* Specific styles for the about page */
@@ -173,7 +173,7 @@
         max-width: 90%; /* Set max width */
         margin: 0 auto; /* Center container */
         padding-top: 0px; /* Adjust this value as needed */
-        padding-bottom: 100px;
+        padding-bottom: 80px;
         display: flex; /* Use flexbox for layout */
         flex-direction: column; /* Arrange items in column */
         align-items: flex-start; /* Aligns items to the left */
@@ -829,13 +829,13 @@
         background-color: #ffffff;
         padding: 10px 0;
         text-align: center;
-        position: fixed; /* Fix position to always be visible */
+        position: static; /* No longer sticky, it will stay at the bottom of the content */
         bottom: 0;
         left: 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 1000; /* Ensure it's above other content */
+        z-index: 1000; /* Ensure it's above other content but below the filter button */
     }
 
     /* Social media icons in the footer for mobile */
@@ -935,12 +935,28 @@
         background-color: #0056b3;
     }
 
-    /* Ensure this is visible on mobile screens only */
-    @media (max-width: 768px) {
-        #mobile-default-view {
-            display: block;
-        }
+/* Ensure the default view takes full height of the screen and shows the footer at the bottom */
+@media (max-width: 768px) {
+    #mobile-default-view {
+        display: flex;
+        flex-direction: column; /* Make the container a flexbox */
+        justify-content: space-between; /* Push content and footer apart */
+        min-height: 100vh; /* Ensure it takes the full height of the viewport */
     }
+
+    #mobile-default-view {
+        margin-bottom: 60px; /* Add space between content and footer */
+    }
+
+    .results-container {
+        margin-bottom: 60px; /* Ensure results container doesn't overlap the footer */
+    }
+
+    footer {
+        margin-top: auto; /* Footer will stay at the bottom of the page */
+        position: relative; /* Remove fixed positioning */
+    }
+}
 
     #mobile-default-view p {
         font-size: 16px;
@@ -1340,23 +1356,23 @@
         }
     }
 
-    /* Background Image Container */
-    #background-image-container {
-        width: 100%;
-        height: calc(100vh - 100px - 50px); /* Subtract header (100px) and footer (50px) height from viewport height */
-        display: flex;
-        flex-direction: column; /* Stack background images vertically */
-        overflow: hidden; /* Hide any overflow */
-        position: relative; /* Ensure correct positioning */
-        margin-top: -49px; /* Push the container down by the height of the header */
-    }
+ /* Background Image Container */
+#background-image-container {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column; /* Stack background images vertically */
+    overflow: hidden; /* Hide any overflow */
+    position: relative; /* Ensure correct positioning */
+}
 
-    .background-image {
-        width: 100%;
-        height: 33.33%; /* Adjust as needed */
-        background-size: cover;
-        background-position: center;
-    }
+/* Individual Background Image */
+.background-image {
+    width: 100%; /* Ensure background images fill the full width */
+    height: 33.33%; /* Adjust based on the desired height of each image */
+    background-size: cover; /* Ensure the images cover the full area */
+    background-position: center; /* Center the background image */
+}
 
     /* Ensure the polygons are applied */
     .background-image:nth-child(1) {
@@ -1373,7 +1389,6 @@
 
 /* Sticky filter button */
 #mobile-filter-btn {
-    display: none; /* Hide by default */
     width: 50px;
     height: 50px;
     background-image: url('filter-icon.png');
@@ -1384,7 +1399,7 @@
     right: 20px;
     border: none;
     border-radius: 50%;
-    z-index: 1000; /* Lower than burger menu */
+    z-index: 2005; /* Ensure the filter button is above the footer */
     cursor: pointer;
     transition: background-image 0.3s ease;
 }
@@ -1392,8 +1407,7 @@
 /* For active state */
 #mobile-filter-btn.active {
     background-image: url('close-filter-icon.png');
-    z-index: 2005; /* Ensure the button stays on top when active */
-    outline: none;
+    z-index: 2005; /* Keep it above footer */
 }
 
 /* Ensure hover does not apply unwanted styles */
@@ -1406,5 +1420,34 @@
 @media (min-width: 769px) {
     #mobile-filter-btn {
         display: none;
+    }
+}
+
+/* Hide the social media icons in the burger modal by default */
+.burger-social-icons {
+    display: none;
+}
+
+/* Show the social media icons inside the burger menu for mobile screens */
+@media (max-width: 768px) {
+    .burger-social-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .burger-social-icons a {
+        margin: 0 10px;
+    }
+
+    .burger-social-icons img {
+        width: 32px;
+        height: 32px;
+        transition: width 0.3s, height 0.3s;
+    }
+
+    .burger-social-icons img:hover {
+        width: 40px;
+        height: 40px;
     }
 }
