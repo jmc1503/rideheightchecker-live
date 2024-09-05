@@ -629,12 +629,52 @@ resetBtn.addEventListener('click', () => {
         }
     };
 
+    // Toggle the filter modal and switch icons on button click
     mobileFilterBtn.addEventListener('click', () => {
-        filterModal.classList.add('show');
+        if (filterModal.classList.contains('show')) {
+            closeFilterModal(); // Close the modal when filter button is clicked again
+        } else {
+            openFilterModal(); // Open the modal and show overlay
+        }
     });
 
-    mobileCloseModal.addEventListener('click', () => {
+    // Close the modal when clicking outside the modal (on the overlay)
+    overlay.addEventListener('click', () => {
+        closeFilterModal(); // Close the modal when clicking outside
+    });
+
+    // Function to open the modal and show the overlay
+    function openFilterModal() {
+        filterModal.classList.add('show');
+        overlay.style.display = 'block'; // Show the overlay
+        mobileFilterBtn.classList.add('active'); // Switch to close icon when modal is open
+    }
+
+    // Function to close the modal and hide the overlay
+    function closeFilterModal() {
         filterModal.classList.remove('show');
+        overlay.style.display = 'none'; // Hide the overlay
+        mobileFilterBtn.classList.remove('active'); // Switch back to filter icon
+    }
+
+    // Optional: Ensure the modal closes when the escape key is pressed
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && filterModal.classList.contains('show')) {
+            closeFilterModal(); // Close modal on escape key press
+        }
+    });
+    
+
+    // Optional: Add event listener for modal close actions (e.g., a close button in the modal)
+    document.querySelector('.close').addEventListener('click', closeFilterModal);
+
+    // Adjust filter button visibility based on the results view and window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            mobileFilterBtn.style.display = 'none'; // Hide filter button on desktop
+        } else if (resultContainer.style.display === 'block') {
+            mobileFilterBtn.style.display = 'block'; // Show filter button on mobile
+        }
     });
 
     window.addEventListener('click', (event) => {
@@ -741,13 +781,60 @@ resetBtn.addEventListener('click', () => {
         mainContainer.style.display = 'none'; // Hide the main container
     }
 
-    function showResultsView() {
-        mobileDefaultView.style.display = 'none';
+    // Function to show results view and display filter button on mobile
+ // Function to show the results view and display the filter button on mobile
+ function showResultsView() {
+    const isMobile = window.innerWidth <= 768;
+
+    // Hide the default mobile view
+    mobileDefaultView.style.display = 'none';
+
+    // Show the results and main containers
+    resultContainer.style.display = 'block';
+    mainContainer.style.display = 'block';
+    paginationContainer.style.display = 'block';
+
+    // Display the filter button only on mobile
+    if (isMobile) {
         mobileFilterBtn.style.display = 'block';
-        resultContainer.style.display = 'block';
-        paginationContainer.style.display = 'block';
-        mainContainer.style.display = 'block'; // Show the main container
+    } else {
+        mobileFilterBtn.style.display = 'none';
     }
+}
+
+// Event listener for the Find Parks button (to show the results view)
+findParkBtn.addEventListener('click', function () {
+    showResultsView(); // Call the function to display the results
+});
+
+// Toggle the filter modal and switch icons on the filter button click
+mobileFilterBtn.addEventListener('click', () => {
+    if (filterModal.classList.contains('show')) {
+        closeFilterModal(); // Close the modal when filter button is clicked again
+    } else {
+        filterModal.classList.add('show');
+        overlay.style.display = 'block'; // Show overlay when modal is open
+        mobileFilterBtn.classList.add('active'); // Switch to close icon when modal is open
+    }
+});
+
+    // Close the modal when clicking outside the modal (on the overlay)
+    overlay.addEventListener('click', () => {
+        closeFilterModal(); // Close modal when clicking outside
+    });
+
+
+    // Toggle the filter modal and switch icons on button click
+    mobileFilterBtn.addEventListener('click', () => {
+        if (filterModal.classList.contains('show')) {
+            filterModal.classList.remove('show');
+            mobileFilterBtn.classList.remove('active'); // Switch back to filter icon
+        } else {
+            filterModal.classList.add('show');
+            mobileFilterBtn.classList.add('active'); // Switch to close icon
+        }
+    });
+
 });
 
 function adjustFooterPosition() {
